@@ -5,6 +5,16 @@
 	},
 	"rules": {
 		"quotes": [2, "single"],
-		"func-names": [1]
+		"func-names": [2],
+		"block-scoped-var": [2],
+		"func-style": [2, "expression"],
+		"space-in-brackets": [2, "always"],
+		"max-nested-callbacks": [2, 2],
+		"max-depth": [2, 2],
+		"max-params": [2, 3],
+		"max-statements": [1, 30],
+		"no-plusplus": [2],
+		"max-len": [1, 80, 4],
+		"complexity": [1, 10]
 	}
 }
