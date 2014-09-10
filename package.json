@@ -1,0 +1,26 @@
+{
+  "name": "",
+  "version": "0.0.0",
+  "author": "Danny Fritz",
+  "description": "",
+  "bugs": {
+    "url": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "main": "index.js",
+  "bin": "./bin/cli.js",
+  "files": [],
+  "scripts": {
+    "stare": "npm-stare"
+  },
+  "stare": {},
+  "license": "Apache",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "npm-stare": "^1.0.0"
+  }
+}
