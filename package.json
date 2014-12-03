@@ -17,7 +17,7 @@
     "stare": "npm-stare"
   },
   "stare": {},
-  "license": "Apache",
+  "license": "MIT",
   "dependencies": {
   },
   "devDependencies": {
