@@ -21,9 +21,9 @@
 		"regexYFlag": true,
 		"restParams": true,
 		"spread": true,
-		"superInFunctions ": false,
+		"superInFunctions ": true,
 		"templateStrings": true,
-		"unicodeCodePointEscapes": false
+		"unicodeCodePointEscapes": true
 	},
 	"rules": {
 		"block-scoped-var": [2],

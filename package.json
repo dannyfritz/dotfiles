@@ -1,6 +1,6 @@
 {
   "name": "",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "author": "Danny Fritz <dannyfritz@gmail.com>",
   "description": "",
   "bugs": {
@@ -14,13 +14,10 @@
   "bin": "./bin/cli.js",
   "files": [],
   "scripts": {
-    "stare": "npm-stare"
   },
-  "stare": {},
   "license": "MIT",
   "dependencies": {
   },
   "devDependencies": {
-    "npm-stare": "^1.0.0"
   }
 }
