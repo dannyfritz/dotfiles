@@ -1,7 +1,7 @@
 packages: [
-  "atom-color-highlight"
   "autocomplete-emojis"
-  "autocomplete-glsl"
+  "autocomplete-modules"
+  "autohide-tree-view"
   "bezier-curve-editor"
   "date"
   "editorconfig"
@@ -16,9 +16,9 @@ packages: [
   "language-glsl"
   "language-haskell"
   "language-hjson"
-  "language-javascript-jsx"
   "language-lua"
   "language-rust"
+  "language-vue"
   "minimap"
   "minimap-bookmarks"
   "minimap-find-and-replace"
@@ -26,6 +26,7 @@ packages: [
   "minimap-highlight-selected"
   "minimap-selection"
   "package-sync"
+  "react"
   "todo-show"
   "vim-mode"
 ]
