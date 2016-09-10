@@ -1,20 +1,16 @@
 {
   "name": "",
   "version": "0.0.0",
-  "author": "Danny Fritz <dannyfritz@gmail.com>",
-  "description": "",
-  "bugs": {
-    "url": ""
-  },
-  "repository": {
-    "type": "git",
-    "url": ""
-  },
   "main": "index.js",
-  "bin": "./bin/cli.js",
-  "files": [],
+  "description": "",
+  "author": "Danny Fritz <dannyfritz@gmail.com>",
   "scripts": {
   },
+  "bugs": "https://github.com/dannyfritz/REPO",
+  "repository": "dannyfritz/REPO",
+  "bin": "./bin/cli.js",
+  "keywords": [],
+  "files": [],
   "license": "MIT",
   "dependencies": {
   },
