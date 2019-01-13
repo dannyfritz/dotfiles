@@ -1,0 +1,69 @@
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'joshdick/onedark.vim'
+Plug 'sickill/vim-monokai'
+" Plug 'tpope/vim-sensible'
+Plug 'sheerun/vim-polyglot'
+" Plug 'terryma/vim-multiple-cursors'
+Plug 'itchyny/lightline.vim'
+Plug 'tpope/vim-surround'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/syntastic'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'gilsondev/searchtasks.vim'
+Plug 'w0rp/ale'
+" Plug 'rust-lang/rust.vim'
+" Plug 'vim-scripts/ShowMarks'
+Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
+Plug 'scrooloose/nerdcommenter'
+Plug 'mhinz/vim-grepper', { 'on': ['Grepper', '<plug>(GrepperOperator)'] }
+" Plug 'airblade/vim-gitgutter'
+" Plug 'Valloric/YouCompleteMe'
+
+call plug#end()
+
+set nocompatible
+set wildmenu
+set showcmd
+set hlsearch
+set ignorecase
+set smartcase
+filetype indent plugin on
+" set autoindent
+set visualbell
+
+syntax on
+colorscheme onedark
+set number relativenumber
+
+augroup numbertoggle
+  autocmd!
+  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+augroup END
+
+set mouse=a
+
+if !has('gui_running')
+  set t_Co=256
+endif
+
+set noshowmode
+set laststatus=2
+
+" Make double-<Esc> clear search highlights
+nnoremap <silent> <Esc><Esc> <Esc>:nohlsearch<CR><Esc>
+
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+
+map <C-o> :NERDTreeToggle<CR>
+map <C-p> :Leaderf file<CR>
+" let NERDTreeShowHidden=1
