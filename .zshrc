@@ -31,7 +31,8 @@ zplug "ael-code/zsh-colored-man-pages"
 zplug "popstas/zsh-command-time"
 
 zplug "lukechilds/zsh-nvm"
-zplug "akoenig/npm-run.plugin.zsh"
+#zplug "akoenig/npm-run.plugin.zsh"
+zplug "lukechilds/zsh-better-npm-completion", defer:2
 zplug "pkulev/zsh-rustup-completion"
 
 # Install plugins if there are plugins that have not been installed
@@ -61,6 +62,6 @@ bindkey '^[[B' history-substring-search-down
 bindkey '^?' backward-delete-char
 bindkey '^h' backward-delete-char
 
-alias ls='ls --color=auto'
+#alias ls='ls --color=auto'
 
 [[ $SHLVL != "2" ]] && (tmux attach || tmux new)
