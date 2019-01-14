@@ -13,27 +13,27 @@ zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 #zplug mafredri/zsh-async, from:github
 #zplug sindresorhus/pure, use:pure.zsh, from:github, as:theme
 zplug "agkozak/agkozak-zsh-prompt"
+zplug "popstas/zsh-command-time"
+zplug "zsh-users/zsh-autosuggestions", defer:2
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
+zplug "zsh-users/zsh-history-substring-search"
 
+# Utilities
+zplug "supercrabtree/k"
+zplug "hlissner/zsh-autopair"
+zplug "MikeDacre/careful_rm"
+zplug "ael-code/zsh-colored-man-pages"
+
+# Language Helpers
 zplug "plugins/git", from:oh-my-zsh
 zplug "plugins/sudo", from:oh-my-zsh
 zplug "plugins/cargo", from:oh-my-zsh
 zplug "plugins/rust", from:oh-my-zsh
 zplug "plugins/debian", from:oh-my-zsh
-
-zplug "supercrabtree/k"
-#zplug "zpm-zsh/ls"
-zplug "hlissner/zsh-autopair"
-zplug "zsh-users/zsh-autosuggestions"
-zplug "zsh-users/zsh-syntax-highlighting"
-zplug "zsh-users/zsh-history-substring-search"
-zplug "MikeDacre/careful_rm"
-zplug "ael-code/zsh-colored-man-pages"
-zplug "popstas/zsh-command-time"
-
 zplug "lukechilds/zsh-nvm"
-#zplug "akoenig/npm-run.plugin.zsh"
+zplug "pkulev/zsh-rustup-completion", defer:2
 zplug "lukechilds/zsh-better-npm-completion", defer:2
-zplug "pkulev/zsh-rustup-completion"
+
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
@@ -62,6 +62,17 @@ bindkey '^[[B' history-substring-search-down
 bindkey '^?' backward-delete-char
 bindkey '^h' backward-delete-char
 
-#alias ls='ls --color=auto'
+
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+    alias ls='ls --color=auto'
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+    alias ls='ls -G'
+elif [[ "$OSTYPE" == "cygwin" ]]; then
+    alias ls='ls --color=auto'
+elif [[ "$OSTYPE" == "msys" ]]; then
+    alias ls='ls --color=auto'
+else
+    echo "What OS is this? $OSTYPE"
+fi
 
 [[ $SHLVL != "2" ]] && (tmux attach || tmux new)
