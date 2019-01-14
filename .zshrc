@@ -17,6 +17,7 @@ zplug "popstas/zsh-command-time"
 zplug "zsh-users/zsh-autosuggestions", defer:2
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "zsh-users/zsh-history-substring-search"
+zplug "MikeDacre/tmux-zsh-vim-titles"
 
 # Utilities
 zplug "supercrabtree/k"
