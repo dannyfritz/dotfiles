@@ -19,6 +19,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'gilsondev/searchtasks.vim'
 Plug 'w0rp/ale'
+Plug 'MattesGroeger/vim-bookmarks'
 " Plug 'rust-lang/rust.vim'
 " Plug 'vim-scripts/ShowMarks'
 Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
@@ -69,3 +70,8 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 map <C-o> :NERDTreeToggle<CR>
 map <C-p> :Leaderf file<CR>
 " let NERDTreeShowHidden=1
+let NERDTreeShowBookmarks = 1
+let g:bookmark_save_per_working_dir = 1
+let g:bookmark_auto_save = 1
+let g:bookmark_manage_per_buffer = 1
+let g:bookmark_auto_close = 1
