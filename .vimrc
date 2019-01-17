@@ -20,6 +20,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'gilsondev/searchtasks.vim'
 Plug 'w0rp/ale'
 Plug 'MattesGroeger/vim-bookmarks'
+Plug 'vim-scripts/cream-showinvisibles'
 " Plug 'rust-lang/rust.vim'
 " Plug 'vim-scripts/ShowMarks'
 Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
@@ -66,6 +67,8 @@ set backspace=indent,eol,start
 
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+
+let g:LIST = 1
 
 map <C-o> :NERDTreeToggle<CR>
 map <C-p> :Leaderf file<CR>
