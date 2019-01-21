@@ -8,9 +8,9 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'joshdick/onedark.vim'
 Plug 'sickill/vim-monokai'
-" Plug 'tpope/vim-sensible'
+"Plug 'tpope/vim-sensible'
 Plug 'sheerun/vim-polyglot'
-" Plug 'terryma/vim-multiple-cursors'
+"Plug 'terryma/vim-multiple-cursors'
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdtree'
@@ -21,13 +21,11 @@ Plug 'gilsondev/searchtasks.vim'
 Plug 'w0rp/ale'
 Plug 'MattesGroeger/vim-bookmarks'
 Plug 'vim-scripts/cream-showinvisibles'
-" Plug 'rust-lang/rust.vim'
-" Plug 'vim-scripts/ShowMarks'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --rust-completer --ts-completer' }
 Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
 Plug 'scrooloose/nerdcommenter'
 Plug 'mhinz/vim-grepper', { 'on': ['Grepper', '<plug>(GrepperOperator)'] }
-" Plug 'airblade/vim-gitgutter'
-" Plug 'Valloric/YouCompleteMe'
+"Plug 'airblade/vim-gitgutter'
 
 call plug#end()
 
@@ -78,3 +76,5 @@ let g:bookmark_save_per_working_dir = 1
 let g:bookmark_auto_save = 1
 let g:bookmark_manage_per_buffer = 1
 let g:bookmark_auto_close = 1
+
+let g:ycm_min_num_of_chars_for_completion = 1
