@@ -26,12 +26,16 @@ Plug 'Valloric/YouCompleteMe', { 'do': './install.py --rust-completer --ts-compl
 Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
 Plug 'scrooloose/nerdcommenter'
 Plug 'mhinz/vim-grepper', { 'on': ['Grepper', '<plug>(GrepperOperator)'] }
+Plug 'jtratner/vim-flavored-markdown'
 "Plug 'airblade/vim-gitgutter'
 
 call plug#end()
 
+set encoding=utf8
+set nowrap
 set nocompatible
 set wildmenu
+set cursorline
 set showcmd
 set hlsearch
 set ignorecase
