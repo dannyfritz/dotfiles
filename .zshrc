@@ -47,6 +47,9 @@ fi
 # Then, source plugins and add commands to $PATH
 zplug load
 
+# Disable ctrl+s terminal pausing
+stty -ixon
+
 bindkey -v
 export KEYTIMEOUT=1
 
