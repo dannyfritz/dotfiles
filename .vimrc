@@ -21,7 +21,7 @@ Plug 'vim-scripts/TaskList.vim'
 Plug 'w0rp/ale'
 Plug 'MattesGroeger/vim-bookmarks'
 Plug 'vim-scripts/cream-showinvisibles'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --rust-completer --ts-completer' }
+"Plug 'Valloric/YouCompleteMe', { 'do': './install.py --rust-completer --ts-completer' }
 Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
 Plug 'mhinz/vim-grepper', { 'on': ['Grepper', '<plug>(GrepperOperator)'] }
 Plug 'jtratner/vim-flavored-markdown'
