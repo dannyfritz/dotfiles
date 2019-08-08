@@ -18,7 +18,7 @@ zplug "zsh-users/zsh-autosuggestions", defer:2
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "zsh-users/zsh-history-substring-search"
 zplug "MikeDacre/tmux-zsh-vim-titles"
-zplug "mattberther/zsh-nodenv"
+#zplug "mattberther/zsh-nodenv"
 
 # Utilities
 zplug "supercrabtree/k"
@@ -27,15 +27,16 @@ zplug "MikeDacre/careful_rm"
 zplug "ael-code/zsh-colored-man-pages"
 
 # Language Helpers
-zplug "plugins/git", from:oh-my-zsh
-zplug "plugins/sudo", from:oh-my-zsh
-zplug "plugins/cargo", from:oh-my-zsh
-zplug "plugins/rust", from:oh-my-zsh
-zplug "plugins/debian", from:oh-my-zsh
+zplug "plugins/git", from:oh-my-zsh, lazy:true
+zplug "plugins/sudo", from:oh-my-zsh, lazy:true
+zplug "plugins/cargo", from:oh-my-zsh, lazy:true
+zplug "plugins/rust", from:oh-my-zsh, lazy:true
+zplug "plugins/debian", from:oh-my-zsh, lazy:true
+export NVM_LAZY_LOAD=true
+export NVM_NO_USE=true
 zplug "lukechilds/zsh-nvm"
 zplug "pkulev/zsh-rustup-completion", defer:2
 zplug "lukechilds/zsh-better-npm-completion", defer:2
-
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
@@ -81,3 +82,6 @@ else
 fi
 
 [[ $SHLVL != "2" ]] && (tmux attach || tmux new)
+
+#eval "$(nodenv init -)"
+export PATH="$PATH:`yarn global bin`"
