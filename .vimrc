@@ -41,7 +41,8 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'skywind3000/asyncrun.vim'
 Plug 'skywind3000/asynctasks.vim'
 Plug 'MattesGroeger/vim-bookmarks'
-Plug 'bronson/vim-visual-star-search'
+Plug 'dominikduda/vim_current_word'
+" Plug 'bronson/vim-visual-star-search'
 " Plug '907th/vim-auto-save'
 " Plug 'scrooloose/syntastic'
 " Plug 'w0rp/ale'
@@ -106,6 +107,9 @@ let g:indentLine_char = '▏'
 let g:strip_whitespace_on_save=0
 
 set listchars=tab:>\ ,eol:¶,nbsp:·,space:·
+
+hi CurrentWord gui=bold guifg=0 cterm=bold ctermfg=15
+hi CurrentWordTwins gui=bold guifg=0 cterm=bold ctermfg=15
 
 let g:asyncrun_open=10
 nmap <Leader>r :AsyncTask project-run<CR>

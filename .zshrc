@@ -3,7 +3,7 @@ if [[ ! -d ~/.zplug ]]; then
     source ~/.zplug/init.zsh && zplug update --self
 fi
 
-. $HOME/.asdf/asdf.sh
+. $(brew --prefix asdf)/asdf.sh
 
 source ~/.zplug/init.zsh
 
