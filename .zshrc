@@ -3,38 +3,30 @@ if [[ ! -d ~/.zplug ]]; then
     source ~/.zplug/init.zsh && zplug update --self
 fi
 
+. $HOME/.asdf/asdf.sh
+
 source ~/.zplug/init.zsh
 
 zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 
 # Themes
-#zplug "themes/arrow", from:oh-my-zsh
-#zplug "cbrock/sugar-free"
-#zplug mafredri/zsh-async, from:github
-#zplug sindresorhus/pure, use:pure.zsh, from:github, as:theme
 zplug "agkozak/agkozak-zsh-prompt"
-zplug "popstas/zsh-command-time"
-zplug "zsh-users/zsh-autosuggestions", defer:2
+zplug "popstas/zsh-command-time", defer:2
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
-zplug "zsh-users/zsh-history-substring-search"
-zplug "MikeDacre/tmux-zsh-vim-titles"
+zplug "MikeDacre/tmux-zsh-vim-titles", defer:2
 
 # Utilities
-zplug "supercrabtree/k"
-zplug "hlissner/zsh-autopair"
-zplug "MikeDacre/careful_rm"
-zplug "ael-code/zsh-colored-man-pages"
+zplug "zsh-users/zsh-history-substring-search", defer:2
+zplug "zsh-users/zsh-autosuggestions", defer:2
+zplug "hlissner/zsh-autopair", defer:2
+zplug "MikeDacre/careful_rm", defer:2
+zplug "ael-code/zsh-colored-man-pages", defer:2
 
 # Language Helpers
-zplug "plugins/git", from:oh-my-zsh
-zplug "plugins/sudo", from:oh-my-zsh
-zplug "plugins/cargo", from:oh-my-zsh
-zplug "plugins/rust", from:oh-my-zsh
-zplug "plugins/debian", from:oh-my-zsh
-zplug "lukechilds/zsh-nvm"
-zplug "pkulev/zsh-rustup-completion", defer:2
-zplug "lukechilds/zsh-better-npm-completion", defer:2
-
+zplug "kiurchv/asdf.plugin.zsh", defer:2
+zplug "plugins/git", from:oh-my-zsh, defer:2
+zplug "plugins/sudo", from:oh-my-zsh, defer:2
+zplug "plugins/debian", from:oh-my-zsh, defer:2
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
@@ -56,10 +48,17 @@ export KEYTIMEOUT=1
 ZSH_AUTOSUGGEST_USE_ASYNC="yes"
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=4"
 
-#PURE_PROMPT_SYMBOL="C❯"
-#PURE_PROMPT_VICMD_SYMBOL="V❯"
 AGKOZAK_BLANK_LINES=1
 AGKOZAK_LEFT_PROMPT_ONLY=1
+
+ZSH_COMMAND_TIME_MIN_SECONDS=3
+ZSH_COMMAND_TIME_MSG="⏱: %s"
+ZSH_COMMAND_TIME_COLOR="cyan"
+
+export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
+
+export FZF_DEFAULT_COMMAND="rg --files"
+export FZF_DEFAULT_OPTS="--layout=reverse --inline-info --bind='enter:execute(xdg-open {})+clear-query'"
 
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
@@ -79,4 +78,6 @@ else
     echo "What OS is this? $OSTYPE"
 fi
 
-[[ $SHLVL != "2" ]] && (tmux attach || tmux new)
+#[[ $SHLVL != "2" ]] && (tmux attach || tmux new)
+[[ $SHLVL != "2" ]] && tmux
+
