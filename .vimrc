@@ -43,8 +43,8 @@ Plug 'skywind3000/asynctasks.vim'
 Plug 'MattesGroeger/vim-bookmarks'
 Plug 'bronson/vim-visual-star-search'
 " Plug '907th/vim-auto-save'
-"Plug 'scrooloose/syntastic'
-"Plug 'w0rp/ale'
+" Plug 'scrooloose/syntastic'
+" Plug 'w0rp/ale'
 Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
 
 call plug#end()
