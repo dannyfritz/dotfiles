@@ -34,8 +34,8 @@ Plug 'michaeljsmith/vim-indent-object'
 Plug 'tpope/vim-surround'
 Plug 'junegunn/vim-easy-align'
 Plug 'ap/vim-css-color'
-Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
+" Plug 'scrooloose/nerdtree'
+" Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'skywind3000/asyncrun.vim'
@@ -66,7 +66,8 @@ if !has('gui_running')
   set t_Co=256
 endif
 
-set hlsearch
+" set hlsearch
+set nohlsearch
 set ignorecase
 set smartcase
 nnoremap <silent> <Esc><Esc> <Esc>:nohlsearch<CR><Esc>
@@ -129,16 +130,24 @@ let g:asyncrun_runner.tmux = function('s:run_tmux')
 
 " autocmd StdinReadPre * let s:std_in=1
 " autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
-map <Leader>o :NERDTreeToggle<CR>
+" map <Leader>o :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
 let NERDTreeShowBookmarks = 1
 let NERDTreeIgnore=['\.vim$', '\.swp$[[file]]', '\~$']
 
+let g:Lf_RgConfig = [
+        \ "--max-columns=150",
+        \ "--max-columns-preview",
+        \ "--glob=!git/*",
+        \ "--hidden"
+    \ ]
 let g:Lf_PopupWidth = &columns * 9 / 10
-nmap <Leader>d :Leaderf file --popup --reverse<CR>
+let g:Lf_PreviewInPopup = 1
 nmap <Leader>: :Leaderf command --popup --reverse<CR>
+nmap <Leader>d :Leaderf file --popup --reverse<CR>
+nmap <Leader>D :Leaderf rg --fullScreen --reverse --stayOpen<CR>
 nmap <Leader>f :Leaderf line --popup --cword --reverse<CR>
-nmap <Leader>F :Leaderf rg -C 2 --fullScreen --cword --reverse<CR>
+nmap <Leader>F :Leaderf rg --fullScreen --cword --reverse --stayOpen<CR>
 
 let g:LIST = 1
 let g:bookmark_save_per_working_dir = 1

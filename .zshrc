@@ -4,6 +4,7 @@ if [[ ! -d ~/.zplug ]]; then
 fi
 
 . $(brew --prefix asdf)/asdf.sh
+export PATH="/usr/local/sbin:$PATH"
 
 source ~/.zplug/init.zsh
 
