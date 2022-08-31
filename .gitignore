@@ -11,3 +11,5 @@ Session.vim
 *~
 tags
 [._]*.un~
+.tool-versions
+
