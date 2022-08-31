@@ -3,10 +3,16 @@ if [[ ! -d ~/.zplug ]]; then
     source ~/.zplug/init.zsh && zplug update --self
 fi
 
-. $(brew --prefix asdf)/asdf.sh
-export PATH="/usr/local/sbin:$PATH"
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    . /usr/local/opt/asdf/libexec/asdf.sh
+fi
 
-source ~/.zplug/init.zsh
+export PATH="/usr/local/sbin:$PATH"
+export PATH="$HOME/.bin:$PATH"
+
+if [[ -d ~/.zplug ]]; then
+    source ~/.zplug/init.zsh
+fi
 
 zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 
@@ -14,20 +20,22 @@ zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 zplug "agkozak/agkozak-zsh-prompt"
 zplug "popstas/zsh-command-time", defer:2
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
-zplug "MikeDacre/tmux-zsh-vim-titles", defer:2
+# zplug "MikeDacre/tmux-zsh-vim-titles", defer:2
 
 # Utilities
 zplug "zsh-users/zsh-history-substring-search", defer:2
 zplug "zsh-users/zsh-autosuggestions", defer:2
 zplug "hlissner/zsh-autopair", defer:2
-zplug "MikeDacre/careful_rm", defer:2
+# zplug "MikeDacre/careful_rm", defer:2
 zplug "ael-code/zsh-colored-man-pages", defer:2
 
 # Language Helpers
 zplug "kiurchv/asdf.plugin.zsh", defer:2
 zplug "plugins/git", from:oh-my-zsh, defer:2
-zplug "plugins/sudo", from:oh-my-zsh, defer:2
-zplug "plugins/debian", from:oh-my-zsh, defer:2
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+    zplug "plugins/debian", from:oh-my-zsh, defer:2
+    zplug "plugins/sudo", from:oh-my-zsh, defer:2
+fi
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
@@ -49,8 +57,10 @@ export KEYTIMEOUT=1
 ZSH_AUTOSUGGEST_USE_ASYNC="yes"
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=4"
 
+AGKOZAK_CMD_EXEC_TIME=0
 AGKOZAK_BLANK_LINES=1
 AGKOZAK_LEFT_PROMPT_ONLY=1
+AGKOZAK_CMD_EXEC_TIME=0
 
 ZSH_COMMAND_TIME_MIN_SECONDS=3
 ZSH_COMMAND_TIME_MSG="⏱: %s"
@@ -79,6 +89,10 @@ else
     echo "What OS is this? $OSTYPE"
 fi
 
-#[[ $SHLVL != "2" ]] && (tmux attach || tmux new)
-[[ $SHLVL != "2" ]] && tmux
+export TERMINFO_DIRS=$TERMINFO_DIRS:$HOME/.local/share/terminfo
+
+#$SHLVL != "2" && (tmux attach || tmux new)
+if [[ "$SHLVL" -lt 2 ]]; then
+    tmux
+fi
 

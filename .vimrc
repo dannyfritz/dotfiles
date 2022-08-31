@@ -1,3 +1,5 @@
+set nocompatible
+
 scriptencoding utf-8
 
 if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
@@ -11,7 +13,7 @@ call plug#begin('~/.vim/plugged')
 "Plug 'embear/vim-localvimrc'
 Plug 'tpope/vim-sensible'
 "Plug 'jreybert/vimagit'
-Plug 'tomtom/tcomment_vim'
+"Plug 'tomtom/tcomment_vim'
 Plug 'joshdick/onedark.vim'
 Plug 'sickill/vim-monokai'
 " Plug 'vim-airline/vim-airline'
@@ -24,9 +26,9 @@ Plug 'sheerun/vim-polyglot'
 Plug 'jtratner/vim-flavored-markdown'
 Plug 'yggdroot/indentline'
 Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-fugitive'
+" Plug 'tpope/vim-fugitive'
 Plug 'simias/YankRing.vim'
-Plug 'airblade/vim-gitgutter'
+" Plug 'airblade/vim-gitgutter'
 Plug 'wellle/targets.vim'
 Plug 'chaoren/vim-wordmotion'
 Plug 'christoomey/vim-sort-motion'
@@ -46,7 +48,7 @@ Plug 'dominikduda/vim_current_word'
 " Plug '907th/vim-auto-save'
 " Plug 'scrooloose/syntastic'
 " Plug 'w0rp/ale'
-Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
+" Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
 
 call plug#end()
 
