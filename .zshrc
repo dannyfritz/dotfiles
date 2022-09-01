@@ -1,10 +1,13 @@
+if type brew &>/dev/null
+then
+  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+  autoload -Uz compinit
+  compinit
+fi
+
 if [[ ! -d ~/.zplug ]]; then
     git clone https://github.com/zplug/zplug ~/.zplug
     source ~/.zplug/init.zsh && zplug update --self
-fi
-
-if [[ "$OSTYPE" == "darwin"* ]]; then
-    . /usr/local/opt/asdf/libexec/asdf.sh
 fi
 
 export PATH="/usr/local/sbin:$PATH"
@@ -81,6 +84,8 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
     alias ls='ls --color=auto'
 elif [[ "$OSTYPE" == "darwin"* ]]; then
     alias ls='ls -G'
+    alias vim=nvim
+    . /opt/homebrew/opt/asdf/libexec/asdf.sh
 elif [[ "$OSTYPE" == "cygwin" ]]; then
     alias ls='ls --color=auto'
 elif [[ "$OSTYPE" == "msys" ]]; then
