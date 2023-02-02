@@ -2,7 +2,7 @@
 	email = dannyfritz@gmail.com
 	name = Danny Fritz
 [core]
-	editor = vim
+	editor = nvim
 	excludesfile = ~/.gitignore
 [push]
   default = current

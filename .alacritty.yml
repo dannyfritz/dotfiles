@@ -176,7 +176,7 @@ scrolling:
   #
   # Thin strokes are suitable for retina displays, but for non-retina screens
   # it is recommended to set `use_thin_strokes` to `false`.
-  #use_thin_strokes: true
+  # use_thin_strokes: true
 
   # Use built-in font for box drawing characters.
   #
@@ -242,7 +242,7 @@ draw_bold_text_with_bright_colors: false
     #  foreground: '#1d1f21'
 
   # Keyboard regex hints
-  #hints:
+  # hints:
     # First character in the hint label
     #
     # Allowed values are CellForeground/CellBackground, which reference the
@@ -497,6 +497,7 @@ hints:
   enabled:
    - regex: "(ipfs:|ipns:|magnet:|mailto:|gemini:|gopher:|https:|http:|news:|file:|git:|ssh:|ftp:)\
              [^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^⟨⟩`]+"
+     hyperlinks: true
      command: open
      post_processing: true
      mouse:
