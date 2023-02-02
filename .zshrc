@@ -12,6 +12,8 @@ fi
 
 export PATH="/usr/local/sbin:$PATH"
 export PATH="$HOME/.bin:$PATH"
+export PATH="$(brew --prefix)/opt/python/libexec/bin:$PATH"
+export PATH=/Users/dannyfritz/.local/share/ponyup/bin:$PATH
 
 if [[ -d ~/.zplug ]]; then
     source ~/.zplug/init.zsh
@@ -57,15 +59,16 @@ stty -ixon
 bindkey -v
 export KEYTIMEOUT=1
 
+
 ZSH_AUTOSUGGEST_USE_ASYNC="yes"
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=4"
 
-AGKOZAK_CMD_EXEC_TIME=0
-AGKOZAK_BLANK_LINES=1
+AGKOZAK_USER_HOST_DISPLAY=0
 AGKOZAK_LEFT_PROMPT_ONLY=1
+AGKOZAK_BLANK_LINES=1
 AGKOZAK_CMD_EXEC_TIME=0
 
-ZSH_COMMAND_TIME_MIN_SECONDS=3
+ZSH_COMMAND_TIME_MIN_SECONDS=1
 ZSH_COMMAND_TIME_MSG="⏱: %s"
 ZSH_COMMAND_TIME_COLOR="cyan"
 
@@ -78,7 +81,6 @@ bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 bindkey '^?' backward-delete-char
 bindkey '^h' backward-delete-char
-
 
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
     alias ls='ls --color=auto'
@@ -101,3 +103,5 @@ if [[ "$SHLVL" -lt 2 ]]; then
     tmux
 fi
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
