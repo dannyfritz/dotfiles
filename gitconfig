@@ -1,11 +1,11 @@
 [user]
-	email = dannyfritz@gmail.com
+	email = me@dannyfritz.com
 	name = Danny Fritz
 [core]
 	editor = nvim
 	excludesfile = ~/.gitignore
 [push]
-  default = current
+	default = current
 [pull]
 	ff = only
 [init]
