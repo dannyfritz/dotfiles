@@ -108,4 +108,6 @@ if [[ "$SHLVL" -lt 2 ]]; then
 	tmux
 fi
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+if [ -f ~/.fzf.zsh ]; then
+	source ~/.fzf.zsh
+fi
