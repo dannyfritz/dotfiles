@@ -13,6 +13,10 @@ lvim.log.level = "warn"
 lvim.format_on_save.enabled = false
 lvim.colorscheme = "vscode"
 lvim.lsp.diagnostics.virtual_text = false
+-- lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
+lvim.builtin.nvimtree.setup.renderer.icons.show.file = false
+lvim.builtin.nvimtree.setup.renderer.icons.show.folder = false
+-- lvim.builtin.nvimtree.setup.renderer.icons.show.folder_arrow = false
 vim.opt.timeoutlen = 100
 vim.opt.mouse = ""
 vim.opt.relativenumber = true
@@ -22,11 +26,11 @@ vim.opt.spell = false
 vim.opt.spelllang = "en"
 vim.opt.scrolloff = 8
 vim.opt.sidescrolloff = 8
+vim.opt.colorcolumn = "80,120"
 vim.g.bookmark_auto_close = 1
 vim.g.bookmark_auto_save = 1
 vim.g.bookmark_save_per_working_dir = 1
 vim.g.bookmark_no_default_key_mappings = 1
-vim.opt.colorcolumn = "80,120"
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
 
