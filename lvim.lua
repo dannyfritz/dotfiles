@@ -10,8 +10,9 @@ an executable
 
 -- general
 lvim.log.level = "warn"
+-- lvim.use_icons = false
 lvim.format_on_save.enabled = false
-lvim.colorscheme = "vscode"
+lvim.colorscheme = "nightfox"
 lvim.lsp.diagnostics.virtual_text = false
 -- lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
 lvim.builtin.nvimtree.setup.renderer.icons.show.file = false
@@ -31,6 +32,8 @@ vim.g.bookmark_auto_close = 1
 vim.g.bookmark_auto_save = 1
 vim.g.bookmark_save_per_working_dir = 1
 vim.g.bookmark_no_default_key_mappings = 1
+vim.g.moonflyItalics = false
+vim.g.moonflyUnderlineMatchParen = true
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
 
@@ -81,6 +84,18 @@ lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
 -- l = { "<cmd>Trouble loclist<cr>", "LocationList" },
 -- w = { "<cmd>Trouble workspace_diagnostics<cr>", "Workspace Diagnostics" },
 -- }
+
+-- Window Mapping
+lvim.builtin.which_key.mappings["w"] = {
+  name = "+Window",
+  c = { "<cmd>close<cr>", "vsplit" },
+  j = { "<cmd>winc j<cr>", "Focus Up" },
+  k = { "<cmd>winc k<cr>", "Focus Down" },
+  h = { "<cmd>winc h<cr>", "Focus Left" },
+  l = { "<cmd>winc l<cr>", "Focus Right" },
+  ['|'] = { "<cmd>vsplit<cr>", "vsplit" },
+  ['-'] = { "<cmd>split<cr>", "vsplit" },
+}
 
 -- Hop Mapping
 lvim.builtin.which_key.mappings["H"] = {
@@ -199,40 +214,45 @@ lvim.builtin.treesitter.highlight.enable = true
 -- end
 
 -- set a formatter, this will override the language server formatting capabilities (if it exists)
-local formatters = require "lvim.lsp.null-ls.formatters"
-formatters.setup {
-  --   { command = "black", filetypes = { "python" } },
-  --   { command = "isort", filetypes = { "python" } },
-  {
-    command = "prettier",
-  },
-}
+-- local formatters = require "lvim.lsp.null-ls.formatters"
+-- formatters.setup {
+--   --   { command = "black", filetypes = { "python" } },
+--   --   { command = "isort", filetypes = { "python" } },
+--   {
+--     command = "prettier",
+--   },
+-- }
 
 -- set additional linters
-local linters = require "lvim.lsp.null-ls.linters"
-linters.setup {
-  --   { command = "flake8", filetypes = { "python" } },
-  --   {
-  --     -- each linter accepts a list of options identical to https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md#Configuration
-  --     command = "shellcheck",
-  --     ---@usage arguments to pass to the formatter
-  --     -- these cannot contain whitespaces, options such as `--line-width 80` become either `{'--line-width', '80'}` or `{'--line-width=80'}`
-  --     extra_args = { "--severity", "warning" },
-  --   },
-  --   {
-  --     command = "codespell",
-  --     ---@usage specify which filetypes to enable. By default a providers will attach to all the filetypes it supports.
-  --     filetypes = { "javascript", "python" },
-  --   },
-  {
-    command = "eslint"
-  }
-}
+-- local linters = require "lvim.lsp.null-ls.linters"
+-- linters.setup {
+--   --   { command = "flake8", filetypes = { "python" } },
+--   --   {
+--   --     -- each linter accepts a list of options identical to https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md#Configuration
+--   --     command = "shellcheck",
+--   --     ---@usage arguments to pass to the formatter
+--   --     -- these cannot contain whitespaces, options such as `--line-width 80` become either `{'--line-width', '80'}` or `{'--line-width=80'}`
+--   --     extra_args = { "--severity", "warning" },
+--   --   },
+--   --   {
+--   --     command = "codespell",
+--   --     ---@usage specify which filetypes to enable. By default a providers will attach to all the filetypes it supports.
+--   --     filetypes = { "javascript", "python" },
+--   --   },
+--   {
+--     command = "eslint"
+--   }
+-- }
 
 -- Additional Plugins
 lvim.plugins = {
-  { "tpope/vim-repeat" },
+  -- { "folke/tokyonight.nvim" },
+  { "EdenEast/nightfox.nvim" },
+  { "sainnhe/sonokai" },
+  { "bluz71/vim-moonfly-colors",  as = "moonfly" },
+  { "bluz71/vim-nightfly-colors", as = "nightfly" },
   { "Mofiqul/vscode.nvim" },
+  { "tpope/vim-repeat" },
   {
     "phaazon/hop.nvim",
     event = "BufRead",
@@ -285,7 +305,7 @@ lvim.plugins = {
   },
   {
     "tom-anders/telescope-vim-bookmarks.nvim",
-    requires = {{'MattesGroeger/vim-bookmarks' }},
+    requires = { { 'MattesGroeger/vim-bookmarks' } },
     config = function()
       require('telescope').load_extension('vim_bookmarks')
     end
