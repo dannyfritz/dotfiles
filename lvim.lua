@@ -248,10 +248,10 @@ lvim.builtin.treesitter.highlight.enable = true
 lvim.plugins = {
   -- { "folke/tokyonight.nvim" },
   { "EdenEast/nightfox.nvim" },
-  { "sainnhe/sonokai" },
-  { "bluz71/vim-moonfly-colors",  as = "moonfly" },
-  { "bluz71/vim-nightfly-colors", as = "nightfly" },
-  { "Mofiqul/vscode.nvim" },
+  -- { "sainnhe/sonokai" },
+  -- { "bluz71/vim-moonfly-colors",  as = "moonfly" },
+  -- { "bluz71/vim-nightfly-colors", as = "nightfly" },
+  -- { "Mofiqul/vscode.nvim" },
   { "tpope/vim-repeat" },
   {
     "phaazon/hop.nvim",
@@ -273,24 +273,27 @@ lvim.plugins = {
     end
   },
   {
-    "folke/todo-comments.nvim",
-    requires = "nvim-lua/plenary.nvim",
-    event = "BufRead",
+    'echasnovski/mini.nvim',
+    version = false,
     config = function()
-      require "todo-comments".setup {}
-    end
-  },
-  {
-    "itchyny/vim-cursorword",
-    event = { "BufEnter", "BufNewFile" },
-    config = function()
-      vim.api.nvim_command("augroup user_plugin_cursorword")
-      vim.api.nvim_command("autocmd!")
-      vim.api.nvim_command("autocmd FileType NvimTree,lspsagafinder,dashboard,vista let b:cursorword = 0")
-      vim.api.nvim_command("autocmd WinEnter * if &diff || &pvw | let b:cursorword = 0 | endif")
-      vim.api.nvim_command("autocmd InsertEnter * let b:cursorword = 0")
-      vim.api.nvim_command("autocmd InsertLeave * let b:cursorword = 1")
-      vim.api.nvim_command("augroup END")
+      require('mini.cursorword').setup()
+      require('mini.trailspace').setup()
+      local map = require('mini.map')
+      map.setup({
+        -- symbols = {
+        --   encode = map.gen_encode_symbols.block("2x1"),
+        -- },
+        integrations = {
+          map.gen_integration.builtin_search(),
+          map.gen_integration.gitsigns(),
+          map.gen_integration.diagnostic(),
+        },
+        window = {
+          width = 2,
+          -- winblend = 100,
+          show_integration_count = false,
+        }
+      })
     end
   },
   {
@@ -301,6 +304,14 @@ lvim.plugins = {
     end,
   },
   {
+    "folke/todo-comments.nvim",
+    requires = "nvim-lua/plenary.nvim",
+    event = "BufRead",
+    config = function()
+      require "todo-comments".setup {}
+    end
+  },
+  {
     "MattesGroeger/vim-bookmarks"
   },
   {
@@ -309,10 +320,50 @@ lvim.plugins = {
     config = function()
       require('telescope').load_extension('vim_bookmarks')
     end
-  }
+  },
+  -- {
+  --   "iamcco/markdown-preview.nvim",
+  --   config = function()
+  --   end,
+  -- },
+  {
+    "iamcco/markdown-preview.nvim",
+    run = "cd app && npm install",
+    config = function()
+      vim.fn["mkdp#util#install"]()
+      vim.g.mkdp_filetypes = { "markdown" }
+    end,
+    ft = { "markdown" },
+  },
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
+lvim.autocommands = {
+  {
+    { "BufEnter", "Filetype" },
+    {
+      desc = "Open mini.map and exclude some filetypes",
+      pattern = { "*" },
+      callback = function()
+        local exclude_ft = {
+          "qf",
+          "NvimTree",
+          "toggleterm",
+          "TelescopePrompt",
+          "alpha",
+          "netrw",
+        }
+        local map = require("mini.map")
+        if vim.tbl_contains(exclude_ft, vim.o.filetype) then
+          vim.b.minimap_disable = true
+          map.close()
+        elseif vim.o.buftype == "" then
+          map.open()
+        end
+      end
+    }
+  }
+}
 -- vim.api.nvim_create_autocmd("BufEnter", {
 --   pattern = { "*.json", "*.jsonc" },
 --   -- enable wrap mode for json files only
