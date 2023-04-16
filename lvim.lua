@@ -258,7 +258,7 @@ lvim.plugins = {
     event = "BufRead",
     branch = "v2",
     config = function()
-      require "hop".setup {}
+      require "hop".setup({})
     end
   },
   {
@@ -308,7 +308,7 @@ lvim.plugins = {
     requires = "nvim-lua/plenary.nvim",
     event = "BufRead",
     config = function()
-      require "todo-comments".setup {}
+      require "todo-comments".setup({})
     end
   },
   {
