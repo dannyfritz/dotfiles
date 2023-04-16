@@ -97,13 +97,9 @@ lvim.builtin.which_key.mappings["w"] = {
   ['-'] = { "<cmd>split<cr>", "vsplit" },
 }
 
--- Hop Mapping
-lvim.builtin.which_key.mappings["H"] = {
-  name = "+Hop",
-  w = { "<cmd>HopWord<cr>", "Word" },
-  p = { "<cmd>HopPattern<cr>", "Pattern" },
-  b = { "<cmd>HopPatternMW<cr>", "Pattern Visible Buffers" },
-  H = { "<cmd>HopPatternMW<cr>", "Pattern Visible Buffers" },
+lvim.builtin.which_key.mappings["j"] = {
+  "<cmd>lua MiniJump2d.start(MiniJump2d.builtin_opts.single_character)<cr>",
+  "Jump",
 }
 
 -- Todos Mapping
@@ -254,14 +250,6 @@ lvim.plugins = {
   -- { "Mofiqul/vscode.nvim" },
   { "tpope/vim-repeat" },
   {
-    "phaazon/hop.nvim",
-    event = "BufRead",
-    branch = "v2",
-    config = function()
-      require "hop".setup({})
-    end
-  },
-  {
     "norcalli/nvim-colorizer.lua",
     config = function()
       require "colorizer".setup({ "css", "javascript", "typesript" }, {
@@ -278,6 +266,11 @@ lvim.plugins = {
     config = function()
       require('mini.cursorword').setup()
       require('mini.trailspace').setup()
+      require('mini.jump2d').setup({
+        mappings = {
+          start_jumping = nil
+        }
+      })
       local map = require('mini.map')
       map.setup({
         -- symbols = {
@@ -285,7 +278,7 @@ lvim.plugins = {
         -- },
         integrations = {
           map.gen_integration.builtin_search(),
-          map.gen_integration.gitsigns(),
+          -- map.gen_integration.gitsigns(),
           map.gen_integration.diagnostic(),
         },
         window = {
