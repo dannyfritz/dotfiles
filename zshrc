@@ -1,11 +1,6 @@
-if [[ "$OSTYPE" == "darwin" ]];
-then
-	if type brew &>/dev/null
-	then
-		FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
-		autoload -Uz compinit
-		compinit
-	fi
+if [[ "$SHLVL" = 1 ]]; then
+	tmux
+	exit 0
 fi
 
 if [[ ! -d ~/.zplug ]]; then
@@ -13,17 +8,22 @@ if [[ ! -d ~/.zplug ]]; then
 	source ~/.zplug/init.zsh && zplug update --self
 fi
 
-export PATH="/usr/local/sbin:$PATH"
-export PATH="$HOME/.bin:$PATH"
-export PATH="$HOME/.local/bin:$PATH"
-if type brew &>/dev/null
-then
-	export PATH="$(brew --prefix)/opt/python/libexec/bin:$PATH"
-fi
-
 if [[ -d ~/.zplug ]]; then
 	source ~/.zplug/init.zsh
 fi
+
+if [[ "$OSTYPE" == "darwin" ]]; then
+	if type brew &>/dev/null; then
+		FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+		autoload -Uz compinit
+		compinit
+		export PATH="$(brew --prefix)/opt/python/libexec/bin:$PATH"
+	fi
+fi
+
+export PATH="/usr/local/sbin:$PATH"
+export PATH="$HOME/.bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 
@@ -31,22 +31,17 @@ zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 zplug "agkozak/agkozak-zsh-prompt"
 zplug "popstas/zsh-command-time", defer:2
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
-# zplug "MikeDacre/tmux-zsh-vim-titles", defer:2
 
 # Utilities
 #zplug "zsh-users/zsh-history-substring-search", defer:2
 #zplug "zsh-users/zsh-autosuggestions", defer:2
 #zplug "hlissner/zsh-autopair", defer:2
-# zplug "MikeDacre/careful_rm", defer:2
+zplug "MikeDacre/careful_rm", defer:2
 zplug "ael-code/zsh-colored-man-pages", defer:2
+zplug "kiurchv/asdf.plugin.zsh", defer:2
 
 # Language Helpers
-zplug "kiurchv/asdf.plugin.zsh", defer:2
 zplug "plugins/git", from:oh-my-zsh, defer:2
-if [[ "$OSTYPE" == "linux-gnu" ]]; then
-	zplug "plugins/debian", from:oh-my-zsh, defer:2
-	zplug "plugins/sudo", from:oh-my-zsh, defer:2
-fi
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
@@ -102,11 +97,6 @@ else
 fi
 
 export TERMINFO_DIRS=$TERMINFO_DIRS:$HOME/.local/share/terminfo
-
-#$SHLVL != "2" && (tmux attach || tmux new)
-if [[ "$SHLVL" -lt 2 ]]; then
-	tmux
-fi
 
 if [ -f ~/.fzf.zsh ]; then
 	source ~/.fzf.zsh

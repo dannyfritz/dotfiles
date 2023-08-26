@@ -2,9 +2,11 @@ ln -sf $(pwd)/alacritty.yml ~/.alacritty.yml
 ln -sf $(pwd)/asdfrc ~/.asdfrc
 ln -sf $(pwd)/gitconfig ~/.gitconfig
 ln -sf $(pwd)/gitignore ~/.gitignore
-ln -sf $(pwd)/psqlrc ~/.psqlrc
 ln -sf $(pwd)/tmux.conf ~/.tmux.conf
-ln -sf $(pwd)/vimrc ~/.vimrc
 ln -sf $(pwd)/zshrc ~/.zshrc
-mkdir -p ~/.config/lvim
-ln -sf $(pwd)/lvim.lua ~/.config/lvim/config.lua
+mkdir -p ~/.config/kitty
+ln -sf $(pwd)/kitty.conf  ~/.config/kitty/kitty.conf
+mkdir -p ~/.config/fish
+ln -sf $(pwd)/config.fish ~/.config/fish/config.fish
+mkdir -p ~/.config/gitui
+ln -sf $(pwd)/gitui.ron ~/.config/gitui/key_bindings.ron
