@@ -26,3 +26,4 @@ fish_vi_key_bindings
 set --universal tide_cmd_duration_threshold 0
 set --universal tide_cmd_duration_decimals 1
 set --universal tide_left_prompt_items pwd newline character
+set --universal tide_right_prompt_items cmd_duration status
