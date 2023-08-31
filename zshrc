@@ -12,18 +12,19 @@ if [[ -d ~/.zplug ]]; then
 	source ~/.zplug/init.zsh
 fi
 
+export PATH="/usr/local/sbin:$PATH"
+export PATH="$HOME/.bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+
 if [[ "$OSTYPE" == "darwin" ]]; then
-	if type brew &>/dev/null; then
+	if type brew &>/dev/null
+	then
 		FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 		autoload -Uz compinit
 		compinit
 		export PATH="$(brew --prefix)/opt/python/libexec/bin:$PATH"
 	fi
 fi
-
-export PATH="/usr/local/sbin:$PATH"
-export PATH="$HOME/.bin:$PATH"
-export PATH="$HOME/.local/bin:$PATH"
 
 zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 
@@ -33,15 +34,16 @@ zplug "popstas/zsh-command-time", defer:2
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 
 # Utilities
-#zplug "zsh-users/zsh-history-substring-search", defer:2
-#zplug "zsh-users/zsh-autosuggestions", defer:2
-#zplug "hlissner/zsh-autopair", defer:2
-zplug "MikeDacre/careful_rm", defer:2
 zplug "ael-code/zsh-colored-man-pages", defer:2
 zplug "kiurchv/asdf.plugin.zsh", defer:2
 
 # Language Helpers
 zplug "plugins/git", from:oh-my-zsh, defer:2
+
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+	zplug "plugins/debian", from:oh-my-zsh, defer:2
+	zplug "plugins/sudo", from:oh-my-zsh, defer:2
+fi
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
