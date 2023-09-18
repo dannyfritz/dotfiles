@@ -1,0 +1,287 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = true
+command_timeout = 300
+
+[battery]
+disabled = true
+
+[character]
+success_symbol = "[>](bold green)"
+error_symbol = "[x](bold red)"
+vimcmd_symbol = "[<](bold green)"
+
+[cmd_duration]
+format = '[$duration]($style) '
+min_time = 0
+style = 'dimmed yellow'
+
+[directory]
+read_only = " ro"
+
+[git_branch]
+format = '[$symbol$branch]($style) '
+symbol = ''
+style = 'dimmed purple'
+
+[git_commit]
+tag_symbol = " tag "
+
+[git_status]
+ahead = ">"
+behind = "<"
+diverged = "<>"
+renamed = "r"
+deleted = "x"
+style = 'dimmed red'
+
+[memory_usage]
+symbol = "memory "
+
+[status]
+symbol = "[x](bold red) "
+
+[sudo]
+symbol = "sudo "
+
+# Language modules (disabled)
+
+[aws]
+symbol = "aws "
+disabled = true
+
+[azure]
+symbol = "az "
+disabled = true
+
+[buf]
+disabled = true
+
+[bun]
+symbol = "bun "
+disabled = true
+
+[c]
+symbol = "C "
+disabled = true
+
+[cobol]
+symbol = "cobol "
+disabled = true
+
+[conda]
+symbol = "conda "
+disabled = true
+
+[crystal]
+symbol = "cr "
+disabled = true
+
+[cmake]
+symbol = "cmake "
+disabled = true
+
+[daml]
+symbol = "daml "
+disabled = true
+
+[dart]
+symbol = "dart "
+disabled = true
+
+[deno]
+symbol = "deno "
+disabled = true
+
+[dotnet]
+symbol = ".NET "
+disabled = true
+
+[docker_context]
+symbol = "docker "
+disabled = true
+
+[elixir]
+symbol = "exs "
+disabled = true
+
+[elm]
+symbol = "elm "
+disabled = true
+
+[fennel]
+symbol = "fnl "
+disabled = true
+
+[fossil_branch]
+symbol = "fossil "
+disabled = true
+
+[gcloud]
+symbol = "gcp "
+disabled = true
+
+[golang]
+symbol = "go "
+disabled = true
+
+[gradle]
+symbol = "gradle "
+disabled = true
+
+[guix_shell]
+symbol = "guix "
+disabled = true
+
+[hg_branch]
+symbol = "hg "
+disabled = true
+
+[java]
+symbol = "java "
+disabled = true
+
+[julia]
+symbol = "jl "
+disabled = true
+
+[kotlin]
+symbol = "kt "
+disabled = true
+
+[lua]
+symbol = "lua "
+disabled = true
+
+[nodejs]
+symbol = "nodejs "
+disabled = true
+
+[meson]
+symbol = "meson "
+disabled = true
+
+[nim]
+symbol = "nim "
+disabled = true
+
+[nix_shell]
+symbol = "nix "
+disabled = true
+
+[ocaml]
+symbol = "ml "
+disabled = true
+
+[opa]
+symbol = "opa "
+disabled = true
+
+[os.symbols]
+Alpaquita = "alq "
+Alpine = "alp "
+Amazon = "amz "
+Android = "andr "
+Arch = "rch "
+Artix = "atx "
+CentOS = "cent "
+Debian = "deb "
+DragonFly = "dfbsd "
+Emscripten = "emsc "
+EndeavourOS = "ndev "
+Fedora = "fed "
+FreeBSD = "fbsd "
+Garuda = "garu "
+Gentoo = "gent "
+HardenedBSD = "hbsd "
+Illumos = "lum "
+Linux = "lnx "
+Mabox = "mbox "
+Macos = "mac "
+Manjaro = "mjo "
+Mariner = "mrn "
+MidnightBSD = "mid "
+Mint = "mint "
+NetBSD = "nbsd "
+NixOS = "nix "
+OpenBSD = "obsd "
+OpenCloudOS = "ocos "
+openEuler = "oeul "
+openSUSE = "osuse "
+OracleLinux = "orac "
+Pop = "pop "
+Raspbian = "rasp "
+Redhat = "rhl "
+RedHatEnterprise = "rhel "
+Redox = "redox "
+Solus = "sol "
+SUSE = "suse "
+Ubuntu = "ubnt "
+Unknown = "unk "
+Windows = "win "
+
+[package]
+symbol = "pkg "
+disabled = true
+
+[perl]
+symbol = "pl "
+disabled = true
+
+[php]
+symbol = "php "
+disabled = true
+
+[pijul_channel]
+symbol = "pijul "
+disabled = true
+
+[pulumi]
+symbol = "pulumi "
+disabled = true
+
+[purescript]
+symbol = "purs "
+disabled = true
+
+[python]
+symbol = "py "
+disabled = true
+
+[raku]
+symbol = "raku "
+disabled = true
+
+[ruby]
+symbol = "rb "
+disabled = true
+
+[rust]
+symbol = "rs "
+disabled = true
+
+[scala]
+symbol = "scala "
+disabled = true
+
+[spack]
+symbol = "spack "
+disabled = true
+
+[solidity]
+symbol = "solidity "
+disabled = true
+
+[swift]
+symbol = "swift "
+disabled = true
+
+[terraform]
+symbol = "terraform "
+disabled = true
+
+[zig]
+symbol = "zig "
+disabled = true
+

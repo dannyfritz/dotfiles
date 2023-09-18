@@ -14,6 +14,13 @@ if test -z $TMUX
     exit 0
 end
 
+# https://starship.rs/
+if type -q starship
+    starship init fish | source
+else
+    echo "Error: Prompt missing. Please install Starship https://starship.rs/"
+end
+
 # https://fishshell.com/docs/current/interactive.html#vi-mode-commands
 fish_vi_key_bindings
 

@@ -11,3 +11,4 @@ ln -sf $(pwd)/config.fish ~/.config/fish/config.fish
 ln -sf $(pwd)/fish_plugins ~/.config/fish/fish_plugins
 mkdir -p ~/.config/gitui
 ln -sf $(pwd)/gitui.ron ~/.config/gitui/key_bindings.ron
+ln -sf $(pwd)/starship.toml ~/.config/starship.toml
