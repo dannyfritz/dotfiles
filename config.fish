@@ -1,21 +1,22 @@
 set fish_greeting
 
-if test -z $TMUX
-    tmux
-    exit 0
+# https://docs.brew.sh/Shell-Completion#configuring-completions-in-fish
+if test -e /opt/homebrew/bin/brew
+    eval "$(/opt/homebrew/bin/brew shellenv)"
 end
 
 fish_add_path -g -a /usr/local/sbin
 fish_add_path -g -a $HOME/.bin
 fish_add_path -g -a $HOME/.local/bin
 
+if test -z $TMUX
+    tmux
+    exit 0
+end
+
 # https://fishshell.com/docs/current/interactive.html#vi-mode-commands
 fish_vi_key_bindings
 
-# https://docs.brew.sh/Shell-Completion#configuring-completions-in-fish
-if test -d /opt/homebrew/bin/brew
-    eval "$(/opt/homebrew/bin/brew shellenv)"
-end
 if type -q brew; and test -d (brew --prefix)"/share/fish/completions"
     set -gx fish_complete_path $fish_complete_path (brew --prefix)/share/fish/completions
 end
