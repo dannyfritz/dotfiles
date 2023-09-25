@@ -32,22 +32,7 @@ if type -q brew; and test -d (brew --prefix)"/share/fish/vendor_completions.d"
 end
 if type -q brew; and test -d (brew --prefix)"/opt/asdf/libexec/asdf.fish"
     source (brew --prefix)/opt/asdf/libexec/asdf.fish
-end
-
-if test -d ~/.asdf/asdf.fish
+else if test -d ~/.asdf/asdf.fish
     source ~/.asdf/asdf.fish
 end
 
-# https://github.com/pure-fish/pure
-set --universal pure_enable_container_detection false
-set --universal pure_enable_git false
-set --universal pure_enable_virtualenv false
-set --universal pure_separate_prompt_on_error true
-set --universal pure_show_subsecond_command_duration true
-set --universal pure_threshold_command_duration 0
-
-# https://github.com/IlanCosman/tide
-set --universal tide_cmd_duration_threshold 0
-set --universal tide_cmd_duration_decimals 1
-set --universal tide_left_prompt_items pwd newline character
-set --universal tide_right_prompt_items cmd_duration status
