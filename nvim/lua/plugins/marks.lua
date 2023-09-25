@@ -38,6 +38,9 @@ return {
     "folke/todo-comments.nvim",
     opts = {
       signs = false,
+      -- search = {
+      --   pattern = [[\b(KEYWORDS)\b]],
+      -- },
       merge_keywords = false,
       keywords = {
         -- X = {
