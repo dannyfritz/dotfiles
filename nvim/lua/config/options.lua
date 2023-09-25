@@ -3,3 +3,4 @@
 -- Add any additional options here
 vim.opt.conceallevel = 0
 vim.opt.scrolloff = 20
+vim.opt.mouse = ""
