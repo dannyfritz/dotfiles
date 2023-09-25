@@ -37,8 +37,14 @@ return {
   {
     "folke/todo-comments.nvim",
     opts = {
+      signs = false,
       merge_keywords = false,
       keywords = {
+        -- X = {
+        --   icon = "x",
+        --   color = "warning",
+        --   alt = { "M", "MARK", "HERE" },
+        -- },
         TODO = {
           icon = "t",
           color = "hint",
