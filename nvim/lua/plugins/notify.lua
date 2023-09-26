@@ -1,5 +1,8 @@
 return {
-  { "rcarriga/nvim-notify", opts = {
-    stages = "static",
-  } },
+  {
+    "rcarriga/nvim-notify",
+    opts = {
+      stages = "static",
+    },
+  },
 }

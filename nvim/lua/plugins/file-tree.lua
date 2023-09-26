@@ -2,7 +2,7 @@ return {
   { "nvim-tree/nvim-web-devicons", enabled = false },
   {
     "nvim-neo-tree/neo-tree.nvim",
-    -- enabled = false,
+    enabled = false,
     opts = {
       window = {
         position = "right",
@@ -14,7 +14,12 @@ return {
     opts = {
       options = {
         permanent_delete = false,
-        use_as_default_explorer = false,
+        use_as_default_explorer = true,
+      },
+      windows = {
+        max_number = 4,
+        preview = true,
+        width_preview = 75,
       },
     },
   },
