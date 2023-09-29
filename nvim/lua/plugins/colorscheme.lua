@@ -9,6 +9,11 @@ return {
       vim.g.neobones_lighten_cursor_line = 8
       vim.g.neobones_lighten_comments = 40
       vim.g.neobones_italic_comments = false
+      vim.api.nvim_create_autocmd({ "VimEnter", "colorsceme" }, {
+        callback = function()
+          vim.cmd("highlight ColorColumn guibg=#151820")
+        end,
+      })
     end,
   },
   {
