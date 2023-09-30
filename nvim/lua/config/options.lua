@@ -6,3 +6,4 @@ vim.opt.scrolloff = 20
 vim.opt.mouse = ""
 vim.cmd("highlight ColorColumn guibg=#151820")
 vim.opt.colorcolumn = { 80, 100 }
+vim.g.minipairs_disable = true
