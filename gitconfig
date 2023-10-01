@@ -10,3 +10,14 @@
 	ff = only
 [init]
 	defaultBranch = main
+[diff]
+  tool = nvimdiff
+[difftool]
+  prompt = false
+[merge]
+  tool = nvimdiff
+[mergetool]
+  keepBackup = false
+  writeToTemp = true
+  prompt = true
+  hideResolved = true

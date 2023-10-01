@@ -8,6 +8,7 @@ end
 fish_add_path -g -a /usr/local/sbin
 fish_add_path -g -a $HOME/.bin
 fish_add_path -g -a $HOME/.local/bin
+alias nvimdiff "nvim -d"
 
 if test -z $TMUX
     tmux
