@@ -2,7 +2,8 @@ ln -sf $(pwd)/alacritty.yml ~/.alacritty.yml
 ln -sf $(pwd)/asdfrc ~/.asdfrc
 ln -sf $(pwd)/gitconfig ~/.gitconfig
 ln -sf $(pwd)/gitignore ~/.gitignore
-ln -sf $(pwd)/tmux.conf ~/.tmux.conf
+mkdir -p ~/.config/tmux
+ln -sf $(pwd)/tmux.conf ~/.config/tmux/tmux.conf
 ln -sf $(pwd)/zshrc ~/.zshrc
 mkdir -p ~/.config/kitty
 ln -sf $(pwd)/kitty.conf  ~/.config/kitty/kitty.conf
