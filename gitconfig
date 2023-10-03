@@ -3,7 +3,6 @@
 	name = Danny Fritz
 [core]
 	editor = nvim
-	excludesfile = ~/.gitignore
 [push]
 	default = current
 [pull]
