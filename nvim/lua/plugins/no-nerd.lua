@@ -1,9 +1,11 @@
 return {
-  "nvim-telescope/telescope.nvim",
-  opts = {
-    defaults = {
-      prompt_prefix = "X",
-      selection_caret = ">",
+  {
+    "nvim-telescope/telescope.nvim",
+    opts = {
+      defaults = {
+        prompt_prefix = "🔍 ",
+        selection_caret = "> ",
+      },
     },
   },
   {
