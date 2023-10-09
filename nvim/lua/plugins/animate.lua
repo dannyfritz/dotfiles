@@ -1,5 +1,6 @@
 return {
   "echasnovski/mini.animate",
+  enabled = false,
   opts = function()
     local animate = require("mini.animate")
     return {
@@ -8,6 +9,7 @@ return {
       },
       resize = {
         enable = false,
+        timing = animate.gen_timing.linear({ easint = "out", duration = 8 }),
       },
       open = {
         enable = false,
