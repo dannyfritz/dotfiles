@@ -19,11 +19,13 @@ style = 'dimmed yellow'
 
 [directory]
 read_only = " ro"
+# fish_style_pwd_dir_length = 2
 
 [git_branch]
 format = '[$symbol$branch]($style) '
 symbol = ''
 style = 'dimmed purple'
+truncation_length = 20
 
 [git_commit]
 tag_symbol = " tag "
@@ -35,6 +37,9 @@ diverged = "<>"
 renamed = "r"
 deleted = "x"
 style = 'dimmed red'
+
+[git_metrics]
+disabled = true
 
 [memory_usage]
 symbol = "memory "
