@@ -4,3 +4,5 @@
 vim.keymap.set("n", "<leader><tab>z", "<cmd>tabedit %<cr>", { desc = "Zoom to Tab" })
 vim.keymap.set("n", "<Leader>ft", "<Nop>")
 vim.keymap.set("n", "<Leader>fT", "<Nop>")
+vim.keymap.set("n", "<Leader>gg", "<Nop>")
+vim.keymap.set("n", "<Leader>gG", "<Nop>")
