@@ -5,7 +5,14 @@ return {
       local actions = require("telescope.actions")
       return vim.tbl_deep_extend("force", opts, {
         defaults = {
+          sorting_strategy = "ascending",
           layout_strategy = "vertical",
+          layout_config = {
+            vertical = {
+              prompt_position = "top",
+              mirror = true,
+            },
+          },
           mappings = {
             i = {
               ["<C-j>"] = actions.move_selection_next,
