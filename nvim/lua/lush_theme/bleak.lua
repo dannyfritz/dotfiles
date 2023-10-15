@@ -123,12 +123,12 @@ local theme = lush(function(injected_functions)
     CursorLineFold { }, -- Like FoldColumn when 'cursorline' is set for the cursor line
     CursorLineSign { }, -- Like SignColumn when 'cursorline' is set for the cursor line
     MatchParen     { fg = accent3.saturate(100), gui = "bold" }, -- Character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
-    ModeMsg        { }, -- 'showmode' message (e.g., "-- INSERT -- ")
-    MsgArea        { fg = info }, -- Area for messages and cmdline
+    ModeMsg        { fg = info }, -- 'showmode' message (e.g., "-- INSERT -- ")
+    MsgArea        { bg = step30, fg = info }, -- Area for messages and cmdline
     MsgSeparator   { }, -- Separator for scrolled messages, `msgsep` flag of 'display'
     MoreMsg        { }, -- |more-prompt|
     NonText        { }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
-    NormalFloat    { }, -- Normal text in floating windows.
+    NormalFloat    { bg = step20 }, -- Normal text in floating windows.
     FloatBorder    { }, -- Border of floating windows.
     FloatTitle     { }, -- Title of floating windows.
     NormalNC       { }, -- normal text in non-current windows
@@ -142,14 +142,14 @@ local theme = lush(function(injected_functions)
     PmenuThumb     { bg = info }, -- Popup menu: Thumb of the scrollbar.
     Question       { }, -- |hit-enter| prompt and yes/no questions
     QuickFixLine   { }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
-    Search         { }, -- Last search pattern highlighting (see 'hlsearch'). Also used for similar items that need to stand out.
+    Search         { fg = hint }, -- Last search pattern highlighting (see 'hlsearch'). Also used for similar items that need to stand out.
     SpecialKey     { }, -- Unprintable characters: text displayed differently from what it really is. But not 'listchars' whitespace. |hl-Whitespace|
-    SpellBad       { }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
-    SpellCap       { }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
+    SpellBad       { fg = error }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
+    SpellCap       { fg = error }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
     SpellLocal     { }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
     SpellRare      { }, -- Word that is recognized by the spellchecker as one that is hardly ever used. |spell| Combined with the highlighting used otherwise.
-    StatusLine     { }, -- Status line of current window
-    StatusLineNC   { }, -- Status lines of not-current windows. Note: If this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
+    StatusLine     { bg = bg, fg = bg }, -- Status line of current window
+    StatusLineNC   { bg = bg }, -- Status lines of not-current windows. Note: If this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
     TabLine        { }, -- Tab pages line, not active tab page label
     TabLineFill    { }, -- Tab pages line, where there are no labels
     TabLineSel     { }, -- Tab pages line, active tab page label
@@ -159,8 +159,8 @@ local theme = lush(function(injected_functions)
     WarningMsg     { fg = warn }, -- Warning messages
     Whitespace     { fg = step50 }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
     Winseparator   { fg = step20 }, -- Separator between window splits. Inherts from |hl-VertSplit| by default, which it will replace eventually.
-    WildMenu       {  }, -- Current match in 'wildmenu' completion
-    WinBar         {  }, -- Window bar of current window
+    WildMenu       { }, -- Current match in 'wildmenu' completion
+    WinBar         { }, -- Window bar of current window
     WinBarNC       { }, -- Window bar of not-current windows
 
     -- Common vim syntax groups used for all kinds of code and markup.
