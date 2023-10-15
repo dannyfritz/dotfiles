@@ -77,4 +77,10 @@ return {
       return opts
     end,
   },
+  {
+    "folke/trouble.nvim",
+    opts = {
+      icons = false,
+    },
+  },
 }
