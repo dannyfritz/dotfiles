@@ -30,6 +30,23 @@ require("lazy").setup({
   },
   install = { colorscheme = { "tokyonight", "habamax" } },
   checker = { enabled = false }, -- automatically check for plugin updates
+  ui = {
+    icons = {
+      cmd = "⌘",
+      config = "🛠",
+      event = "📅",
+      ft = "📂",
+      init = "⚙",
+      keys = "🗝",
+      lazy = "💤",
+      plugin = "🔌",
+      require = "🌙",
+      runtime = "💻",
+      source = "📄",
+      start = "🚀",
+      task = "📌",
+    },
+  },
   performance = {
     rtp = {
       -- disable some rtp plugins

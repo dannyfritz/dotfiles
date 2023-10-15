@@ -17,8 +17,7 @@ return {
             i = {
               ["<C-j>"] = actions.move_selection_next,
               ["<C-k>"] = actions.move_selection_previous,
-              ["<C-l>"] = actions.preview_scrolling_right,
-              ["<C-h>"] = actions.preview_scrolling_left,
+              ["<C-l>"] = actions.select_default,
             },
             n = {
               ["q"] = actions.close,

@@ -1,5 +1,17 @@
 return {
   {
+    "rcarriga/nvim-notify",
+    opts = {
+      icons = {
+        ERROR = "✖",
+        WARN = "✹",
+        INFO = "✹",
+        DEBUG = "✹",
+        TRACE = "✹",
+      },
+    },
+  },
+  {
     "nvim-telescope/telescope.nvim",
     opts = {
       defaults = {
