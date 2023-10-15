@@ -194,7 +194,7 @@ local theme = lush(function(injected_functions)
     PreCondit      { fg = accent3 }, --   Preprocessor #if, #else, #endif, etc.
     Type           { fg = accent1 }, -- (*) int, long, char, etc.
     StorageClass   { fg = accent3 }, --   static, register, volatile, etc.
-    Structure      { fg = accent3 }, --   struct, union, enum, etc.
+    Structure      { }, --   struct, union, enum, etc.
     Typedef        { }, --   A typedef
     Special        { }, -- (*) Any special symbol
     SpecialChar    { }, --   Special character in a constant
