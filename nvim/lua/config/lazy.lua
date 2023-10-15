@@ -32,12 +32,12 @@ require("lazy").setup({
   checker = { enabled = false }, -- automatically check for plugin updates
   ui = {
     icons = {
-      cmd = "⌘",
-      config = "🛠",
+      cmd = "🪄",
+      config = "🛠️",
       event = "📅",
       ft = "📂",
-      init = "⚙",
-      keys = "🗝",
+      init = "⏰",
+      keys = "⌨️",
       lazy = "💤",
       plugin = "🔌",
       require = "🌙",
