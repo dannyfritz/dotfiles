@@ -43,8 +43,7 @@ require("lazy").setup({
       require = "🌙",
       runtime = "💻",
       source = "📄",
-      start = "🚀",
-      task = "📌",
+      start = "🚀"
     },
   },
   performance = {
