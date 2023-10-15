@@ -1,13 +1,39 @@
+local ICONS = {
+  ERROR = "✖",
+  WARN = "▼",
+  INFO = "✹",
+  DEBUG = "✹",
+  TRACE = "✹",
+  SEARCH = "🔍",
+}
+
 return {
+  {
+    "akinsho/bufferline.nvim",
+    opts = {
+      options = {
+        diagnostics_indicator = function(_, _, diag)
+          local ret = (diag.error and ICONS.ERROR .. diag.error .. " " or "")
+            .. (diag.warning and ICONS.WARN .. diag.warning or "")
+          return vim.trim(ret)
+        end,
+        groups = {
+          items = {
+            require("bufferline.groups").builtin.pinned:with({ icon = "P" }),
+          },
+        },
+      },
+    },
+  },
   {
     "rcarriga/nvim-notify",
     opts = {
       icons = {
-        ERROR = "✖",
-        WARN = "✹",
-        INFO = "✹",
-        DEBUG = "✹",
-        TRACE = "✹",
+        ERROR = ICONS.ERROR,
+        WARN = ICONS.WARN,
+        INFO = ICONS.INFO,
+        DEBUG = ICONS.DEBUG,
+        TRACE = ICONS.TRACE,
       },
     },
   },
@@ -15,7 +41,7 @@ return {
     "nvim-telescope/telescope.nvim",
     opts = {
       defaults = {
-        prompt_prefix = "🔍 ",
+        prompt_prefix = ICONS.SEARCH .. " ",
         selection_caret = "> ",
       },
     },
@@ -35,19 +61,19 @@ return {
       cmdline = {
         format = {
           cmdline = { icon = ">" },
-          search_down = { icon = "🔍⌄" },
-          search_up = { icon = "🔍⌃" },
+          search_down = { icon = ICONS.SEARCH .. "⌄" },
+          search_up = { icon = ICONS.SEARCH .. "⌃" },
           filter = { icon = "$" },
-          lua = { icon = "☾" },
+          lua = { icon = "🌙" },
           help = { icon = "?" },
         },
       },
       format = {
         level = {
           icons = {
-            error = "✖",
-            warn = "▼",
-            info = "●",
+            error = ICONS.ERROR,
+            warn = ICONS.WARN,
+            info = ICONS.INFO,
           },
         },
       },
