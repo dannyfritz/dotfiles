@@ -22,6 +22,7 @@
   "mini.comment": { "branch": "main", "commit": "2c7a512dad27e34a26d0f7d5d5bc2579f88167dc" },
   "mini.files": { "branch": "main", "commit": "f928a0775d6f6d7cd85c45c6b5baeb25743d204e" },
   "mini.indentscope": { "branch": "main", "commit": "cbc07203ca8faae952ca373c1f6cc5881ce97af0" },
+  "mini.map": { "branch": "main", "commit": "abaebb9844b6f44e468a876a76acf845faf5d6e7" },
   "mini.pairs": { "branch": "main", "commit": "6f6bd7ed5757b40bc29c73dac0d743e4e6978124" },
   "mini.starter": { "branch": "main", "commit": "733224e90e842a2fb6dba9eaae2dc765ba9d6a41" },
   "mini.surround": { "branch": "main", "commit": "68ce058ef9716d7d955b79363845d2dd003d6500" },
