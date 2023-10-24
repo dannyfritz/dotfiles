@@ -24,5 +24,7 @@ ln -sf $(pwd)/starship.toml ~/.config/starship.toml
 # tmux
 mkdir -p ~/.config/tmux
 ln -sf $(pwd)/tmux.conf ~/.config/tmux/tmux.conf
+# yazi
+ln -sf $(pwd)/yazi ~/.config/yazi
 # zsh
 ln -sf $(pwd)/zshrc ~/.zshrc
