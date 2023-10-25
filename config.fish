@@ -27,7 +27,6 @@ if status --is-interactive
   set -a expected_programs rg\;https://github.com/BurntSushi/ripgrep
   set -a expected_programs starship\;https://starship.rs/
   set -a expected_programs yazi\;https://yazi-rs.github.io/
-  echo "TMUX " $TMUX
   for expected_program in $expected_programs
     begin
       string match -q -r '(?<program>.*);(?<website>.*)' $expected_program
