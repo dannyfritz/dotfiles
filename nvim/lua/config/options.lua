@@ -3,7 +3,7 @@
 -- Add any additional options here
 vim.opt.conceallevel = 0
 vim.opt.scrolloff = 30
-vim.opt.mouse = ""
+-- vim.opt.mouse = ""
 vim.cmd("highlight ColorColumn guibg=#151820")
 vim.opt.colorcolumn = { 80, 100 }
 vim.g.minipairs_disable = true
