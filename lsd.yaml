@@ -1,9 +1,8 @@
 blocks:
-  - date
+  # - git
   - name
   - size
-  - permission
-  - user
+  - date
 
 color:
   when: auto
@@ -14,13 +13,12 @@ icons:
 
 indicators: true
 
-# layout: tree
-
 sorting:
   dir-grouping: first
 
-total-size: true
+# total-size: true
 
 # hyperlink: always
 
 header: true
+
