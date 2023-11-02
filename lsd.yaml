@@ -1,0 +1,26 @@
+blocks:
+  - date
+  - name
+  - size
+  - permission
+  - user
+
+color:
+  when: auto
+  theme: default
+
+icons:
+  when: never
+
+indicators: true
+
+# layout: tree
+
+sorting:
+  dir-grouping: first
+
+total-size: true
+
+# hyperlink: always
+
+header: true
