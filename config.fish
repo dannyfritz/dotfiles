@@ -4,6 +4,9 @@ set fish_greeting
 if test -e /opt/homebrew/bin/brew
   eval "$(/opt/homebrew/bin/brew shellenv)"
 end
+if test -e /home/linuxbrew/.linuxbrew/bin/brew
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+end
 
 fish_add_path -g -a /usr/local/sbin
 fish_add_path -g -a $HOME/.bin
@@ -17,7 +20,7 @@ if status --is-interactive
   set --erase expected_programs
   set -a expected_programs asdf\;https://yazi-rs.github.io/
   set -a expected_programs bat\;https://github.com/sharkdp/bat
-  set -a expected_programs entr\;https://github.com/eradman/entr
+  set -a expected_programs watchman\;https://github.com/facebook/watchman
   set -a expected_programs fzf\;https://github.com/junegunn/fzf
   set -a expected_programs glow\;https://github.com/charmbracelet/glow
   set -a expected_programs htop\;https://htop.dev/
