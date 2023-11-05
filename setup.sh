@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # Alacritty
 mkdir -p ~/.config/alacritty
 ln -sf $(pwd)/alacritty.yml ~/.config/alacritty/alacritty.yml
@@ -21,13 +22,13 @@ ln -sf $(pwd)/kitty.conf  ~/.config/kitty/kitty.conf
 mkdir -p ~/.config/lsd
 ln -sf $(pwd)/lsd.yaml ~/.config/lsd/config.yaml
 # nvim
-ln -sf $(pwd)/nvim ~/.config/nvim
+ln -nsf $(pwd)/nvim ~/.config/nvim
 # starship
 ln -sf $(pwd)/starship.toml ~/.config/starship.toml
 # tmux
 mkdir -p ~/.config/tmux
 ln -sf $(pwd)/tmux.conf ~/.config/tmux/tmux.conf
 # yazi
-ln -sf $(pwd)/yazi ~/.config/yazi
+ln -nsf $(pwd)/yazi ~/.config/yazi
 # zsh
 ln -sf $(pwd)/zshrc ~/.zshrc
