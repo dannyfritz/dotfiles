@@ -1,14 +1,14 @@
 [user]
-	email = me@dannyfritz.com
-	name = Danny Fritz
+  email = me@dannyfritz.com
+  name = Danny Fritz
 [core]
-	editor = nvim
+  editor = nvim
 [push]
-	default = current
+  default = current
 [pull]
-	ff = only
+  ff = only
 [init]
-	defaultBranch = main
+  defaultBranch = main
 [diff]
   tool = nvimdiff
 [difftool]
@@ -20,3 +20,5 @@
   writeToTemp = true
   prompt = true
   hideResolved = true
+[rerere]
+  enabled = true

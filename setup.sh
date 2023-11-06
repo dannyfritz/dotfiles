@@ -4,6 +4,9 @@ mkdir -p ~/.config/alacritty
 ln -sf $(pwd)/alacritty.yml ~/.config/alacritty/alacritty.yml
 # asdf
 ln -sf $(pwd)/asdfrc ~/.asdfrc
+# bat
+mkdir -p ~/.config/bat
+ln -sf $(pwd)/bat.config ~/.config/bat/config
 # git
 mkdir -p ~/.config/git
 ln -sf $(pwd)/gitconfig ~/.config/git/config
