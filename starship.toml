@@ -25,7 +25,7 @@ read_only = " ro"
 format = '[$symbol$branch]($style) '
 symbol = ''
 style = 'dimmed purple'
-truncation_length = 20
+truncation_length = 28
 
 [git_commit]
 tag_symbol = " tag "
