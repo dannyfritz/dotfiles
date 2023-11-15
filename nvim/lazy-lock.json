@@ -41,6 +41,7 @@
   "nvim-treesitter-textobjects": { "branch": "master", "commit": "dbcd9388e3b119a87c785e10a00d62876077d23d" },
   "nvim-ts-autotag": { "branch": "main", "commit": "6be1192965df35f94b8ea6d323354f7dc7a557e4" },
   "nvim-ts-context-commentstring": { "branch": "main", "commit": "6c30f3c8915d7b31c3decdfe6c7672432da1809d" },
+  "openingh.nvim": { "branch": "main", "commit": "5c9e851d7c26fdb236dfea8866b71fefe7ddeffc" },
   "persistence.nvim": { "branch": "main", "commit": "ad538bfd5336f1335cdb6fd4e0b0eebfa6e12f32" },
   "plenary.nvim": { "branch": "master", "commit": "50012918b2fc8357b87cff2a7f7f0446e47da174" },
   "telescope-fzf-native.nvim": { "branch": "main", "commit": "6c921ca12321edaa773e324ef64ea301a1d0da62" },
