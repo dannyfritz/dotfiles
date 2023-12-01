@@ -91,3 +91,7 @@ else if test -d ~/.asdf/asdf.fish
   source ~/.asdf/asdf.fish
 end
 
+if test -e ~/.opam/opam-init/init.fish
+  source ~/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
+end
+
