@@ -20,8 +20,8 @@ if status --is-interactive
   set --erase expected_programs
   set -a expected_programs asdf\;https://asdf-vm.com/
   set -a expected_programs bat\;https://github.com/sharkdp/bat
+  set -a expected_programs entr\;https://github.com/eradman/entr
   set -a expected_programs fzf\;https://github.com/junegunn/fzf
-  # set -a expected_programs gaze\;https://github.com/wtetsu/gaze
   set -a expected_programs glow\;https://github.com/charmbracelet/glow
   set -a expected_programs htop\;https://htop.dev/
   set -a expected_programs jq\;https://github.com/jqlang/jq
