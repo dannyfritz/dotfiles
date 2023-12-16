@@ -18,9 +18,10 @@ if status --is-interactive
     exit 0
   end
   set --erase expected_programs
-  set -a expected_programs asdf\;https://yazi-rs.github.io/
+  set -a expected_programs asdf\;https://asdf-vm.com/
   set -a expected_programs bat\;https://github.com/sharkdp/bat
   set -a expected_programs fzf\;https://github.com/junegunn/fzf
+  set -a expected_programs gaze\;https://github.com/wtetsu/gaze
   set -a expected_programs glow\;https://github.com/charmbracelet/glow
   set -a expected_programs htop\;https://htop.dev/
   set -a expected_programs jq\;https://github.com/jqlang/jq
@@ -28,7 +29,7 @@ if status --is-interactive
   set -a expected_programs nvim\;https://neovim.io/
   set -a expected_programs rg\;https://github.com/BurntSushi/ripgrep
   set -a expected_programs starship\;https://starship.rs/
-  set -a expected_programs watchexec\;https://github.com/watchexec/watchexec
+  # set -a expected_programs watchexec\;https://github.com/watchexec/watchexec
   set -a expected_programs yazi\;https://yazi-rs.github.io/
   for expected_program in $expected_programs
     begin
@@ -79,13 +80,13 @@ end
 # https://fishshell.com/docs/current/interactive.html#vi-mode-commands
 fish_vi_key_bindings
 
-if type -q brew; and test -d (brew --prefix)"/share/fish/completions"
+if type -q brew; and test -d (brew --prefix)/share/fish/completions
   set -gx fish_complete_path $fish_complete_path (brew --prefix)/share/fish/completions
 end
-if type -q brew; and test -d (brew --prefix)"/share/fish/vendor_completions.d"
+if type -q brew; and test -e (brew --prefix)/share/fish/vendor_completions.d
   set -gx fish_complete_path $fish_complete_path (brew --prefix)/share/fish/vendor_completions.d
 end
-if type -q brew; and test -d (brew --prefix)"/opt/asdf/libexec/asdf.fish"
+if type -q brew; and test -e (brew --prefix)/opt/asdf/libexec/asdf.fish
   source (brew --prefix)/opt/asdf/libexec/asdf.fish
 else if test -d ~/.asdf/asdf.fish
   source ~/.asdf/asdf.fish
