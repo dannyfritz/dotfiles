@@ -21,7 +21,7 @@ if status --is-interactive
   set -a expected_programs asdf\;https://asdf-vm.com/
   set -a expected_programs bat\;https://github.com/sharkdp/bat
   set -a expected_programs fzf\;https://github.com/junegunn/fzf
-  set -a expected_programs gaze\;https://github.com/wtetsu/gaze
+  # set -a expected_programs gaze\;https://github.com/wtetsu/gaze
   set -a expected_programs glow\;https://github.com/charmbracelet/glow
   set -a expected_programs htop\;https://htop.dev/
   set -a expected_programs jq\;https://github.com/jqlang/jq
@@ -29,7 +29,7 @@ if status --is-interactive
   set -a expected_programs nvim\;https://neovim.io/
   set -a expected_programs rg\;https://github.com/BurntSushi/ripgrep
   set -a expected_programs starship\;https://starship.rs/
-  # set -a expected_programs watchexec\;https://github.com/watchexec/watchexec
+  set -a expected_programs watchexec\;https://github.com/watchexec/watchexec
   set -a expected_programs yazi\;https://yazi-rs.github.io/
   for expected_program in $expected_programs
     begin
