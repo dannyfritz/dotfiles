@@ -29,7 +29,6 @@ if status --is-interactive
   set -a expected_programs nvim\;https://neovim.io/
   set -a expected_programs rg\;https://github.com/BurntSushi/ripgrep
   set -a expected_programs starship\;https://starship.rs/
-  set -a expected_programs watchexec\;https://github.com/watchexec/watchexec
   set -a expected_programs yazi\;https://yazi-rs.github.io/
   for expected_program in $expected_programs
     begin
