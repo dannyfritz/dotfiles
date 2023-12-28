@@ -21,6 +21,7 @@ if status --is-interactive
   set -a expected_programs asdf\;https://asdf-vm.com/
   set -a expected_programs bat\;https://github.com/sharkdp/bat
   set -a expected_programs entr\;https://github.com/eradman/entr
+  set -a expected_programs fd\;https://github.com/sharkdp/fd
   set -a expected_programs fzf\;https://github.com/junegunn/fzf
   set -a expected_programs glow\;https://github.com/charmbracelet/glow
   set -a expected_programs htop\;https://htop.dev/
