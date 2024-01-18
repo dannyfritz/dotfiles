@@ -11,7 +11,7 @@ return {
           return true
         end
         for _, line in ipairs(file_lines) do
-          if #line > 500 then
+          if #line > 1000 then
             return true
           end
         end
