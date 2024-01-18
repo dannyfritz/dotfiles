@@ -44,8 +44,9 @@ return {
           { "macro-recording", fmt = show_macro_recording },
         },
         lualine_b = {
-          { "progress", separator = " ", padding = { left = 1, right = 1 } },
-          { "diff", colored = true },
+          { "progress", separator = "", padding = { left = 1, right = 0 } },
+          { "location", separator = " ", padding = { left = 0, right = 0 } },
+          -- { "diff", colored = true },
         },
         lualine_c = {
           { "filename", newfile_status = true, path = 1 },
