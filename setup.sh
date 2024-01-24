@@ -26,6 +26,8 @@ mkdir -p ~/.config/lsd
 ln -sf $(pwd)/lsd.yaml ~/.config/lsd/config.yaml
 # nvim
 ln -nsf $(pwd)/nvim ~/.config/nvim
+# sounds
+ln -sf $(pwd)/sounds ~/.config/sounds
 # starship
 ln -sf $(pwd)/starship.toml ~/.config/starship.toml
 # tmux
