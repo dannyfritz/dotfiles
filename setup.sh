@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Alacritty
 mkdir -p ~/.config/alacritty
-ln -sf $(pwd)/alacritty.yml ~/.config/alacritty/alacritty.yml
+ln -sf $(pwd)/alacritty.toml ~/.config/alacritty/alacritty.toml
 # asdf
 ln -sf $(pwd)/asdfrc ~/.asdfrc
 # bat
