@@ -2,6 +2,8 @@
 separator_open = ""
 separator_close = ""
 
-[icons]
-"*"  = " "
-"*/" = "+"
+[icon]
+rules = [
+  { name = "*",  text = " " },
+  { name = "*/", text = "+" },
+]
