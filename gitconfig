@@ -42,3 +42,5 @@
   line-numbers = true
   # side-by-side = true
   true-colors = always
+  hunk-header-decoration-style = ul
+  hunk-header-style = omit
