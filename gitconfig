@@ -3,18 +3,32 @@
   name = Danny Fritz
 [core]
   editor = nvim
-[push]
-  default = current
-[pull]
-  ff = only
+  pager = delta
 [init]
   defaultBranch = main
+[help]
+  autocorrect = prompt
+[commit]
+  verbose = true
+[interactive]
+  diffFilter = delta --color-only
+[branch]
+  sort = -commiterdate
+[fetch]
+  prune = true
+[pull]
+  ff = only
+[push]
+  default = current
 [diff]
+  algorithm = histogram
   tool = nvimdiff
+  colorMoved = default
 [difftool]
   prompt = false
 [merge]
   tool = nvimdiff
+  conflictStyle = zdiff3
 [mergetool]
   keepBackup = false
   writeToTemp = true
@@ -22,3 +36,8 @@
   hideResolved = true
 [rerere]
   enabled = true
+[delta]
+  navigate = true
+  line-numbers = true
+  # side-by-side = true
+  true-colors = always

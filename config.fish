@@ -20,6 +20,7 @@ if status --is-interactive
   set --erase expected_programs
   set -a expected_programs asdf\;https://asdf-vm.com/
   set -a expected_programs bat\;https://github.com/sharkdp/bat
+  set -a expected_programs delta\;https://github.com/dandavison/delta
   set -a expected_programs entr\;https://github.com/eradman/entr
   set -a expected_programs fd\;https://github.com/sharkdp/fd
   set -a expected_programs figlet\;http://www.figlet.org/
