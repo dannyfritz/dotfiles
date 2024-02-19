@@ -38,6 +38,7 @@
   enabled = true
 [delta]
   navigate = true
+  syntax-theme = "base16"
   line-numbers = true
   # side-by-side = true
   true-colors = always
