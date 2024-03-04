@@ -8,9 +8,9 @@ if test -e /home/linuxbrew/.linuxbrew/bin/brew
   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 end
 
-fish_add_path -g -a /usr/local/sbin
-fish_add_path -g -a $HOME/.bin
-fish_add_path -g -a $HOME/.local/bin
+fish_add_path -g -p /usr/local/sbin
+fish_add_path -g -p $HOME/.bin
+fish_add_path -g -p $HOME/.local/bin
 
 if status --is-interactive
   if test -z $TMUX
