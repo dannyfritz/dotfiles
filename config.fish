@@ -2,15 +2,17 @@ set fish_greeting
 
 # https://docs.brew.sh/Shell-Completion#configuring-completions-in-fish
 if test -e /opt/homebrew/bin/brew
+  fish_add_path -gpPm "/opt/homebrew/bin" "/opt/homebrew/sbin/"
   eval "$(/opt/homebrew/bin/brew shellenv)"
 end
 if test -e /home/linuxbrew/.linuxbrew/bin/brew
+  fish_add_path -gpPm "/home/linuxbrew/.linuxbrew/bin" "/home/linuxbrew/.linuxbrew/sbin"
   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 end
 
-fish_add_path -g -p /usr/local/sbin
-fish_add_path -g -p $HOME/.bin
-fish_add_path -g -p $HOME/.local/bin
+fish_add_path -gp /usr/local/sbin
+fish_add_path -gp $HOME/.bin
+fish_add_path -gp $HOME/.local/bin
 
 if status --is-interactive
   if test -z $TMUX
