@@ -4,11 +4,11 @@ live_config_reload = true
 animation = "EaseOutExpo"
 
 [font]
-size = 10
+size = 11
 
 [font.normal]
 family = "JetBrains Mono"
-style = "medium"
+style = "Regular"
 
 [window]
 option_as_alt = "Both"
