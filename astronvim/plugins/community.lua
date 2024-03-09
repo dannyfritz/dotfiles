@@ -9,5 +9,6 @@ return {
 	{ import = "astrocommunity.pack.typescript" },
 	{ import = "astrocommunity.pack.typescript-all-in-one" },
 	{ import = "astrocommunity.pack.yaml" },
+	{ import = "astrocommunity.editing-support.todo-comments-nvim" },
 }
 
