@@ -73,6 +73,10 @@ if type -q nvim
   alias nvimdiff "nvim -d"
 end
 
+if test -d ~/.config/astronvim
+  alias astro="NVIM_APPNAME=astronvim nvim"
+end
+
 if type -q starship
   starship init fish | source
 end

@@ -4,6 +4,11 @@ mkdir -p ~/.config/alacritty
 ln -sf $(pwd)/alacritty.toml ~/.config/alacritty/alacritty.toml
 # asdf
 ln -sf $(pwd)/asdfrc ~/.asdfrc
+# astrovim
+if [ ! -d ~/.config/astronvim ]; then
+  git clone --depth 1 https://github.com/AstroNvim/AstroNvim ~/.config/astronvim
+fi
+ln -nsf $(pwd)/astronvim ~/.config/astronvim/lua/user
 # bat
 mkdir -p ~/.config/bat
 ln -sf $(pwd)/bat.config ~/.config/bat/config
