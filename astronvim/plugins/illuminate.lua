@@ -1,8 +1,6 @@
 return {
-  {
-    "RRethy/vim-illuminate",
-    opts = {
-      delay = 0,
-    },
+  "RRethy/vim-illuminate",
+  opts = {
+    delay = 0,
   },
 }

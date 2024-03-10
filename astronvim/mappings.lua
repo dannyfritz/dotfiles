@@ -1,6 +1,7 @@
 return {
 	n = {
-		["<leader><le,ader>"] = { "<cmd>Telescope buffers<cr>", desc = "Find Buffers" },
+		["<leader><leader>"] = { "<cmd>Telescope find_files<cr>", desc = "Find Files" },
+		["<leader>,"] = { "<cmd>Telescope buffers<cr>", desc = "Find Buffers" },
 		["<leader>bn"] = {
 			function()
 				require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1)
