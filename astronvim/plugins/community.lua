@@ -12,5 +12,6 @@ return {
 	{ import = "astrocommunity.pack.typescript" },
 	{ import = "astrocommunity.pack.typescript-all-in-one" },
 	{ import = "astrocommunity.pack.yaml" },
+	{ import = "astrocommunity.search.nvim-hlslens" },
 }
 
