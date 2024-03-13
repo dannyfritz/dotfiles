@@ -1,3 +1,3 @@
 return {
-  { "mfussenegger/nvim-dap", enabled = false },
+	{ "mfussenegger/nvim-dap", enabled = false },
 }

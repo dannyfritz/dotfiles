@@ -1,8 +1,8 @@
 return {
-  colorscheme = "bleak",
-  options = {
-    g = {
-      icons_enabled = false,
-    },
-  },
+	colorscheme = "bleak",
+	options = {
+		g = {
+			icons_enabled = false,
+		},
+	},
 }
