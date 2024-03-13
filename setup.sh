@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 # Alacritty
-mkdir -p ~/.config/alacritty
-ln -sf $(pwd)/alacritty.toml ~/.config/alacritty/alacritty.toml
+ln -nsf $(pwd)/alacritty ~/.config/alacritty
 # asdf
 ln -sf $(pwd)/asdfrc ~/.asdfrc
 # astrovim
@@ -10,25 +9,17 @@ if [ ! -d ~/.config/astronvim ]; then
 fi
 ln -nsf $(pwd)/astronvim ~/.config/astronvim/lua/user
 # bat
-mkdir -p ~/.config/bat
-ln -sf $(pwd)/bat.config ~/.config/bat/config
+ln -nsf $(pwd)/bat ~/.config/bat
 # git
-mkdir -p ~/.config/git
-ln -sf $(pwd)/gitconfig ~/.config/git/config
-ln -sf $(pwd)/gitignore ~/.config/git/ignore
+ln -nsf $(pwd)/git ~/.config/git
 # fish
 mkdir -p ~/.config/fish
-ln -sf $(pwd)/config.fish ~/.config/fish/config.fish
-ln -sf $(pwd)/fish_plugins ~/.config/fish/fish_plugins
+ln -sf $(pwd)/fish/config.fish ~/.config/fish/config.fish
+ln -sf $(pwd)/fish/fish_plugins ~/.config/fish/fish_plugins
 # gitui
-mkdir -p ~/.config/gitui
-ln -sf $(pwd)/gitui.ron ~/.config/gitui/key_bindings.ron
-# kitty
-mkdir -p ~/.config/kitty
-ln -sf $(pwd)/kitty.conf  ~/.config/kitty/kitty.conf
+ln -nsf $(pwd)/gitui ~/.config/gitui
 # lsd
-mkdir -p ~/.config/lsd
-ln -sf $(pwd)/lsd.yaml ~/.config/lsd/config.yaml
+ln -nsf $(pwd)/lsd ~/.config/lsd
 # nvim
 ln -nsf $(pwd)/nvim ~/.config/nvim
 # sounds
@@ -40,5 +31,3 @@ mkdir -p ~/.config/tmux
 ln -sf $(pwd)/tmux.conf ~/.config/tmux/tmux.conf
 # yazi
 ln -nsf $(pwd)/yazi ~/.config/yazi
-# zsh
-ln -sf $(pwd)/zshrc ~/.zshrc
