@@ -13,7 +13,7 @@
 [interactive]
   diffFilter = delta --color-only
 [branch]
-  sort = -commiterdate
+  sort = -committerdate
 [fetch]
   prune = true
 [pull]
