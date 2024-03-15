@@ -1,6 +1,6 @@
 return {
 	n = {
-		["<leader><leader>"] = { "<cmd>Telescope find_files<cr>", desc = "Find Files" },
+		["<leader><space>"] = { "<cmd>Telescope find_files<cr>", desc = "Find Files" },
 		["<leader>,"] = { "<cmd>Telescope buffers<cr>", desc = "Find Buffers" },
 		["<leader>bn"] = {
 			function()
