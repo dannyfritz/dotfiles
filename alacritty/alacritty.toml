@@ -12,3 +12,9 @@ style = "Regular"
 
 [window]
 option_as_alt = "Both"
+
+[keyboard]
+bindings = [
+  { key = "=", mods = "Control", action = "IncreaseFontSize" },
+  { key = "-", mods = "Control", action = "DecreaseFontSize" },
+]
