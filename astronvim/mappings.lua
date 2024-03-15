@@ -14,5 +14,11 @@ return {
 			end,
 			desc = "Previous buffer",
 		},
+		["<leader>by"] = {
+			function()
+				vim.cmd([[let @+ = expand('%:p')]]);
+			end,
+			desc = "Yank Buffer Filename to Clipboard",
+		},
 	},
 }
