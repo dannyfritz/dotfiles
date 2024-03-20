@@ -73,8 +73,8 @@ if type -q nvim
 end
 
 if test -d ~/.config/astronvim
-  set -gx NVIM_APPNAME astronvimv4
-  alias astro="NVIM_APPNAME=astronvimv4 nvim"
+  set -gx NVIM_APPNAME astronvim
+  alias astro="NVIM_APPNAME=astronvim nvim"
 end
 
 if type -q starship

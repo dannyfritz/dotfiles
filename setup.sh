@@ -4,11 +4,7 @@ ln -nsf $(pwd)/alacritty ~/.config/alacritty
 # asdf
 ln -sf $(pwd)/asdfrc ~/.asdfrc
 # astrovim
-if [ ! -d ~/.config/astronvim ]; then
-  git clone --depth 1 https://github.com/AstroNvim/AstroNvim ~/.config/astronvim
-fi
-ln -nsf $(pwd)/astronvim ~/.config/astronvim/lua/user
-ln -nsf $(pwd)/astronvim_v4 ~/.config/astronvimv4
+ln -nsf $(pwd)/astronvim ~/.config/astronvim
 # bat
 ln -nsf $(pwd)/bat ~/.config/bat
 # git
@@ -21,8 +17,6 @@ ln -sf $(pwd)/fish/fish_plugins ~/.config/fish/fish_plugins
 ln -nsf $(pwd)/gitui ~/.config/gitui
 # lsd
 ln -nsf $(pwd)/lsd ~/.config/lsd
-# nvim
-ln -nsf $(pwd)/nvim ~/.config/nvim
 # sounds
 ln -nsf $(pwd)/sounds ~/.config/sounds
 # starship
