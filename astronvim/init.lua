@@ -1,4 +1,7 @@
 return {
+	-- updater = {
+	-- 	channel = "nightly",
+	-- },
 	colorscheme = "bleak",
 	options = {
 		opt = {

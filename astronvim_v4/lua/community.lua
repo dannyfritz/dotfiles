@@ -17,5 +17,5 @@ return {
   { import = "astrocommunity.pack.typescript-all-in-one" },
   { import = "astrocommunity.pack.yaml" },
   { import = "astrocommunity.scrolling.nvim-scrollbar" },
-  -- { import = "astrocommunity.search.nvim-hlslens" },
+  { import = "astrocommunity.search.nvim-hlslens" },
 }

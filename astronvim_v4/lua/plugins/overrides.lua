@@ -1,6 +1,7 @@
 return {
-  { "mfussenegger/nvim-dap", enabled = false },
-  { "akinsho/toggleterm.nvim", enabled = false },
+  { "mfussenegger/nvim-dap", optional = true, enabled = false },
+  { "jay-babu/mason-nvim-dap.nvim", optional = true, enabled = false },
+  { "akinsho/toggleterm.nvim", optional = true, enabled = false },
   {
     "RRethy/vim-illuminate",
     opts = {
