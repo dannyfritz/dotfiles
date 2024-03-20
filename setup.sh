@@ -8,6 +8,7 @@ if [ ! -d ~/.config/astronvim ]; then
   git clone --depth 1 https://github.com/AstroNvim/AstroNvim ~/.config/astronvim
 fi
 ln -nsf $(pwd)/astronvim ~/.config/astronvim/lua/user
+ln -nsf $(pwd)/astronvim_v4 ~/.config/astronvimv4
 # bat
 ln -nsf $(pwd)/bat ~/.config/bat
 # git
