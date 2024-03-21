@@ -68,6 +68,16 @@ if status --is-interactive
   end
 end
 
+alias rm="rm -i"
+
+if type -q lsd
+  alias ls="lsd"
+end
+
+if type -q bat
+  alias cat="bat"
+end
+
 if type -q nvim
   set -gx EDITOR nvim
 end
