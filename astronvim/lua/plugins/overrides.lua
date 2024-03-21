@@ -60,6 +60,8 @@ return {
           status.component.file_info {
             file_icon = false,
             file_modified = false,
+            filetype = false,
+            filename = {},
             file_read_only = false,
             surround = false,
             update = "BufEnter",
