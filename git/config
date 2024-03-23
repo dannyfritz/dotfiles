@@ -4,38 +4,10 @@
 [core]
   editor = nvim
   pager = delta
-[init]
-  defaultBranch = main
-[help]
-  autocorrect = prompt
-[commit]
-  verbose = true
-[interactive]
-  diffFilter = delta --color-only
 [branch]
   sort = -committerdate
-[fetch]
-  prune = true
-[pull]
-  ff = only
-[push]
-  default = current
-[diff]
-  algorithm = histogram
-  tool = nvimdiff
-  colorMoved = default
-[difftool]
-  prompt = false
-[merge]
-  tool = nvimdiff
-  conflictStyle = zdiff3
-[mergetool]
-  keepBackup = false
-  writeToTemp = true
-  prompt = true
-  hideResolved = true
-[rerere]
-  enabled = true
+[commit]
+  verbose = true
 [delta]
   navigate = true
   syntax-theme = "base16"
@@ -44,3 +16,42 @@
   true-colors = always
   hunk-header-decoration-style = ul
   hunk-header-style = omit
+[diff]
+  algorithm = histogram
+  colorMoved = true
+  mnemonicPrefix = true
+  tool = nvimdiff
+[difftool]
+  prompt = false
+[fetch]
+  prune = true
+  all = true
+[grep]
+  lineNumber = true
+[help]
+  autocorrect = prompt
+[init]
+  defaultBranch = main
+[interactive]
+  diffFilter = delta --color-only
+[fetch]
+  prune = true
+[log]
+  abbrevCommit = true
+  follow = true
+[merge]
+  tool = nvimdiff
+  conflictStyle = zdiff3
+[mergetool]
+  keepBackup = false
+  keepTemporaries = false
+  writeToTemp = true
+  prompt = true
+  hideResolved = true
+[pull]
+  ff = only
+[push]
+  default = upstream
+[rerere]
+  autoupdate = true
+  enabled = true
