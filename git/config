@@ -51,6 +51,7 @@
 [pull]
   ff = only
 [push]
+  autoSetupRemote = true
   default = upstream
 [rerere]
   autoupdate = true
