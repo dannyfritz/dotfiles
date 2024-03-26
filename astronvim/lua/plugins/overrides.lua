@@ -2,6 +2,7 @@ return {
   { "mfussenegger/nvim-dap", optional = true, enabled = false },
   { "jay-babu/mason-nvim-dap.nvim", optional = true, enabled = false },
   { "akinsho/toggleterm.nvim", optional = true, enabled = false },
+  { "vuki656/package-info.nvim", enabled = false },
   {
     "RRethy/vim-illuminate",
     opts = {
