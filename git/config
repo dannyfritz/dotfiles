@@ -16,6 +16,8 @@
   true-colors = always
   hunk-header-decoration-style = ul
   hunk-header-style = omit
+  minus-style = syntax "#580000"
+  plus-style = syntax "#004400"
 [diff]
   algorithm = histogram
   colorMoved = true
