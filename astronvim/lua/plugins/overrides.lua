@@ -1,6 +1,7 @@
 return {
   { "mfussenegger/nvim-dap", optional = true, enabled = false },
   { "jay-babu/mason-nvim-dap.nvim", optional = true, enabled = false },
+  { "rcarriga/cmp-dap", optional = true, enabled = false },
   { "akinsho/toggleterm.nvim", optional = true, enabled = false },
   { "vuki656/package-info.nvim", enabled = false },
   { "jay-babu/mason-nvim-dap.nvim", enabled = false },
@@ -89,6 +90,22 @@ return {
         status.component.mode { surround = { separator = "right" } },
       }
       return opts
+    end,
+  },
+  { -- override nvim-cmp plugin
+    "hrsh7th/nvim-cmp",
+    -- override the options table that is used in the `require("cmp").setup()` call
+    opts = function(_, opts)
+      -- opts parameter is the default options table
+      -- the function is lazy loaded so cmp is able to be required
+      local cmp = require "cmp"
+      -- modify the sources part of the options table
+      opts.sources = cmp.config.sources {
+        { name = "nvim_lsp", priority = 1000 },
+        { name = "buffer", priority = 500 },
+        { name = "path", priority = 250 },
+        -- { name = "luasnip", priority = 100 },
+      }
     end,
   },
 }
