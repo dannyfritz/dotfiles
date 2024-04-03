@@ -82,6 +82,7 @@ return {
           padding = { right = 1 },
         },
         status.component.diagnostics(),
+        status.component.cmd_info(),
         -- status.component.file_info({ hl = status_hl, filetype = false, filename = {}, file_modified = false }),
         -- status.component.git_branch(),
         status.component.fill(),
