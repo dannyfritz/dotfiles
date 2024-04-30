@@ -98,11 +98,13 @@ if type -q figlet; and type -q utimer; and type -q noti; and type -q play
 end
 
 if type -q yazi
-  function ya
-    set tmp (mktemp -t "yazi-cwd.XXXXX")
-    yazi --cwd-file="$tmp"
-    if set cwd (cat -- "$tmp"); and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
-      cd -- "$cwd"
+    function ya
+        set tmp (mktemp -t "yazi-cwd.XXXXXX")
+        yazi $argv --cwd-file="$tmp"
+        if set cwd (cat -- "$tmp"); and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
+            cd -- "$cwd"
+        end
+        rm -f -- "$tmp"
     end
     rm -f -- "$tmp"
   end
