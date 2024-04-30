@@ -1,4 +1,7 @@
 return {
-	{ "rktjmp/lush.nvim", enabled = true },
-	{ "dannyfritz/bleak.nvim" },
+  { "rktjmp/lush.nvim", enabled = true },
+  { "dannyfritz/bleak.nvim" },
+  { "ramojus/mellifluous.nvim", config = {
+    color_set = "tender",
+  } },
 }

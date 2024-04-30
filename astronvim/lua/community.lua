@@ -6,9 +6,11 @@
 return {
   { "AstroNvim/astrocommunity" },
   -- import/override with your plugins folder
+  { import = "astrocommunity.colorscheme.mellifluous-nvim" },
   -- { import = "astrocommunity.bars-and-lines.vim-illuminate" },
   -- { import = "astrocommunity.editing-support.todo-comments-nvim" },
   { import = "astrocommunity.pack.html-css" },
+  { import = "astrocommunity.pack.fish" },
   { import = "astrocommunity.pack.json" },
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.pack.toml" },
