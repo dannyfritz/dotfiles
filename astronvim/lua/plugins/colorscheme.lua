@@ -1,10 +1,17 @@
 return {
-  -- { "rktjmp/lush.nvim", enabled = true },
-  -- { "dannyfritz/bleak.nvim" },
-  -- { "ramojus/mellifluous.nvim", config = {
-  --   color_set = "tender",
-  -- } },
+  { "rktjmp/lush.nvim", enabled = true },
+  { "dannyfritz/bleak.nvim" },
+  { "ramojus/mellifluous.nvim", config = {
+    color_set = "tender",
+  } },
   {
     "e-q/okcolors.nvim",
+  },
+  {
+    "AstroNvim/astroui",
+    ---@type AstroUIOpts
+    opts = {
+      colorscheme = "mellifluous",
+    },
   },
 }
