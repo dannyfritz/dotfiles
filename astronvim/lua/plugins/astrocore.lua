@@ -21,7 +21,7 @@ return {
     options = {
       opt = { -- vim.opt.<key>
         conceallevel = 0,
-        scrolloff = 30,
+        scrolloff = 8,
         colorcolumn = { 80, 100 },
       },
       g = { -- vim.g.<key>
