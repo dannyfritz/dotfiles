@@ -17,6 +17,7 @@ return {
   { import = "astrocommunity.pack.markdown" },
   { import = "astrocommunity.pack.toml" },
   { import = "astrocommunity.pack.python-ruff" },
+  { "mfussenegger/nvim-dap-python", enabled = false },
   -- { import = "astrocommunity.pack.typescript" },
   { import = "astrocommunity.pack.typescript-all-in-one" },
   { import = "astrocommunity.pack.yaml" },

@@ -4,7 +4,6 @@ return {
   { "rcarriga/cmp-dap", optional = true, enabled = false },
   { "akinsho/toggleterm.nvim", optional = true, enabled = false },
   { "vuki656/package-info.nvim", enabled = false },
-  { "jay-babu/mason-nvim-dap.nvim", enabled = false },
   {
     "RRethy/vim-illuminate",
     opts = {
