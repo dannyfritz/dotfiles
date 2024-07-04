@@ -21,6 +21,8 @@ return {
         opts.button("LDR f o", get_icon("DefaultFile", 2, true) .. "Recent Files"),
         opts.button("LDR f f", get_icon("Search", 2, true) .. "Find File"),
         opts.button("LDR f w", get_icon("WordFile", 2, true) .. "Find Word"),
+        opts.button("LDR p a", get_icon("Lazy", 2, true) .. "Update"),
+        opts.button("q", get_icon("Quit", 2, true) .. "Quit", ":qa<CR>"),
       }
       return opts
     end,
