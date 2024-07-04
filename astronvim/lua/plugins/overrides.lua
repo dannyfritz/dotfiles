@@ -4,12 +4,12 @@ return {
   { "rcarriga/cmp-dap", optional = true, enabled = false },
   { "akinsho/toggleterm.nvim", optional = true, enabled = false },
   { "vuki656/package-info.nvim", enabled = false },
-  {
-    "RRethy/vim-illuminate",
-    opts = {
-      delay = 0,
-      under_cursor = true,
-    },
+  { "folke/which-key.nvim",
+    opts = function(_, opts)
+      local get_icon = require("astroui").get_icon
+      opts.icons.separator = get_icon("ArrowRight")
+      return opts
+    end,
   },
   {
     "goolord/alpha-nvim",
