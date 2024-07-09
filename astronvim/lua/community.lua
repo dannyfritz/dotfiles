@@ -14,6 +14,7 @@ return {
       under_cursor = true,
     },
   },
+  { import = "astrocommunity.debugging.nvim-bqf" },
   { import = "astrocommunity.editing-support.bigfile-nvim" },
   { import = "astrocommunity.editing-support.auto-save-nvim" },
   { import = "astrocommunity.editing-support.todo-comments-nvim" },

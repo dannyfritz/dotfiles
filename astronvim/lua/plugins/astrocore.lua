@@ -35,6 +35,9 @@ return {
     -- NOTE: keycodes follow the casing in the vimdocs. For example, `<Leader>` must be capitalized
     mappings = {
       n = {
+        ["<Leader><Space>"] = { "<cmd>Telescope find_files<cr>", desc = "Find Files" },
+        ["<Leader>,"] = { "<cmd>Telescope buffers<cr>", desc = "Find Buffers" },
+        ["<Leader>b"] = { desc = "Buffers" },
         ["<Leader>bD"] = {
           function()
             require("astroui.status.heirline").buffer_picker(
@@ -43,17 +46,19 @@ return {
           end,
           desc = "Pick to close",
         },
-        ["<Leader>b"] = { desc = "Buffers" },
-        ["<leader><space>"] = { "<cmd>Telescope find_files<cr>", desc = "Find Files" },
-        ["<leader>,"] = { "<cmd>Telescope buffers<cr>", desc = "Find Buffers" },
-        ["<leader>bn"] = {
+        ["<Leader>by"] = {
+          function() vim.cmd [[let @+ = expand('%:p')]] end,
+          desc = "Yank Buffer Filename to Clipboard",
+        },
+        ["<Leader>bn"] = {
           function() require("astrocore.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end,
           desc = "Next buffer",
         },
-        ["<leader>bp"] = {
+        ["<Leader>bp"] = {
           function() require("astrocore.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
           desc = "Previous buffer",
         },
+        ["<Leader>uq"] = { "<cmd>copen<cr>", desc = "Open Quickfix List (copen)" },
         L = {
           function() require("astrocore.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end,
           desc = "Next buffer",
@@ -62,11 +67,13 @@ return {
           function() require("astrocore.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
           desc = "Previous buffer",
         },
-        ["<leader>by"] = {
-          function() vim.cmd [[let @+ = expand('%:p')]] end,
-          desc = "Yank Buffer Filename to Clipboard",
-        },
       },
+      -- s = {
+      --   ["<Leader>fw"] = {
+      --     "<CMD>vimgrep /escape(@\")<CR>/ %<CR>",
+      --     desc = "Find and quickfix current selection in current file"
+      --   },
+      -- },
       t = {},
     },
   },
