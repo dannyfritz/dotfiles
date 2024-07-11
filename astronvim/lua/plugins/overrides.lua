@@ -1,13 +1,15 @@
 return {
+  { "max397574/better-escape.nvim", enabled = false },
   { "mfussenegger/nvim-dap", optional = true, enabled = false },
   { "jay-babu/mason-nvim-dap.nvim", optional = true, enabled = false },
   { "rcarriga/cmp-dap", optional = true, enabled = false },
   { "akinsho/toggleterm.nvim", optional = true, enabled = false },
   { "vuki656/package-info.nvim", enabled = false },
-  { "folke/which-key.nvim",
+  {
+    "folke/which-key.nvim",
     opts = function(_, opts)
       local get_icon = require("astroui").get_icon
-      opts.icons.separator = get_icon("ArrowRight")
+      opts.icons.separator = get_icon "ArrowRight"
       return opts
     end,
   },
