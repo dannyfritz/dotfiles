@@ -11,8 +11,7 @@ ln -nsf $(pwd)/bat ~/.config/bat
 ln -nsf $(pwd)/git ~/.config/git
 # fish
 mkdir -p ~/.config/fish
-ln -sf $(pwd)/fish/config.fish ~/.config/fish/config.fish
-ln -sf $(pwd)/fish/fish_plugins ~/.config/fish/fish_plugins
+ln -sf $(pwd)/fish/*.fish ~/.config/fish/
 # gitui
 ln -nsf $(pwd)/gitui ~/.config/gitui
 # lsd
