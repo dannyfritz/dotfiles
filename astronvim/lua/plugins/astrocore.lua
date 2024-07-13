@@ -58,7 +58,6 @@ return {
           function() require("astrocore.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
           desc = "Previous buffer",
         },
-        ["<Leader>uq"] = { "<cmd>copen<cr>", desc = "Open Quickfix List (copen)" },
         L = {
           function() require("astrocore.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end,
           desc = "Next buffer",

@@ -9,7 +9,10 @@ return {
     "folke/which-key.nvim",
     opts = function(_, opts)
       local get_icon = require("astroui").get_icon
+      -- opts.preset = "modern"
       opts.icons.separator = get_icon "ArrowRight"
+      opts.icons.keys = opts.icons.keys or {}
+      opts.icons.keys.Space = "‿"
       return opts
     end,
   },

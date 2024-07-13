@@ -23,6 +23,8 @@ return {
   { import = "astrocommunity.icon.mini-icons" },
   { "echasnovski/mini.icons", opts = { style = "ascii" } },
   -- { import = "astrocommunity.editing-support.todo-comments-nvim" },
+  -- { import = "astrocommunity.keybinding.mini-clue" },
+  -- { "echasnovski/mini.clue", opts = { window = { delay = 100 } } },
   { import = "astrocommunity.pack.bash" },
   { import = "astrocommunity.pack.html-css" },
   { import = "astrocommunity.pack.fish" },
