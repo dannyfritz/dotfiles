@@ -21,6 +21,8 @@ return {
   { "folke/todo-comments.nvim", opts = { signs = false } },
   { import = "astrocommunity.editing-support.yanky-nvim" },
   { import = "astrocommunity.icon.mini-icons" },
+  { import = "astrocommunity.lsp.garbage-day-nvim" },
+  { import = "astrocommunity.lsp.lsp-signature-nvim" },
   { "echasnovski/mini.icons", opts = { style = "ascii" } },
   -- { import = "astrocommunity.editing-support.todo-comments-nvim" },
   -- { import = "astrocommunity.keybinding.mini-clue" },
