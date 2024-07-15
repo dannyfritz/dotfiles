@@ -8,6 +8,10 @@ source $HOME/.config/fish/brew.fish
 fish_add_path -gp /usr/local/sbin
 fish_add_path -gp $HOME/.bin
 fish_add_path -gp $HOME/.local/bin
+set -gx XDG_CACHE_HOME $HOME/.cache
+set -gx XDG_CONFIG_HOME $HOME/.config
+set -gx XDG_DATA_HOME $HOME/.local/share
+set -gx XDG_STATE_HOME $HOME/.local/state
 
 source $HOME/.config/fish/expected_programs.fish
 
