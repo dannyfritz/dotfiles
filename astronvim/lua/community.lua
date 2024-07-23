@@ -39,6 +39,7 @@ return {
   { import = "astrocommunity.pack.typescript-all-in-one" },
   { import = "astrocommunity.pack.yaml" },
   { import = "astrocommunity.scrolling.nvim-scrollbar" },
+  { import = "astrocommunity.search.grug-far-nvim" },
   { import = "astrocommunity.search.nvim-hlslens" },
   {
     "kevinhwang91/nvim-hlslens",
