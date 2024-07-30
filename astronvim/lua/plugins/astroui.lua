@@ -17,6 +17,10 @@ return {
       },
     },
     text_icons = {
+      ArrowUp = "↑",
+      ArrowDown = "↓",
+      ArrowLeft = "←",
+      ArrowRight = "→",
       DiagnosticError = "✖",
       DiagnosticWarn = "▼",
       DiagnosticInfo = "✹",
