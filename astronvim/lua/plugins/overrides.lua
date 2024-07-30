@@ -1,4 +1,24 @@
 return {
+  {
+    "RRethy/vim-illuminate",
+    opts = {
+      delay = 0,
+      under_cursor = true,
+    },
+  },
+  { "folke/todo-comments.nvim", opts = { signs = false } },
+  { "echasnovski/mini.icons", opts = { style = "ascii" } },
+  -- { "echasnovski/mini.clue", opts = { window = { delay = 100 } } },
+  { "mfussenegger/nvim-dap-python", enabled = false },
+  {
+    "kevinhwang91/nvim-hlslens",
+    opts = function(_, opts)
+      opts.auto_enable = true
+      opts.enable_inc_search = true
+      opts.calm_down = true
+      return opts
+    end,
+  },
   { "max397574/better-escape.nvim", enabled = false },
   { "mfussenegger/nvim-dap", optional = true, enabled = false },
   { "jay-babu/mason-nvim-dap.nvim", optional = true, enabled = false },
