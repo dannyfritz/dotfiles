@@ -1,9 +1,10 @@
 [status]
-separator_open = ""
-separator_close = ""
+separator_open = "["
+separator_close = "]"
 
 [icon]
-rules = [
-  { name = "*",  text = " " },
-  { name = "*/", text = "+" },
-]
+globs = []
+dirs  = [{ name = "*/", text = "+" }]
+files = [{ name = "*", text = " "}]
+exts  = []
+conds = []
