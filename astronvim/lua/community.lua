@@ -7,7 +7,7 @@ return {
   { "AstroNvim/astrocommunity" },
   -- import/override with your plugins folder
   { import = "astrocommunity.bars-and-lines.vim-illuminate" },
-  { import = "astrocommunity.debugging.nvim-bqf" },
+  { import = "astrocommunity.quickfix.nvim-bqf" },
   { import = "astrocommunity.editing-support.bigfile-nvim" },
   -- { import = "astrocommunity.editing-support.auto-save-nvim" },
   { import = "astrocommunity.editing-support.todo-comments-nvim" },
