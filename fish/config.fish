@@ -37,3 +37,26 @@ source $HOME/.config/fish/nvim.fish
 source $HOME/.config/fish/yazi.fish
 source $HOME/.config/fish/pomodoro.fish
 source $HOME/.config/fish/matrix.fish
+
+function update_all
+    if type -q brew
+        brew upgrade
+        brew upgrade
+    end
+    if type -q fisher
+        fisher update
+    end
+    if type -e ~/.tmux/plugins/tpm/bin/update_plugins
+      ~/.tmux/plugins/tpm/bin/update_plugins all
+    end
+    if type -q asdf
+        asdf plugin update --all
+    end
+    if type -q nvim
+        nvim --headless "+Lazy! sync" +qa
+        nvim --headless "+Lazy! sync" +qa
+    end
+    if type -q dnf5
+        sudo dnf5 upgrade
+    end
+end
