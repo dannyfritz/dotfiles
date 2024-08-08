@@ -7,7 +7,10 @@ animation = "EaseOutExpo"
 size = 11
 
 [font.normal]
-family = "JetBrains Mono"
+# family = "JetBrains Mono"
+# family = "Rec Mono Linear"
+# family = "Fira Code"
+family = "Hack"
 style = "Regular"
 
 [window]
