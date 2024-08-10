@@ -40,23 +40,58 @@ source $HOME/.config/fish/matrix.fish
 
 function update_all
     if type -q brew
+        set_color bryellow -r
+        echo "###################"
+        echo "## Updating Brew ##"
+        echo "###################"
+        set_color normal
         brew upgrade
-        brew upgrade
+        set_color bryellow -r
+        echo "########################"
+        echo "## Updating Brew Cask ##"
+        echo "########################"
+        set_color normal
+        brew upgrade --cask --greedy
     end
     if type -q fisher
+        set_color bryellow -r
+        echo "#####################"
+        echo "## Updating Fisher ##"
+        echo "#####################"
+        set_color normal
         fisher update
     end
-    if type -e ~/.tmux/plugins/tpm/bin/update_plugins
+    if test -e ~/.tmux/plugins/tpm/bin/update_plugins
+        set_color bryellow -r
+        echo "#######################"
+        echo "## Updating tmux tpm ##"
+        echo "#######################"
+        set_color normal
       ~/.tmux/plugins/tpm/bin/update_plugins all
     end
     if type -q asdf
+        set_color bryellow -r
+        echo "###################"
+        echo "## Updating asdf ##"
+        echo "###################"
+        set_color normal
         asdf plugin update --all
     end
     if type -q nvim
+        set_color bryellow -r
+        echo "#####################"
+        echo "## Updating Neovim ##"
+        echo "#####################"
+        set_color normal
         nvim --headless "+Lazy! sync" +qa
         nvim --headless "+Lazy! sync" +qa
     end
     if type -q dnf5
+        set_color bryellow -r
+        echo "##################"
+        echo "## Updating DNF ##"
+        echo "##################"
+        set_color normal
         sudo dnf5 upgrade
     end
 end
