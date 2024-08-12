@@ -67,7 +67,7 @@ function update_all
         echo "## Updating tmux tpm ##"
         echo "#######################"
         set_color normal
-      ~/.tmux/plugins/tpm/bin/update_plugins all
+        ~/.tmux/plugins/tpm/bin/update_plugins all
     end
     if type -q asdf
         set_color bryellow -r
