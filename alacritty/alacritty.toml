@@ -10,7 +10,8 @@ size = 11
 # family = "JetBrains Mono"
 # family = "Rec Mono Linear"
 # family = "Fira Code"
-family = "Hack"
+# family = "Hack"
+family = "Intel One Mono"
 style = "Regular"
 
 [window]
