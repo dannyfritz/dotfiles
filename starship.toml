@@ -10,7 +10,7 @@ disabled = true
 [character]
 success_symbol = "[>](bold green)"
 error_symbol = "[x](bold red)"
-vimcmd_symbol = "[<](bold green)"
+vimcmd_symbol = "[>](inverted yellow)"
 
 [cmd_duration]
 format = '[$duration]($style) '
