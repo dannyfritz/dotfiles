@@ -85,6 +85,7 @@ function update_all
         set_color normal
         nvim --headless "+Lazy! sync" +qa
         nvim --headless "+Lazy! sync" +qa
+        # nvim --headless "+MasonUpdate" +qa
     end
     if type -q dnf5
         set_color bryellow

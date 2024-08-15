@@ -17,7 +17,6 @@ if status --is-interactive
     set -a expected_programs htop\;https://htop.dev/
     set -a expected_programs jq\;https://github.com/jqlang/jq
     set -a expected_programs lsd\;https://github.com/lsd-rs/lsd
-    # set -a expected_programs nb\;https://xwmx.github.io/nb
     set -a expected_programs noti\;https://github.com/variadico/noti
     set -a expected_programs nvim\;https://neovim.io/
     set -a expected_programs rg\;https://github.com/BurntSushi/ripgrep
