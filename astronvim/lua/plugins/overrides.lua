@@ -65,6 +65,19 @@ return {
     end,
   },
   {
+    "nvim-lualine/lualine.nvim",
+    opts = {
+      options = {
+        icons_enabled = false,
+      },
+      sections = {
+        lualine_b = { "diff", "diagnostics" },
+        lualine_c = { "filename" },
+        lualine_x = { "searchcount" },
+      },
+    },
+  },
+  {
     "rebelot/heirline.nvim",
     opts = function(_, opts)
       local status = require "astroui.status"
