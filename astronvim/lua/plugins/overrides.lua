@@ -74,7 +74,7 @@ return {
         component_separators = " ",
         disabled_filetypes = { statusline = { "alpha", "neo-tree" }, winbar = { "alpha", "grug-far" } },
       },
-      extensions = { "alpha", "lazy", "mason", "man", "neo-tree", "quickfix" },
+      extensions = { "lazy", "mason", "man", "neo-tree", "quickfix" },
       sections = {
         lualine_b = { "diff", "diagnostics" },
         lualine_c = { "filename" },
