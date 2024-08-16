@@ -6,6 +6,7 @@
 return {
   { "AstroNvim/astrocommunity" },
   -- import/override with your plugins folder
+  { import = "astrocommunity.bars-and-lines.bufferline-nvim" },
   { import = "astrocommunity.bars-and-lines.vim-illuminate" },
   { import = "astrocommunity.bars-and-lines.lualine-nvim" },
   { import = "astrocommunity.color.nvim-highlight-colors" }, -- #F00
@@ -28,7 +29,8 @@ return {
   { import = "astrocommunity.pack.yaml" },
   { import = "astrocommunity.quickfix.nvim-bqf" },
   { import = "astrocommunity.scrolling.nvim-scrollbar" },
-  { import = "astrocommunity.search.grug-far-nvim" },
+  -- { import = "astrocommunity.search.grug-far-nvim" },
+  { import = "astrocommunity.search.nvim-spectre" },
   { import = "astrocommunity.search.nvim-hlslens" },
   { import = "astrocommunity.utility.nvim-toggler"},
 }

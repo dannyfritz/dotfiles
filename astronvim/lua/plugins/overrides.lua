@@ -9,7 +9,6 @@ return {
   { "folke/todo-comments.nvim", opts = { signs = false } },
   { "echasnovski/mini.icons", opts = { style = "ascii" } },
   -- { "echasnovski/mini.clue", opts = { window = { delay = 100 } } },
-  { "mfussenegger/nvim-dap-python", enabled = false },
   {
     "kevinhwang91/nvim-hlslens",
     opts = function(_, opts)
@@ -21,6 +20,7 @@ return {
   },
   { "max397574/better-escape.nvim", enabled = false },
   { "mfussenegger/nvim-dap", optional = true, enabled = false },
+  { "mfussenegger/nvim-dap-python", enabled = false },
   { "jay-babu/mason-nvim-dap.nvim", optional = true, enabled = false },
   { "rcarriga/cmp-dap", optional = true, enabled = false },
   { "akinsho/toggleterm.nvim", optional = true, enabled = false },
@@ -64,95 +64,65 @@ return {
       return opts
     end,
   },
+  -- { "heirline.nvim", enabled = false },
   {
     "nvim-lualine/lualine.nvim",
     opts = {
       options = {
         icons_enabled = false,
+        section_separators = "",
+        component_separators = " ",
+        disabled_filetypes = { statusline = { "alpha", "neo-tree" }, winbar = { "alpha", "grug-far" } },
       },
+      extensions = { "alpha", "lazy", "mason", "man", "neo-tree", "quickfix" },
       sections = {
         lualine_b = { "diff", "diagnostics" },
         lualine_c = { "filename" },
         lualine_x = { "searchcount" },
       },
+      -- tabline = {
+      --   lualine_a = { { "buffers" } },
+      -- },
+      winbar = {
+        lualine_c = { { "filename", path = 1, file_status = false } },
+      },
     },
   },
   {
-    "rebelot/heirline.nvim",
-    opts = function(_, opts)
-      local status = require "astroui.status"
-      local get_hlgroup = require("astroui").get_hlgroup
-      opts.tabline[2] = status.heirline.make_buflist {
-        {
-          provider = " ",
-          hl = function(self)
-            if self.is_visible then
-              return { standout = true }
-            else
-              return {}
-            end
-          end,
-        },
-        status.component.tabline_file_info {
-          hl = function(self)
-            if self.is_visible then
-              return { standout = true }
-            else
-              return {}
-            end
-          end,
-          close_button = false,
-        },
-      }
-      opts.winbar = {
-        init = function(self) self.bufnr = vim.api.nvim_get_current_buf() end,
-        fallthrough = false,
-        {
-          status.component.separated_path {
-            path_func = status.provider.filename { modify = ":.:h" },
-            separator = "/",
-          },
-          status.component.file_info {
-            file_icon = false,
-            file_modified = false,
-            filetype = false,
-            filename = {},
-            file_read_only = false,
-            surround = false,
-            update = "BufEnter",
-          },
-        },
-      }
-      local status_hl = get_hlgroup "StatusLine"
-      opts.statusline = {
-        status.component.mode { mode_text = { padding = { left = 1, right = 1 } } },
-        status.component.nav {
-          hl = status_hl,
-          scrollbar = false,
-          ruler = {},
-          percentage = {},
-          padding = { right = 1 },
-        },
-        status.component.diagnostics(),
-        status.component.cmd_info(),
-        -- status.component.file_info({ hl = status_hl, filetype = false, filename = {}, file_modified = false }),
-        -- status.component.git_branch(),
-        status.component.fill(),
-        -- status.component.lsp(),
-        -- status.component.treesitter(),
-        status.component.mode { surround = { separator = "right" } },
-      }
-      return opts
-    end,
+    "akinsho/bufferline.nvim",
+    opts = {
+      options = {
+        show_buffer_close_icons = false,
+        left_trunc_marker = "..",
+        right_trunc_marker = "..",
+        separator_style = "thin",
+      },
+    },
+    keys = {
+      { "<Leader>,", "<cmd>Telescope buffers<cr>", desc = "Find Buffers" },
+      { "<Leader>b", desc = "Buffers" },
+      {
+        "<Leader>by",
+        function() vim.cmd [[let @+ = expand('%:p')]] end,
+        desc = "Yank Buffer Filename to Clipboard",
+      },
+      {
+        "<Leader>c",
+        function()
+          local bufs = vim.fn.getbufinfo { buflisted = true }
+          require("astrocore.buffer").close(0)
+          if require("astrocore").is_available "alpha-nvim" and not bufs[2] then require("alpha").start() end
+        end,
+        desc = "Close buffer",
+      },
+      { "H", "<CMD>BufferLineCyclePrev<CR>", desc = "Previous buffer" },
+      { "L", "<CMD>BufferLineCycleNext<CR>", desc = "Next buffer" },
+    },
   },
-  { -- override nvim-cmp plugin
+  {
     "hrsh7th/nvim-cmp",
-    -- override the options table that is used in the `require("cmp").setup()` call
     opts = function(_, opts)
-      -- opts parameter is the default options table
-      -- the function is lazy loaded so cmp is able to be required
       local cmp = require "cmp"
-      -- modify the sources part of the options table
       opts.sources = cmp.config.sources {
         { name = "nvim_lsp", priority = 1000 },
         { name = "buffer", priority = 500 },

@@ -36,52 +36,7 @@ return {
     mappings = {
       n = {
         ["<Leader><Space>"] = { "<cmd>Telescope find_files<cr>", desc = "Find Files" },
-        ["<Leader>,"] = { "<cmd>Telescope buffers<cr>", desc = "Find Buffers" },
-        ["<Leader>b"] = { desc = "Buffers" },
-        ["<Leader>bD"] = {
-          function()
-            require("astroui.status.heirline").buffer_picker(
-              function(bufnr) require("astrocore.buffer").close(bufnr) end
-            )
-          end,
-          desc = "Pick to close",
-        },
-        ["<Leader>by"] = {
-          function() vim.cmd [[let @+ = expand('%:p')]] end,
-          desc = "Yank Buffer Filename to Clipboard",
-        },
-        ["<Leader>bn"] = {
-          function() require("astrocore.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end,
-          desc = "Next buffer",
-        },
-        ["<Leader>bp"] = {
-          function() require("astrocore.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
-          desc = "Previous buffer",
-        },
-        ["<Leader>c"] = {
-          function()
-            local bufs = vim.fn.getbufinfo({ buflisted = true })
-            require("astrocore.buffer").close(0)
-            if require("astrocore").is_available("alpha-nvim") and not bufs[2] then
-              require("alpha").start()
-            end
-          end
-        },
-        L = {
-          function() require("astrocore.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end,
-          desc = "Next buffer",
-        },
-        H = {
-          function() require("astrocore.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
-          desc = "Previous buffer",
-        },
       },
-      -- s = {
-      --   ["<Leader>fw"] = {
-      --     "<CMD>vimgrep /escape(@\")<CR>/ %<CR>",
-      --     desc = "Find and quickfix current selection in current file"
-      --   },
-      -- },
       t = {},
     },
   },
