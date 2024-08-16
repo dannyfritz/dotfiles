@@ -58,6 +58,15 @@ return {
           function() require("astrocore.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
           desc = "Previous buffer",
         },
+        ["<Leader>c"] = {
+          function()
+            local bufs = vim.fn.getbufinfo({ buflisted = true })
+            require("astrocore.buffer").close(0)
+            if require("astrocore").is_available("alpha-nvim") and not bufs[2] then
+              require("alpha").start()
+            end
+          end
+        },
         L = {
           function() require("astrocore.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end,
           desc = "Next buffer",
