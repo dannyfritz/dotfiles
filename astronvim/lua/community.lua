@@ -17,7 +17,6 @@ return {
   { import = "astrocommunity.icon.mini-icons" },
   { import = "astrocommunity.lsp.garbage-day-nvim" },
   { import = "astrocommunity.lsp.lsp-signature-nvim" },
-  { import = "astrocommunity.motion.marks-nvim" },
   { import = "astrocommunity.pack.bash" },
   { import = "astrocommunity.pack.fish" },
   { import = "astrocommunity.pack.html-css" },
