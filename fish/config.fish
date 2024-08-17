@@ -87,6 +87,14 @@ function update_all
         nvim --headless "+Lazy! sync" +qa
         # nvim --headless "+MasonUpdate" +qa
     end
+    if type -q flatpak
+        set_color bryellow
+        echo "#############"
+        echo "## Flatpak ##"
+        echo "#############"
+        set_color normal
+        flatpak update
+    end
     if type -q dnf5
         set_color bryellow
         echo "##################"
