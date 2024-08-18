@@ -9,7 +9,7 @@ return {
   { import = "astrocommunity.bars-and-lines.bufferline-nvim" },
   { import = "astrocommunity.bars-and-lines.lualine-nvim" },
   { import = "astrocommunity.bars-and-lines.vim-illuminate" },
-  { import = "astrocommunity.color.nvim-highlight-colors" }, -- #F00
+  { import = "astrocommunity.color.nvim-highlight-colors" },
   { import = "astrocommunity.colorscheme.lackluster-nvim" },
   { import = "astrocommunity.editing-support.bigfile-nvim" },
   { import = "astrocommunity.editing-support.todo-comments-nvim" },
@@ -33,7 +33,6 @@ return {
   {
     "MagicDuck/grug-far.nvim",
     commit = "6cbe595b0049522256d972ed6831b708186df176",
-    opts = { icons = { enabled = false } },
   },
   { import = "astrocommunity.search.nvim-hlslens" },
   { import = "astrocommunity.utility.nvim-toggler" },

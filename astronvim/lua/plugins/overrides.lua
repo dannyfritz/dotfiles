@@ -2,13 +2,11 @@ return {
   {
     "RRethy/vim-illuminate",
     opts = {
-      delay = 0,
+      delay = 60,
       under_cursor = true,
     },
   },
   { "folke/todo-comments.nvim", opts = { signs = false } },
-  { "echasnovski/mini.icons", opts = { style = "ascii" } },
-  -- { "echasnovski/mini.clue", opts = { window = { delay = 100 } } },
   {
     "kevinhwang91/nvim-hlslens",
     opts = function(_, opts)
