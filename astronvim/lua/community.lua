@@ -30,10 +30,6 @@ return {
   { import = "astrocommunity.quickfix.nvim-bqf" },
   { import = "astrocommunity.scrolling.nvim-scrollbar" },
   { import = "astrocommunity.search.grug-far-nvim" },
-  {
-    "MagicDuck/grug-far.nvim",
-    commit = "6cbe595b0049522256d972ed6831b708186df176",
-  },
   { import = "astrocommunity.search.nvim-hlslens" },
   { import = "astrocommunity.utility.nvim-toggler" },
 }

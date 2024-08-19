@@ -25,7 +25,7 @@
   "friendly-snippets": { "branch": "main", "commit": "00ebcaa159e817150bd83bfe2d51fa3b3377d5c4" },
   "garbage-day.nvim": { "branch": "main", "commit": "4a1160bfffb2f499fb55a54333f29d160ab3c8a1" },
   "gitsigns.nvim": { "branch": "main", "commit": "0b04035bb7b3c83e999b9676e2fb46fd0aa9f910" },
-  "grug-far.nvim": { "branch": "main", "commit": "6cbe595b0049522256d972ed6831b708186df176" },
+  "grug-far.nvim": { "branch": "main", "commit": "5aae8b67be44682d469e71ec9e285793111f10a9" },
   "guess-indent.nvim": { "branch": "main", "commit": "6cd61f7a600bb756e558627cd2e740302c58e32d" },
   "heirline.nvim": { "branch": "master", "commit": "0d797435e54645a5f98bad7ad6046aac1ef95c1e" },
   "indent-blankline.nvim": { "branch": "master", "commit": "3fe94b8034dd5241cb882bb73847303b58857ecf" },
