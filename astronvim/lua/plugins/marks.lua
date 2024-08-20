@@ -16,7 +16,7 @@ return {
     end,
     keys = {
       { "<Leader>fM", "<cmd>Telescope bookmarks list<cr>", desc = "Find Bookmark" },
-      { "<Leader>m", desc = "Bookmarks" },
+      { "<Leader>m", "", desc = "Bookmarks" },
       {
         "<Leader>mm",
         function()

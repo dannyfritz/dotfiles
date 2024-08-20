@@ -35,7 +35,7 @@ return {
     },
     keys = {
       { "<Leader>,", "<cmd>Telescope buffers<cr>", desc = "Find Buffers" },
-      { "<Leader>b", desc = "Buffers" },
+      { "<Leader>b", "", desc = "Buffers" },
       {
         "<Leader>by",
         function() vim.cmd [[let @+ = expand('%:p')]] end,
