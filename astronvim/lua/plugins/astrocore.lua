@@ -5,42 +5,38 @@
 
 ---@type LazySpec
 return {
-  "AstroNvim/astrocore",
-  ---@type AstroCoreOpts
-  opts = {
-    features = {
-      -- large_buf = { size = 1024 * 500, lines = 10000 }, -- set global limits for large files for disabling features like treesitter
-      diagnostics_mode = 1, -- diagnostic mode on start (0 = off, 1 = no signs/virtual text, 2 = no virtual text, 3 = on)
-      highlighturl = true, -- highlight URLs at start
-    },
-    -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
-    diagnostics = {
-      virtual_text = false,
-      underline = true,
-    },
-    options = {
-      opt = { -- vim.opt.<key>
-        conceallevel = 0,
-        scrolloff = 8,
-        colorcolumn = { 80, 100 },
+  {
+    "AstroNvim/astrocore",
+    ---@type AstroCoreOpts
+    opts = {
+      features = {
+        -- large_buf = { size = 1024 * 500, lines = 10000 }, -- set global limits for large files for disabling features like treesitter
+        diagnostics_mode = 1, -- diagnostic mode on start (0 = off, 1 = no signs/virtual text, 2 = no virtual text, 3 = on)
+        highlighturl = true, -- highlight URLs at start
       },
-      g = { -- vim.g.<key>
-        -- configure global vim variables (vim.g)
-        -- NOTE: `mapleader` and `maplocalleader` must be set in the AstroNvim opts or before `lazy.setup`
-        -- This can be found in the `lua/lazy_setup.lua` file
-        icons_enabled = false,
+      -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
+      diagnostics = {
+        virtual_text = false,
+        underline = true,
       },
-    },
-    -- Mappings can be configured through AstroCore as well.
-    -- NOTE: keycodes follow the casing in the vimdocs. For example, `<Leader>` must be capitalized
-    mappings = {
-      n = {
-        ["<Leader><Space>"] = {
-          function() require("telescope.builtin").find_files { } end,
-          desc = "Find Files",
+      options = {
+        opt = { -- vim.opt.<key>
+          conceallevel = 0,
+          scrolloff = 8,
+          colorcolumn = { 80, 100 },
+        },
+        g = { -- vim.g.<key>
+          -- configure global vim variables (vim.g)
+          -- NOTE: `mapleader` and `maplocalleader` must be set in the AstroNvim opts or before `lazy.setup`
+          -- This can be found in the `lua/lazy_setup.lua` file
+          icons_enabled = false,
         },
       },
-      t = {},
+      -- Mappings can be configured through AstroCore as well.
+      -- NOTE: keycodes follow the casing in the vimdocs. For example, `<Leader>` must be capitalized
+      mappings = {
+        t = {},
+      },
     },
   },
 }
