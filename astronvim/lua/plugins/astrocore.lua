@@ -35,7 +35,10 @@ return {
     -- NOTE: keycodes follow the casing in the vimdocs. For example, `<Leader>` must be capitalized
     mappings = {
       n = {
-        ["<Leader><Space>"] = { "<cmd>Telescope find_files<cr>", desc = "Find Files" },
+        ["<Leader><Space>"] = {
+          function() require("telescope.builtin").find_files { } end,
+          desc = "Find Files",
+        },
       },
       t = {},
     },

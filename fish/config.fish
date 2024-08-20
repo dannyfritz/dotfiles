@@ -33,6 +33,10 @@ if test -e ~/.opam/opam-init/init.fish
     source ~/.opam/opam-init/init.fish >/dev/null 2>/dev/null; or true
 end
 
+if type -q rg
+    set -gx RIPGREP_CONFIG_PATH $XDG_CONFIG_HOME/.ripgreprc
+end
+
 source $HOME/.config/fish/nvim.fish
 source $HOME/.config/fish/yazi.fish
 source $HOME/.config/fish/pomodoro.fish
