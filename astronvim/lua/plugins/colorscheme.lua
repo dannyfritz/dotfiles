@@ -13,13 +13,4 @@ return {
       color_set = "tender",
     },
   },
-  -- {
-  --   "dannyfritz/bleak.nvim",
-  --   enabled = false,
-  --   dependencies = { { "rktjmp/lush.nvim" } },
-  -- },
-  -- {
-  --   "e-q/okcolors.nvim",
-  --   enabled = false,
-  -- },
 }
