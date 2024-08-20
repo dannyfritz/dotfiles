@@ -24,6 +24,9 @@ return {
           conceallevel = 0,
           scrolloff = 8,
           colorcolumn = { 80, 100 },
+          foldcolumn = "0",
+          relativenumber = false,
+          -- signcolumn = "auto",
         },
         g = { -- vim.g.<key>
           -- configure global vim variables (vim.g)
