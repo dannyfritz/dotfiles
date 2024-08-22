@@ -1,3 +1,4 @@
+function getVisualSelection() return table.concat(vim.fn.getregion(vim.fn.getpos "v", vim.fn.getpos "."), "\n") end
 return {
   {
     "RRethy/vim-illuminate",
@@ -93,6 +94,24 @@ return {
         "<Leader><Space>",
         function() require("telescope.builtin").find_files {} end,
         desc = "Find Files",
+      },
+      {
+        "<Leader>f",
+        "",
+        desc = "Find",
+        mode = { "v" },
+      },
+      {
+        "<Leader>fw",
+        function() require("telescope.builtin").live_grep { default_text = getVisualSelection() } end,
+        desc = "Find words",
+        mode = { "v" },
+      },
+      {
+        "<Leader>ff",
+        function() require("telescope.builtin").find_files { default_text = getVisualSelection() } end,
+        desc = "Find files",
+        mode = { "v" },
       },
     },
   },
