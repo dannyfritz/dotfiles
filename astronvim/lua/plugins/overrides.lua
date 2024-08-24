@@ -123,4 +123,13 @@ return {
       },
     },
   },
+  {
+    "echasnovski/mini.animate",
+    opts = function(_, opts)
+      local animate = require "mini.animate"
+      opts.scroll.timing = animate.gen_timing.cubic { duration = 120, unit = "total", easing = "out" }
+      opts.cursor.timing = animate.gen_timing.cubic { duration = 100, unit = "total", easing = "out" }
+      return opts
+    end,
+  },
 }

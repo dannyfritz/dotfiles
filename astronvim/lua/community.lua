@@ -29,6 +29,7 @@ return {
   { import = "astrocommunity.pack.yaml" },
   { import = "astrocommunity.quickfix.nvim-bqf" },
   { import = "astrocommunity.scrolling.nvim-scrollbar" },
+  { import = "astrocommunity.scrolling.mini-animate" },
   { import = "astrocommunity.search.grug-far-nvim" },
   { import = "astrocommunity.search.nvim-hlslens" },
   { import = "astrocommunity.utility.nvim-toggler" },
