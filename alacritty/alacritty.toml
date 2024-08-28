@@ -1,7 +1,9 @@
 live_config_reload = true
 
 [bell]
-animation = "EaseOutExpo"
+animation = "EaseOutQuad"
+duration = 300 
+color = "#554444"
 
 [font]
 size = 8.5
