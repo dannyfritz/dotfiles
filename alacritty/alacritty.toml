@@ -6,7 +6,7 @@ duration = 300
 color = "#554444"
 
 [font]
-size = 8.5
+size = 10
 
 [font.normal]
 # family = "JetBrains Mono"
