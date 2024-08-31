@@ -1,7 +1,7 @@
 function fish_greeting
     if type -q fortune
         if type -q cowsay
-            fortune | cowsay -n -f small -e "oO" -T "U " -W $(tput cols)
+            fortune | cowsay -n -f small -e oO -T "U " -W $(tput cols)
         else
             fortune
         end
@@ -55,69 +55,49 @@ source $HOME/.config/fish/pomodoro.fish
 source $HOME/.config/fish/matrix.fish
 source $HOME/.config/fish/nb.fish
 
+function __banner
+    set_color bryellow
+    if type -q figlet
+        figlet -w $(tput cols) -f banner3 $argv
+    else
+        string repeat -n $(math $(string length $argv) + 15) '#'
+        echo "## Updating $argv ##"
+        string repeat -n $(math $(string length $argv) + 15) '#'
+    end
+    set_color normal
+end
+
 function update_all
     if type -q brew
-        set_color bryellow
-        echo "###################"
-        echo "## Updating Brew ##"
-        echo "###################"
-        set_color normal
+        __banner Brew
         brew upgrade
-        set_color bryellow
-        echo "########################"
-        echo "## Updating Brew Cask ##"
-        echo "########################"
-        set_color normal
+        __banner Brew Cask
         brew upgrade --cask --greedy
     end
     if type -q fisher
-        set_color bryellow
-        echo "#####################"
-        echo "## Updating Fisher ##"
-        echo "#####################"
-        set_color normal
+        __banner Fisher
         fisher update
     end
     if test -e ~/.tmux/plugins/tpm/bin/update_plugins
-        set_color bryellow
-        echo "#######################"
-        echo "## Updating tmux tpm ##"
-        echo "#######################"
-        set_color normal
+        __banner tmux tpm
         ~/.tmux/plugins/tpm/bin/update_plugins all
     end
     if type -q asdf
-        set_color bryellow
-        echo "###################"
-        echo "## Updating asdf ##"
-        echo "###################"
-        set_color normal
+        __banner asdf
         asdf plugin update --all
     end
     if type -q nvim
-        set_color bryellow
-        echo "#####################"
-        echo "## Updating Neovim ##"
-        echo "#####################"
-        set_color normal
+        __banner Neovim
         nvim --headless "+Lazy! sync" +qa
         nvim --headless "+Lazy! sync" +qa
         # nvim --headless "+MasonUpdate" +qa
     end
     if type -q flatpak
-        set_color bryellow
-        echo "#############"
-        echo "## Flatpak ##"
-        echo "#############"
-        set_color normal
+        __banner Flatpak
         flatpak update
     end
     if type -q dnf5
-        set_color bryellow
-        echo "##################"
-        echo "## Updating DNF ##"
-        echo "##################"
-        set_color normal
+        __banner DNF
         sudo dnf5 upgrade
     end
 end
