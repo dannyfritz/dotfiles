@@ -37,14 +37,13 @@ if type -q rg
     set -gx RIPGREP_CONFIG_PATH $XDG_CONFIG_HOME/.ripgreprc
 end
 
-if test -e ~/notebook
-    alias nb="nvim --cmd \"cd ~/notebook\""
 end
 
 source $HOME/.config/fish/nvim.fish
 source $HOME/.config/fish/yazi.fish
 source $HOME/.config/fish/pomodoro.fish
 source $HOME/.config/fish/matrix.fish
+source $HOME/.config/fish/nb.fish
 
 function update_all
     if type -q brew
