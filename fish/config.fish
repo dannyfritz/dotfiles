@@ -45,6 +45,8 @@ if type -q rg
     set -gx RIPGREP_CONFIG_PATH $XDG_CONFIG_HOME/.ripgreprc
 end
 
+if type -q gitui
+    alias gitui="gitui --watcher"
 end
 
 source $HOME/.config/fish/nvim.fish
