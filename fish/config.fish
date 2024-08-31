@@ -1,4 +1,12 @@
-set fish_greeting
+function fish_greeting
+    if type -q fortune
+        if type -q cowsay
+            fortune | cowsay -n -f small -e "oO" -T "U " -W $(tput cols)
+        else
+            fortune
+        end
+    end
+end
 
 # https://fishshell.com/docs/current/interactive.html#vi-mode-commands
 fish_vi_key_bindings
