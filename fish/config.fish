@@ -56,9 +56,9 @@ source $HOME/.config/fish/matrix.fish
 source $HOME/.config/fish/nb.fish
 
 function __banner
-    set_color bryellow
+    set_color --bold bryellow
     if type -q figlet
-        figlet -w $(tput cols) -f banner3 $argv
+        figlet -w $(tput cols) $argv
     else
         string repeat -n $(math $(string length $argv) + 15) '#'
         echo "## Updating $argv ##"
