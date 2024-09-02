@@ -1,4 +1,7 @@
 function fish_greeting
+    if test -z $TMUX
+        return
+    end
     if type -q fortune
         if type -q cowsay
             fortune | cowsay -n -f small -e oO -T "U " -W $(tput cols)

@@ -6,13 +6,13 @@ if status --is-interactive
     set --erase expected_programs
     set -a expected_programs asdf\;https://asdf-vm.com
     set -a expected_programs bat\;https://github.com/sharkdp/bat
-    set -a expected_programs cowsay\;https://github.com/tnalpgge/rank-amateur-cowsay
+    # set -a expected_programs cowsay\;https://github.com/tnalpgge/rank-amateur-cowsay
     set -a expected_programs delta\;https://github.com/dandavison/delta
     set -a expected_programs entr\;https://github.com/eradman/entr
     set -a expected_programs fd\;https://github.com/sharkdp/fd
     set -a expected_programs figlet\;http://www.figlet.org
     # set -a expected_programs fish\;https://fishshell.com/
-    set -a expected_programs fortune\;http://bxr.su/OpenBSD/games/fortune
+    # set -a expected_programs fortune\;http://bxr.su/OpenBSD/games/fortune
     set -a expected_programs fzf\;https://github.com/junegunn/fzf
     set -a expected_programs gitui\;https://github.com/extrawurst/gitui
     set -a expected_programs glow\;https://github.com/charmbracelet/glow
