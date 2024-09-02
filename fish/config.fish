@@ -88,8 +88,8 @@ function update_all
     end
     if type -q nvim
         __banner Neovim
-        nvim --headless "+Lazy! sync" +qa
-        nvim --headless "+Lazy! sync" +qa
+        nvim --headless "+Lazy! sync" +qa | rg --color=never "log.*\s\|\s"
+        nvim --headless "+Lazy! sync" +qa | rg --color=never "log.*\s\|\s"
         # nvim --headless "+MasonUpdate" +qa
     end
     if type -q flatpak
