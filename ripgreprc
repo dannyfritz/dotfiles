@@ -1,3 +1,6 @@
 --hidden
 --glob=!.git
 --smart-case
+--trim
+--max-columns=120
+--max-columns-preview
