@@ -1,10 +1,7 @@
 return {
+  { "kkharji/sqlite.lua", module = "sqlite", lazy = true },
   {
     "AckslD/nvim-neoclip.lua",
-    dependencies = {
-      { "kkharji/sqlite.lua", module = "sqlite" },
-      { "nvim-telescope/telescope.nvim" },
-    },
     opts = {
       enable_persistent_history = true,
     },
