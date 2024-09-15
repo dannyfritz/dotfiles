@@ -3,11 +3,9 @@ function fish_greeting
         return
     end
     if type -q fortune
-        if type -q cowsay
-            fortune | cowsay -n -f small -e oO -T "U " -W $(tput cols)
-        else
-            fortune
-        end
+        set_color --dim --italics
+        fortune
+        set_color normal
     end
 end
 
