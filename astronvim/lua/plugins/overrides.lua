@@ -132,4 +132,14 @@ return {
       return opts
     end,
   },
+  {
+    "MagicDuck/grug-far.nvim",
+    opts = {
+      engines = {
+        ripgrep = {
+          extraArgs = "--no-trim",
+        },
+      },
+    },
+  },
 }
