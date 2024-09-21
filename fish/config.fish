@@ -56,6 +56,12 @@ source $HOME/.config/fish/pomodoro.fish
 source $HOME/.config/fish/matrix.fish
 source $HOME/.config/fish/nb.fish
 
+if type -q fzf
+    function fhistory 
+        history | fzf --no-sort | tee "$(tty)" | read -l line; commandline -j $line
+    end
+end
+
 function __banner
     set_color --bold bryellow
     if type -q figlet
