@@ -142,4 +142,10 @@ return {
       },
     },
   },
+  {
+    "zeioth/garbage-day.nvim",
+    opts = {
+      wakeup_delay = 3000,
+    }
+  },
 }
