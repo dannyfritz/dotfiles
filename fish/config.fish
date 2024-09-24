@@ -58,7 +58,7 @@ source $HOME/.config/fish/nb.fish
 
 if type -q fzf
     function fhistory 
-        history | fzf --no-sort | tee "$(tty)" | read -l line; commandline -j $line
+        history | fzf --no-sort | read -l line; commandline -j $line
     end
 end
 
