@@ -22,6 +22,13 @@ set -gx XDG_CONFIG_HOME $HOME/.config
 set -gx XDG_DATA_HOME $HOME/.local/share
 set -gx XDG_STATE_HOME $HOME/.local/state
 
+if status --is-interactive
+    if test -z $TMUX
+        tmux
+        exit 0
+    end
+end
+
 source $HOME/.config/fish/expected_programs.fish
 
 if type -q starship
