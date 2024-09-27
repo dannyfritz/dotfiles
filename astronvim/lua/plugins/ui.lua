@@ -21,6 +21,9 @@ return {
       winbar = {
         lualine_c = { { "filename", path = 1, file_status = false } },
       },
+      inactive_winbar = {
+        lualine_b = { { "filename", path = 1, file_status = false } },
+      },
     },
   },
   {
