@@ -1,25 +1,24 @@
-function __nbhelp
-    set_color normal
-    printf "Modify and sync ~/notebook\n\n"
-    set_color -o brwhite
-    printf "USAGE:\n"
-    set_color normal
-    printf "\tnb [COMMAND]\n\n"
-    set_color -o brwhite
-    printf "COMMANDS:\n"
-    set_color normal
-    printf "\tnb\t\talias to \"nb open\"\n"
-    printf "\tnb open\t\tOpen nvim\n"
-    printf "\tnb sync\t\tOpen gitui\n"
-    set_color normal
-end
-function nb
-    set --erase -f OPTIONS
-    set -f NB_LOCATION ~/notebook
-    if not test -e $NB_LOCATION;
-        and not test -d $NB_LOCATION
+function nb -d "Modify and sync the notebook"
+    set -l LOCATION ~/notebook
+    function __nbhelp -V LOCATION
+        set_color normal
+        printf "Modify and sync $LOCATION\n\n"
+        set_color -o brwhite
+        printf "USAGE:\n"
+        set_color normal
+        printf "\tnb [COMMAND]\n\n"
+        set_color -o brwhite
+        printf "COMMANDS:\n"
+        set_color normal
+        printf "\tnb\t\talias to \"nb open\"\n"
+        printf "\tnb open\t\tOpen nvim\n"
+        printf "\tnb sync\t\tOpen gitui\n"
+        set_color normal
+    end
+    if not test -e $LOCATION;
+        and not test -d $LOCATION
         set_color yellow
-        echo "No directory found at \"$NB_LOCATION\"!"
+        echo "No directory found at \"$LOCATION\"!"
         set_color normal
         return 1
     end
@@ -31,7 +30,7 @@ function nb
             set_color normal
             return 1
         end
-        command nvim --cmd "cd $NB_LOCATION"
+        command nvim --cmd "cd $LOCATION"
         return 0
     else if test "$argv" = sync
         if not type -q gitui
@@ -40,13 +39,13 @@ function nb
             set_color normal
             return 1
         end
-        if not test -d $(printf "%s/.git" $NB_LOCATION)
+        if not test -d $(printf "%s/.git" $LOCATION)
             set_color yellow
-            printf '"%s" is not a git repository.\n' $NB_LOCATION
+            printf '"%s" is not a git repository.\n' $LOCATION
             set_color normal
             return 1
         end
-        command gitui --directory $NB_LOCATION
+        command gitui --directory $LOCATION
         return 0
     else
         set_color yellow

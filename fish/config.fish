@@ -72,25 +72,23 @@ if type -q fzf
     end
 end
 
-# Modify your dotfiles
-function __dfhelp
-    set_color normal
-    printf "Modify and sync ~/dotfiles\n\n"
-    set_color -o brwhite
-    printf "USAGE:\n"
-    set_color normal
-    printf "\t.df [COMMAND]\n\n"
-    set_color -o brwhite
-    printf "COMMANDS:\n"
-    set_color normal
-    printf "\t.df\t\talias to \".df open\"\n"
-    printf "\t.df open\t\tOpen nvim\n"
-    printf "\t.df sync\t\tOpen gitui\n"
-    set_color normal
-end
-function .df
-    set --erase -f OPTIONS
+function dotfiles -d "Modify and sync dotfiles"
     set -f LOCATION ~/dotfiles
+    function __dotfileshelp -V LOCATION
+        set_color normal
+        printf "Modify and sync $LOCATION\n\n"
+        set_color -o brwhite
+        printf "USAGE:\n"
+        set_color normal
+        printf "\tdotfiles [COMMAND]\n\n"
+        set_color -o brwhite
+        printf "COMMANDS:\n"
+        set_color normal
+        printf "\tdotfiles\t\talias to \"dotfiles open\"\n"
+        printf "\tdotfiles open\t\tOpen nvim\n"
+        printf "\tdotfiles sync\t\tOpen gitui\n"
+        set_color normal
+    end
     if not test -e $LOCATION;
         and not test -d $LOCATION
         set_color yellow
@@ -127,7 +125,7 @@ function .df
     else
         set_color yellow
         printf 'Unknown COMMAND: "%s"\n\n' $argv
-        __dfhelp
+        __dotfileshelp
         return 1
     end
 end
