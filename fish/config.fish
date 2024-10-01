@@ -72,6 +72,66 @@ if type -q fzf
     end
 end
 
+# Modify your dotfiles
+function __dfhelp
+    set_color normal
+    printf "Modify and sync ~/dotfiles\n\n"
+    set_color -o brwhite
+    printf "USAGE:\n"
+    set_color normal
+    printf "\t.df [COMMAND]\n\n"
+    set_color -o brwhite
+    printf "COMMANDS:\n"
+    set_color normal
+    printf "\t.df\t\talias to \".df open\"\n"
+    printf "\t.df open\t\tOpen nvim\n"
+    printf "\t.df sync\t\tOpen gitui\n"
+    set_color normal
+end
+function .df
+    set --erase -f OPTIONS
+    set -f LOCATION ~/dotfiles
+    if not test -e $LOCATION;
+        and not test -d $LOCATION
+        set_color yellow
+        echo "No directory found at \"$LOCATION\"!"
+        set_color normal
+        return 1
+    end
+    if test -z $argv;
+        or test $argv = open
+        if not type -q nvim
+            set_color yellow
+            echo "Missing \"nvim\" command!"
+            set_color normal
+            return 1
+        end
+        command nvim --cmd "cd $LOCATION"
+        source $LOCATION/fish/config.fish
+        return 0
+    else if test "$argv" = sync
+        if not type -q gitui
+            set_color yellow
+            echo "Missing \"gitui\" command!"
+            set_color normal
+            return 1
+        end
+        if not test -d $(printf "%s/.git" $LOCATION)
+            set_color yellow
+            printf '"%s" is not a git repository.\n' $LOCATION
+            set_color normal
+            return 1
+        end
+        command gitui --directory $LOCATION
+        return 0
+    else
+        set_color yellow
+        printf 'Unknown COMMAND: "%s"\n\n' $argv
+        __dfhelp
+        return 1
+    end
+end
+
 function __banner
     set_color --bold bryellow
     if type -q figlet

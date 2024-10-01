@@ -1,4 +1,6 @@
 function __nbhelp
+    set_color normal
+    printf "Modify and sync ~/notebook\n\n"
     set_color -o brwhite
     printf "USAGE:\n"
     set_color normal
