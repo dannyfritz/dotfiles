@@ -33,7 +33,6 @@ source $XDG_CONFIG_HOME/fish/expected_programs.fish
 source $XDG_CONFIG_HOME/fish/nvim.fish
 source $XDG_CONFIG_HOME/fish/yazi.fish
 source $XDG_CONFIG_HOME/fish/pomodoro.fish
-source $XDG_CONFIG_HOME/fish/matrix.fish
 source $XDG_CONFIG_HOME/fish/nb.fish
 
 if type -q starship
