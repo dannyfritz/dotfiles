@@ -29,7 +29,12 @@ if status --is-interactive
     end
 end
 
-source $HOME/.config/fish/expected_programs.fish
+source $XDG_CONFIG_HOME/fish/expected_programs.fish
+source $XDG_CONFIG_HOME/fish/nvim.fish
+source $XDG_CONFIG_HOME/fish/yazi.fish
+source $XDG_CONFIG_HOME/fish/pomodoro.fish
+source $XDG_CONFIG_HOME/fish/matrix.fish
+source $XDG_CONFIG_HOME/fish/nb.fish
 
 if type -q starship
     starship init fish | source
@@ -45,8 +50,8 @@ if type -q bat
     alias cat="bat"
 end
 
-if test -e ~/.opam/opam-init/init.fish
-    source ~/.opam/opam-init/init.fish >/dev/null 2>/dev/null; or true
+if type -q cmatrix
+    alias matrix="cmatrix -a -b -u 3"
 end
 
 if type -q rg
@@ -57,11 +62,9 @@ if type -q gitui
     alias gitui="gitui --watcher"
 end
 
-source $HOME/.config/fish/nvim.fish
-source $HOME/.config/fish/yazi.fish
-source $HOME/.config/fish/pomodoro.fish
-source $HOME/.config/fish/matrix.fish
-source $HOME/.config/fish/nb.fish
+if test -e ~/.opam/opam-init/init.fish
+    source ~/.opam/opam-init/init.fish >/dev/null 2>/dev/null; or true
+end
 
 if type -q fzf
     function fhistory
