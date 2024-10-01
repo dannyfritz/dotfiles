@@ -1,4 +1,4 @@
-function pomodoro
+function pomodoro -d "Pomodoro timer"
     if ! type -q jq
         echo '\"jq\" is required to use Pomodoro'
         return 1
@@ -9,6 +9,8 @@ function pomodoro
     if test $OPTION = null
         set_color yellow
         printf 'Unknown OPTION: "%s"\n\n' $argv
+        set_color normal
+        printf 'Manage your time with short and long break timers.\n\n'
         set_color -o brwhite
         printf "USAGE:\n"
         set_color normal
