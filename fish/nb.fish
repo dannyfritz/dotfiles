@@ -16,10 +16,10 @@ function nb
     set -f NB_LOCATION ~/notebook
     if not test -e $NB_LOCATION;
         and not test -d $NB_LOCATION
-            set_color yellow
-            echo "No directory found at \"$NB_LOCATION\"!"
-            set_color normal
-            return 1
+        set_color yellow
+        echo "No directory found at \"$NB_LOCATION\"!"
+        set_color normal
+        return 1
     end
     if test -z $argv;
         or test $argv = open

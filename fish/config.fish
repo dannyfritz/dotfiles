@@ -64,8 +64,9 @@ source $HOME/.config/fish/matrix.fish
 source $HOME/.config/fish/nb.fish
 
 if type -q fzf
-    function fhistory 
-        history | fzf --no-sort | read -l line; commandline -j $line
+    function fhistory
+        history | fzf --no-sort | read -l line
+        commandline -j $line
     end
 end
 

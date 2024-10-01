@@ -46,4 +46,3 @@ if status --is-interactive
     end
     set_color normal
 end
-

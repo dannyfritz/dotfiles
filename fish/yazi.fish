@@ -8,4 +8,3 @@ if type -q yazi
         rm -f -- "$tmp"
     end
 end
-
