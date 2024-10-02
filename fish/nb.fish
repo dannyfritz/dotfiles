@@ -10,9 +10,25 @@ function nb -d "Modify and sync the notebook"
         set_color -o brwhite
         printf "COMMANDS:\n"
         set_color normal
-        printf "\tnb\t\talias to \"nb open\"\n"
-        printf "\tnb open\t\tOpen nvim\n"
-        printf "\tnb sync\t\tOpen gitui\n"
+        printf "\tnb                            "
+        set_color -d
+        printf "Alias to \"nb open\"\n"
+        set_color normal
+        printf "\tnb open                       "
+        set_color -d
+        printf "Open nvim\n"
+        set_color normal
+        printf "\tnb sync                       "
+        set_color -d
+        printf "Open gitui\n"
+        set_color normal
+        printf "\tnb q [SEARCH_TERM]            "
+        set_color -d
+        printf "Alias to \"nb query\"\n"
+        set_color normal
+        printf "\tnb query [SEARCH_TERM]        "
+        set_color -d
+        printf "Search using ripgrep\n"
         set_color normal
     end
     if not test -e $LOCATION;
@@ -22,8 +38,9 @@ function nb -d "Modify and sync the notebook"
         set_color normal
         return 1
     end
-    if test -z $argv;
-        or test $argv = open
+    set -l OPTION $(string split " " $argv)[1]
+    if test -z $OPTION;
+        or test $OPTION = open
         if not type -q nvim
             set_color yellow
             echo "Missing \"nvim\" command!"
@@ -32,7 +49,7 @@ function nb -d "Modify and sync the notebook"
         end
         command nvim --cmd "cd $LOCATION"
         return 0
-    else if test "$argv" = sync
+    else if test "$OPTION" = sync
         if not type -q gitui
             set_color yellow
             echo "Missing \"gitui\" command!"
@@ -46,6 +63,27 @@ function nb -d "Modify and sync the notebook"
             return 1
         end
         command gitui --directory $LOCATION
+        return 0
+    else if test "$OPTION" = query
+        or test $OPTION = q
+        if not type -q rg
+            set_color yellow
+            echo "Missing \"rg\" command!"
+            set_color normal
+            return 1
+        end
+        set -l SEARCH $(string split " " $argv)[2..-1]
+        command rg $SEARCH $LOCATION
+        return 0
+    else if test "$OPTION" = todo
+        if not type -q rg
+            set_color yellow
+            echo "Missing \"rg\" command!"
+            set_color normal
+            return 1
+        end
+        # command rg -e "(-\s?\[\s?])|(-\s?\[[xX]])" $LOCATION/Project $LOCATION/Area
+        command rg -e "-\s?\[\s?]" $LOCATION/Project $LOCATION/Area
         return 0
     else
         set_color yellow
