@@ -20,8 +20,8 @@ return {
         { theme = "spring", from = { month = 3, day = 20 }, to = { month = 6, day = 20 } },
         { theme = "summer", from = { month = 6, day = 21 }, to = { month = 9, day = 21 } },
       },
-      max = 30, -- maximum number of drops on the screen
-      interval = 100, -- every 150ms we update the drops
+      max = 20, -- maximum number of drops on the screen
+      interval = 200, -- every 150ms we update the drops
       screensaver = false, -- show after 5 minutes. Set to false, to disable
       filetypes = { "dashboard", "alpha", "ministarter" }, -- will enable/disable automatically for the following filetypes
       -- winblend = 100, -- winblend for the drop window
