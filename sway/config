@@ -91,6 +91,7 @@ input "2:7:SynPS/2_Synaptics_TouchPad" {
     # Change normal to inverse to use left mouse button for resizing and right
     # mouse button for dragging.
     floating_modifier $mod normal
+    focus_follows_mouse no
 
     # Reload the configuration file
     bindsym $mod+Shift+c reload
