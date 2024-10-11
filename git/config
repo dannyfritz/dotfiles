@@ -36,8 +36,6 @@
   defaultBranch = main
 [interactive]
   diffFilter = delta --color-only
-[fetch]
-  prune = true
 [log]
   abbrevCommit = true
   follow = true
