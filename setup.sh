@@ -22,6 +22,8 @@ ln -sf $(pwd)/ripgreprc $XDG_CONFIG_HOME/.ripgreprc
 ln -nsf $(pwd)/sounds $XDG_CONFIG_HOME/sounds
 # starship
 ln -sf $(pwd)/starship.toml $XDG_CONFIG_HOME/starship.toml
+# sway
+ln -sf $(pwd)/sway $XDG_CONFIG_HOME/sway
 # tmux
 mkdir -p $XDG_CONFIG_HOME/tmux
 ln -sf $(pwd)/tmux.conf $XDG_CONFIG_HOME/tmux/tmux.conf
