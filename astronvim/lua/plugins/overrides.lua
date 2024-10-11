@@ -63,18 +63,18 @@ return {
       return opts
     end,
   },
-  {
-    "nvim-neo-tree/neo-tree.nvim",
-    opts = {
-      filesystem = {
-        filtered_items = {
-          hide_gitignored = false,
-          hide_dotfiles = false,
-          hide_hidden = false,
-        },
-      },
-    },
-  },
+  -- {
+  --   "nvim-neo-tree/neo-tree.nvim",
+  --   opts = {
+  --     filesystem = {
+  --       filtered_items = {
+  --         hide_gitignored = false,
+  --         hide_dotfiles = false,
+  --         hide_hidden = false,
+  --       },
+  --     },
+  --   },
+  -- },
   {
     "hrsh7th/nvim-cmp",
     opts = function(_, opts)
@@ -146,6 +146,22 @@ return {
     "zeioth/garbage-day.nvim",
     opts = {
       wakeup_delay = 3000,
-    }
+    },
+  },
+  {
+    -- MiniFiles.open(vim.api.nvim_buf_get_name(0))
+    "AstroNvim/astrocore",
+    opts = {
+      mappings = {
+        n = {
+          ["<Leader>e"] = {
+            function()
+              if not require("mini.files").close() then require("mini.files").open(vim.api.nvim_buf_get_name(0)) end
+            end,
+            desc = "Explorer",
+          },
+        },
+      },
+    },
   },
 }

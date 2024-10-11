@@ -26,6 +26,7 @@ return {
           colorcolumn = { 80, 100 },
           foldcolumn = "0",
           relativenumber = false,
+          -- shell = "/bin/bash",
           -- signcolumn = "auto",
         },
         g = { -- vim.g.<key>
