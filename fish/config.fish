@@ -1,3 +1,30 @@
+source $HOME/.config/fish/brew.fish
+
+fish_add_path -gp /usr/local/sbin
+fish_add_path -gp $HOME/.bin
+fish_add_path -gp $HOME/.local/bin
+
+set -gx XDG_CACHE_HOME $HOME/.cache
+set -gx XDG_CONFIG_HOME $HOME/.config
+set -gx XDG_DATA_HOME $HOME/.local/share
+set -gx XDG_STATE_HOME $HOME/.local/state
+
+if type -q rg
+    set -gx RIPGREP_CONFIG_PATH $XDG_CONFIG_HOME/.ripgreprc
+end
+
+if not status --is-interactive
+    exit 0
+end
+
+# https://fishshell.com/docs/current/interactive.html#vi-mode-commands
+fish_vi_key_bindings
+
+if test -z $TMUX
+    tmux
+    exit 0
+end
+
 function fish_greeting
     if test -z $TMUX
         return
@@ -6,26 +33,6 @@ function fish_greeting
         set_color --dim --italics
         fortune
         set_color normal
-    end
-end
-
-# https://fishshell.com/docs/current/interactive.html#vi-mode-commands
-fish_vi_key_bindings
-
-source $HOME/.config/fish/brew.fish
-
-fish_add_path -gp /usr/local/sbin
-fish_add_path -gp $HOME/.bin
-fish_add_path -gp $HOME/.local/bin
-set -gx XDG_CACHE_HOME $HOME/.cache
-set -gx XDG_CONFIG_HOME $HOME/.config
-set -gx XDG_DATA_HOME $HOME/.local/share
-set -gx XDG_STATE_HOME $HOME/.local/state
-
-if status --is-interactive
-    if test -z $TMUX
-        tmux
-        exit 0
     end
 end
 
@@ -51,10 +58,6 @@ end
 
 if type -q cmatrix
     alias matrix="cmatrix -a -b -u 3"
-end
-
-if type -q rg
-    set -gx RIPGREP_CONFIG_PATH $XDG_CONFIG_HOME/.ripgreprc
 end
 
 if type -q gitui
