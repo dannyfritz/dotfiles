@@ -150,7 +150,12 @@ return {
   },
   {
     "echasnovski/mini.files",
-    config = function()
+    opts = {
+      content = {
+        prefix = function() end,
+      },
+    },
+    init = function()
       local MiniFiles = require "mini.files"
       local set_mark = function(id, path, desc) MiniFiles.set_bookmark(id, path, { desc = desc }) end
       vim.api.nvim_create_autocmd("User", {
