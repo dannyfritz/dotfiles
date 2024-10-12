@@ -149,16 +149,28 @@ return {
     },
   },
   {
-    -- MiniFiles.open(vim.api.nvim_buf_get_name(0))
-    "AstroNvim/astrocore",
-    opts = {
-      mappings = {
-        n = {
-          ["<Leader>e"] = {
-            function()
-              if not require("mini.files").close() then require("mini.files").open(vim.api.nvim_buf_get_name(0)) end
-            end,
-            desc = "Explorer",
+    "echasnovski/mini.files",
+    config = function()
+      local MiniFiles = require "mini.files"
+      local set_mark = function(id, path, desc) MiniFiles.set_bookmark(id, path, { desc = desc }) end
+      vim.api.nvim_create_autocmd("User", {
+        pattern = "MiniFilesExplorerOpen",
+        callback = function() set_mark("r", vim.fn.getcwd, "Working directory") end,
+      })
+    end,
+    dependencies = {
+      {
+        "AstroNvim/astrocore",
+        opts = {
+          mappings = {
+            n = {
+              ["<Leader>e"] = {
+                function()
+                  if not require("mini.files").close() then require("mini.files").open(vim.api.nvim_buf_get_name(0)) end
+                end,
+                desc = "Explorer",
+              },
+            },
           },
         },
       },
