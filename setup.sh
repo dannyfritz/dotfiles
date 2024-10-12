@@ -23,11 +23,11 @@ ln -nsf $(pwd)/sounds $XDG_CONFIG_HOME/sounds
 # starship
 ln -sf $(pwd)/starship.toml $XDG_CONFIG_HOME/starship.toml
 # sway
-ln -sf $(pwd)/sway $XDG_CONFIG_HOME/sway
+ln -nsf $(pwd)/sway $XDG_CONFIG_HOME/sway
 # tmux
 mkdir -p $XDG_CONFIG_HOME/tmux
 ln -sf $(pwd)/tmux.conf $XDG_CONFIG_HOME/tmux/tmux.conf
 # waybar
-ln -sf $(pwd)/waybar $XDG_CONFIG_HOME/waybar
+ln -nsf $(pwd)/waybar $XDG_CONFIG_HOME/waybar
 # yazi
 ln -nsf $(pwd)/yazi $XDG_CONFIG_HOME/yazi
