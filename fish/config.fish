@@ -48,10 +48,6 @@ end
 
 alias rm="rm -i"
 
-if type -q lsd
-    alias ls="lsd"
-end
-
 if type -q bat
     alias cat="bat"
 end
@@ -63,6 +59,12 @@ end
 if type -q gitui
     alias gitui="gitui --watcher"
 end
+
+if type -q lsd
+    alias ls="lsd"
+end
+
+alias less="less -R --mouse"
 
 if test -e ~/.opam/opam-init/init.fish
     source ~/.opam/opam-init/init.fish >/dev/null 2>/dev/null; or true
