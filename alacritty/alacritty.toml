@@ -9,10 +9,6 @@ color = "#554444"
 size = 9
 
 [font.normal]
-# family = "JetBrains Mono"
-# family = "Rec Mono Linear"
-# family = "Fira Code"
-# family = "Hack"
 family = "Intel One Mono"
 style = "Medium"
 
