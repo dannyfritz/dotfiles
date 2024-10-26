@@ -8,7 +8,6 @@ return {
   },
   {
     "ramojus/mellifluous.nvim",
-    enabled = true,
     opts = {
       colorset = "tender",
     },

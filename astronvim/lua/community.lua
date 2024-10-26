@@ -10,6 +10,8 @@ return {
   { import = "astrocommunity.bars-and-lines.lualine-nvim" },
   { import = "astrocommunity.bars-and-lines.vim-illuminate" },
   { import = "astrocommunity.color.nvim-highlight-colors" },
+  -- { import = "astrocommunity.colorscheme.lackluster-nvim" },
+  { import = "astrocommunity.colorscheme.mellifluous-nvim" },
   -- { import = "astrocommunity.completion.mini-completion" },
   { import = "astrocommunity.editing-support.yanky-nvim" },
   -- { import = "astrocommunity.file-explorer.oil-nvim" },
