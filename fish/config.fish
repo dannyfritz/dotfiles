@@ -196,8 +196,8 @@ function update_all
         __banner Flatpak
         flatpak update
     end
-    if type -q dnf5
+    if type -q dnf
         __banner DNF
-        sudo dnf5 upgrade
+        sudo dnf upgrade
     end
 end
