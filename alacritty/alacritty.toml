@@ -6,7 +6,7 @@ duration = 300
 color = "#554444"
 
 [font]
-size = 9
+size = 7.5
 
 [font.normal]
 family = "Intel One Mono"
