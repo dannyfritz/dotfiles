@@ -1,5 +1,4 @@
 if status --is-interactive
-    set -l -a expected_programs asdf\;https://asdf-vm.com
     set -l -a expected_programs bat\;https://github.com/sharkdp/bat
     set -l -a expected_programs btop\;https://github.com/aristocratos/btop
     set -l -a expected_programs delta\;https://github.com/dandavison/delta
@@ -13,6 +12,7 @@ if status --is-interactive
     # set -l -a expected_programs glow\;https://github.com/charmbracelet/glow
     set -l -a expected_programs jq\;https://github.com/jqlang/jq
     set -l -a expected_programs lsd\;https://github.com/lsd-rs/lsd
+    set -l -a expected_programs mise\;https://mise.jdx.dev
     set -l -a expected_programs noti\;https://github.com/variadico/noti
     set -l -a expected_programs nvim\;https://neovim.io
     set -l -a expected_programs rg\;https://github.com/BurntSushi/ripgrep

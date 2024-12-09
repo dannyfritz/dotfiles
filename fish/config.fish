@@ -41,6 +41,10 @@ source $XDG_CONFIG_HOME/fish/nvim.fish
 source $XDG_CONFIG_HOME/fish/yazi.fish
 source $XDG_CONFIG_HOME/fish/pomodoro.fish
 
+if type -q mise
+    ~/.local/bin/mise activate fish | source
+end
+
 if type -q starship
     starship init fish | source
 end
@@ -130,6 +134,10 @@ function update_all
     if type -q asdf
         __banner asdf
         asdf plugin update --all
+    end
+    if type -q mise
+        __banner mise
+        mise plugins update
     end
     if type -q nvim
         __banner Neovim
