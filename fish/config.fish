@@ -42,7 +42,7 @@ source $XDG_CONFIG_HOME/fish/yazi.fish
 source $XDG_CONFIG_HOME/fish/pomodoro.fish
 
 if type -q mise
-    ~/.local/bin/mise activate fish | source
+    mise activate fish | source
 end
 
 if type -q starship

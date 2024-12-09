@@ -13,9 +13,4 @@ if type -q brew
     if test -e (brew --prefix)/share/fish/vendor_completions.d
         set -gx fish_complete_path $fish_complete_path (brew --prefix)/share/fish/vendor_completions.d
     end
-    if test -e (brew --prefix)/opt/asdf/libexec/asdf.fish
-        source (brew --prefix)/opt/asdf/libexec/asdf.fish
-    else if test -e ~/.asdf/asdf.fish
-        source ~/.asdf/asdf.fish
-    end
 end

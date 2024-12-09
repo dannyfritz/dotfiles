@@ -2,7 +2,7 @@
 # Alacritty
 ln -nsf $(pwd)/alacritty $XDG_CONFIG_HOME/alacritty
 # asdf
-ln -sf $(pwd)/asdfrc $XDG_CONFIG_HOME/.asdfrc
+# ln -sf $(pwd)/asdfrc $XDG_CONFIG_HOME/.asdfrc
 # astrovim
 ln -nsf $(pwd)/astronvim $XDG_CONFIG_HOME/astronvim
 # bat
