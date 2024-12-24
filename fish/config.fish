@@ -120,8 +120,10 @@ function update_all
     if type -q brew
         __banner Brew
         brew upgrade
-        __banner Brew Cask
-        brew upgrade --cask --greedy
+        if uname -s | grep -q Darwin
+            __banner Brew Cask
+            brew upgrade --cask --greedy
+        end
     end
     if type -q fisher
         __banner Fisher
