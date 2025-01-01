@@ -31,7 +31,7 @@ require("lazy").setup({
       lazy = "💤 ",
     },
   },
-  install = { colorscheme = { "astrodark", "habamax" } },
+  -- install = { colorscheme = { "astrodark", "habamax" } },
   performance = {
     rtp = {
       -- disable some rtp plugins, add more to your liking

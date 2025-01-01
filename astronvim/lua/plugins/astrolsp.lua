@@ -22,16 +22,7 @@ return {
       autocmds = {
         eslint_fix_on_save = false,
       },
-      mappings = {
-        n = {
-          gl = { function() vim.diagnostic.open_float() end, desc = "Hover diagnostics" },
-          gD = {
-            function() vim.lsp.buf.declaration() end,
-            desc = "Declaration of current symbol",
-            cond = "textDocument/declaration",
-          },
-        },
-      },
+      mappings = {},
     },
   },
 }
