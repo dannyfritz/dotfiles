@@ -4,10 +4,14 @@
 [core]
   editor = nvim
   pager = delta
+[column]
+  ui = auto
 [branch]
   sort = -committerdate
 [commit]
   verbose = true
+[tag]
+  sort = version:refname
 [delta]
   navigate = true
   syntax-theme = "base16"
@@ -23,10 +27,12 @@
   colorMoved = true
   mnemonicPrefix = true
   tool = nvimdiff
+  renames = true
 [difftool]
   prompt = false
 [fetch]
   prune = true
+  pruneTags = true
   all = true
 [grep]
   lineNumber = true
@@ -54,5 +60,5 @@
   autoSetupRemote = true
   default = upstream
 [rerere]
-  autoupdate = true
   enabled = true
+  autoupdate = true

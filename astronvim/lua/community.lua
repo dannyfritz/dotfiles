@@ -31,6 +31,7 @@ return {
   { import = "astrocommunity.pack.toml" },
   { import = "astrocommunity.pack.typescript-all-in-one" },
   { import = "astrocommunity.pack.yaml" },
+  -- { import = "astrocommunity.pack.zig" },
   { import = "astrocommunity.quickfix.nvim-bqf" },
   { import = "astrocommunity.scrolling.mini-animate" },
   -- { import = "astrocommunity.scrolling.nvim-scrollbar" },

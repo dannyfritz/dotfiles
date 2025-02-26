@@ -140,6 +140,7 @@ function update_all
     if type -q mise
         __banner mise
         mise plugins update
+        mise upgrade
     end
     if type -q nvim
         __banner Neovim

@@ -1,6 +1,12 @@
 function getVisualSelection() return table.concat(vim.fn.getregion(vim.fn.getpos "v", vim.fn.getpos "."), "\n") end
 return {
   {
+    "nvim-treesitter/nvim-treesitter",
+    opts = function(plugin, opts)
+      require("astrocore").list_insert_unique(opts.ensure_installed, { "zig" })
+    end,
+  },
+  {
     "RRethy/vim-illuminate",
     opts = {
       delay = 60,
