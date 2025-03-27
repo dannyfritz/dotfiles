@@ -11,6 +11,19 @@ return {
   { "akinsho/toggleterm.nvim", optional = true, enabled = false },
   { "vuki656/package-info.nvim", enabled = false },
   {
+    "saghen/blink.cmp",
+    opts = {
+      sources = {
+        providers = {
+          lsp = { score_offset = 3 },
+          buffer = { score_offset = 2 },
+          path = { score_offset = 0 },
+          snippets = { score_offset = -10 },
+        },
+      },
+    },
+  },
+  {
     "folke/which-key.nvim",
     opts = function(_, opts)
       local get_icon = require("astroui").get_icon
