@@ -11,15 +11,15 @@ return {
   { "akinsho/toggleterm.nvim", optional = true, enabled = false },
   { "vuki656/package-info.nvim", enabled = false },
   {
-    "saghen/blink.cmp",
+    "Saghen/blink.cmp",
     opts = {
       sources = {
-        providers = {
-          lsp = { score_offset = 3 },
-          buffer = { score_offset = 2 },
-          path = { score_offset = 0 },
-          snippets = { score_offset = -10 },
-        },
+        transform_items = function(_, items)
+          return vim.tbl_filter(
+            function(item) return item.kind ~= require("blink.cmp.types").CompletionItemKind.Snippet end,
+            items
+          )
+        end,
       },
     },
   },
