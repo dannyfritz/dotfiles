@@ -13,6 +13,7 @@ return {
         -- large_buf = { size = 1024 * 500, lines = 10000 }, -- set global limits for large files for disabling features like treesitter
         diagnostics_mode = 1, -- diagnostic mode on start (0 = off, 1 = no signs/virtual text, 2 = no virtual text, 3 = on)
         highlighturl = true, -- highlight URLs at start
+        icons_enabled = false,
       },
       -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
       diagnostics = {

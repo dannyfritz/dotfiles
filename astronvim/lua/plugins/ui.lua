@@ -37,7 +37,7 @@ return {
       },
     },
     keys = {
-      { "<Leader>,", "<cmd>Telescope buffers<cr>", desc = "Find Buffers" },
+      { "<Leader>,", function() require("snacks").picker.buffers() end, desc = "Find Buffers" },
       { "<Leader>b", "", desc = "Buffers" },
       {
         "<Leader>by",

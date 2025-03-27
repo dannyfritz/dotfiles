@@ -1,33 +1,13 @@
 function getVisualSelection() return table.concat(vim.fn.getregion(vim.fn.getpos "v", vim.fn.getpos "."), "\n") end
 return {
   {
-    "nvim-treesitter/nvim-treesitter",
-    opts = function(plugin, opts)
-      require("astrocore").list_insert_unique(opts.ensure_installed, { "zig" })
-    end,
-  },
-  {
     "RRethy/vim-illuminate",
     opts = {
       delay = 60,
       under_cursor = true,
     },
   },
-  { "folke/todo-comments.nvim", opts = { signs = false } },
-  {
-    "kevinhwang91/nvim-hlslens",
-    opts = function(_, opts)
-      opts.auto_enable = true
-      opts.enable_inc_search = true
-      opts.calm_down = true
-      return opts
-    end,
-  },
   { "max397574/better-escape.nvim", enabled = false },
-  { "mfussenegger/nvim-dap", optional = true, enabled = false },
-  { "mfussenegger/nvim-dap-python", enabled = false },
-  { "jay-babu/mason-nvim-dap.nvim", optional = true, enabled = false },
-  { "rcarriga/cmp-dap", optional = true, enabled = false },
   { "akinsho/toggleterm.nvim", optional = true, enabled = false },
   { "vuki656/package-info.nvim", enabled = false },
   {
@@ -54,51 +34,15 @@ return {
     end,
   },
   {
-    "goolord/alpha-nvim",
-    opts = function(_, opts)
-      local get_icon = require("astroui").get_icon
-      opts.section.buttons.val = {
-        opts.button("LDR S .", get_icon("Refresh", 2, true) .. "Last Session"),
-        opts.button(":ene<CR>", get_icon("DefaultFile", 2, true) .. "New File"),
-        opts.button("LDR f o", get_icon("DefaultFile", 2, true) .. "Recent Files"),
-        opts.button("LDR f f", get_icon("Search", 2, true) .. "Find File"),
-        opts.button("LDR f w", get_icon("WordFile", 2, true) .. "Find Word"),
-        opts.button("LDR p a", get_icon("Lazy", 2, true) .. "Update"),
-        opts.button("q", get_icon("Quit", 2, true) .. "Quit", ":qa<CR>"),
-      }
-      return opts
-    end,
-  },
-  -- {
-  --   "nvim-neo-tree/neo-tree.nvim",
-  --   opts = {
-  --     filesystem = {
-  --       filtered_items = {
-  --         hide_gitignored = false,
-  --         hide_dotfiles = false,
-  --         hide_hidden = false,
-  --       },
-  --     },
-  --   },
-  -- },
-  {
-    "hrsh7th/nvim-cmp",
-    opts = function(_, opts)
-      local cmp = require "cmp"
-      opts.sources = cmp.config.sources {
-        { name = "nvim_lsp", priority = 1000 },
-        { name = "buffer", priority = 500 },
-        { name = "path", priority = 250 },
-        -- { name = "luasnip", priority = 100 },
-      }
-    end,
-  },
-  {
-    "nvim-telescope/telescope.nvim",
+    "folke/snacks.nvim",
     keys = {
       {
         "<Leader><Space>",
-        function() require("telescope.builtin").find_files {} end,
+        function()
+          require("snacks").picker.files {
+            hidden = vim.tbl_get((vim.uv or vim.loop).fs_stat ".git" or {}, "type") == "directory",
+          }
+        end,
         desc = "Find Files",
       },
       {
@@ -109,23 +53,15 @@ return {
       },
       {
         "<Leader>fw",
-        function() require("telescope.builtin").live_grep { default_text = getVisualSelection() } end,
-        desc = "Find words",
+        function() require("snacks").picker.grep_word { search = getVisualSelection() } end,
+        desc = "Find word under cursor",
         mode = { "v" },
       },
       {
         "<Leader>ff",
-        function() require("telescope.builtin").find_files { default_text = getVisualSelection() } end,
+        function() require("snacks").picker.files { search = getVisualSelection() } end,
         desc = "Find files",
         mode = { "v" },
-      },
-    },
-  },
-  {
-    "lukas-reineke/indent-blankline.nvim",
-    opts = {
-      scope = {
-        enabled = true,
       },
     },
   },
