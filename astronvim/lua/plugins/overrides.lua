@@ -24,29 +24,6 @@ return {
     },
   },
   {
-    "folke/which-key.nvim",
-    opts = function(_, opts)
-      local get_icon = require("astroui").get_icon
-      -- opts.preset = "modern"
-      opts.icons.mappings = false
-      opts.icons.separator = ""
-      opts.icons.keys = opts.icons.keys or {}
-      opts.icons.keys.Space = "‿"
-      opts.icons.keys.Up = get_icon("ArrowUp", 1)
-      opts.icons.keys.Down = get_icon("ArrowDown", 1)
-      opts.icons.keys.Left = get_icon("ArrowLeft", 1)
-      opts.icons.keys.Right = get_icon("ArrowRight", 1)
-      opts.icons.keys.C = "<C>" .. " "
-      opts.icons.keys.M = "<M>" .. " "
-      opts.icons.keys.S = "<S>" .. " "
-      opts.icons.keys.BS = "<BS>" .. " "
-      opts.icons.keys.Esc = "<ESC>" .. " "
-      opts.icons.keys.Tab = "<TAB>" .. " "
-      opts.icons.keys.CR = "<CR>" .. " "
-      return opts
-    end,
-  },
-  {
     "folke/snacks.nvim",
     keys = {
       {
