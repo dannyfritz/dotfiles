@@ -41,6 +41,11 @@ source $XDG_CONFIG_HOME/fish/nvim.fish
 source $XDG_CONFIG_HOME/fish/yazi.fish
 source $XDG_CONFIG_HOME/fish/pomodoro.fish
 
+if type -q neovim
+    set -gx MANPAGER "nvim +Man!"
+    # abbr --add man --set-cursor "nvim \"+hide Man %\""
+end
+
 if type -q mise
     mise activate fish | source
 end
@@ -158,3 +163,4 @@ function update_all
         sudo dnf upgrade
     end
 end
+
