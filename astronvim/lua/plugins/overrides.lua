@@ -7,9 +7,9 @@ return {
       under_cursor = true,
     },
   },
-  { "max397574/better-escape.nvim", enabled = false },
+  { "max397574/better-escape.nvim", optional = true, enabled = false },
   { "akinsho/toggleterm.nvim", optional = true, enabled = false },
-  { "vuki656/package-info.nvim", enabled = false },
+  { "vuki656/package-info.nvim", optional = true, enabled = false },
   {
     "Saghen/blink.cmp",
     opts = {
