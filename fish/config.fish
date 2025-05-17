@@ -41,7 +41,7 @@ source $XDG_CONFIG_HOME/fish/nvim.fish
 source $XDG_CONFIG_HOME/fish/yazi.fish
 source $XDG_CONFIG_HOME/fish/pomodoro.fish
 
-if type -q neovim
+if type -q nvim
     set -gx MANPAGER "nvim +Man!"
     # abbr --add man --set-cursor "nvim \"+hide Man %\""
 end
