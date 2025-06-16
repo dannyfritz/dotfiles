@@ -39,7 +39,6 @@ end
 source $XDG_CONFIG_HOME/fish/expected_programs.fish
 source $XDG_CONFIG_HOME/fish/nvim.fish
 source $XDG_CONFIG_HOME/fish/yazi.fish
-source $XDG_CONFIG_HOME/fish/pomodoro.fish
 
 if type -q nvim
     set -gx MANPAGER "nvim +Man!"
