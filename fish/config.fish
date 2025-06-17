@@ -161,5 +161,11 @@ function update_all
         __banner DNF
         sudo dnf upgrade
     end
+    if type -q fwupdmgr
+        __banner fwupdmgr
+        fwupdmgr refresh
+        fwupdmgr get-updates
+        fwupdmgr update
+    end
 end
 
