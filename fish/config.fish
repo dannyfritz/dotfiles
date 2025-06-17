@@ -164,7 +164,6 @@ function update_all
     if type -q fwupdmgr
         __banner fwupdmgr
         fwupdmgr refresh
-        fwupdmgr get-updates
         fwupdmgr update
     end
 end
