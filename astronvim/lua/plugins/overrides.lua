@@ -81,6 +81,18 @@ return {
     },
   },
   {
+    "folke/snacks.nvim",
+    opts = {
+      dashboard = {
+        sections = {
+          { section = "header", padding = 5 },
+          -- { section = "terminal", cmd = "pwd", height = 1, padding = 1 },
+          { section = "startup" },
+        },
+      },
+    },
+  },
+  {
     "echasnovski/mini.files",
     opts = {
       content = {
