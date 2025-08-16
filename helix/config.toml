@@ -1,4 +1,4 @@
-theme = "rasmus"
+theme = "rasmus-alt"
 
 [editor]
 bufferline = "always"
