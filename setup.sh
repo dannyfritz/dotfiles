@@ -14,6 +14,8 @@ mkdir -p $XDG_CONFIG_HOME/fish
 ln -sf $(pwd)/fish/*.fish $XDG_CONFIG_HOME/fish/
 # gitui
 ln -nsf $(pwd)/gitui $XDG_CONFIG_HOME/gitui
+# helix
+ln -nsf $(pwd)/helix $XDG_CONFIG_HOME/helix
 # lsd
 ln -nsf $(pwd)/lsd $XDG_CONFIG_HOME/lsd
 # ripgrep
