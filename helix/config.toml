@@ -23,3 +23,6 @@ right = [
   "total-line-numbers",
   "file-encoding"
 ]
+
+[keys.normal.space]
+"b" = { "c" = ":buffer-close", "C" = ":buffer-close-others", "n" = ":new" }
