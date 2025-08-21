@@ -146,13 +146,13 @@ function update_all
         mise plugins update
         mise upgrade
     end
-    if type -q nvim
-        __banner Neovim
-        nvim --headless "+Lazy! sync" +qa | rg --color=never "log.*\s\|\s"
-        nvim --headless "+Lazy! sync" +qa | rg --color=never "log.*\s\|\s"
-        nvim --headless "+MasonToolsInstallSync" +qa
-        nvim --headless "+MasonToolsUpdateSync" +qa
-    end
+    # if type -q nvim
+    #     __banner Neovim
+    #     nvim --headless "+Lazy! sync" +qa | rg --color=never "log.*\s\|\s"
+    #     nvim --headless "+Lazy! sync" +qa | rg --color=never "log.*\s\|\s"
+    #     nvim --headless "+MasonToolsInstallSync" +qa
+    #     nvim --headless "+MasonToolsUpdateSync" +qa
+    # end
     if type -q flatpak
         __banner Flatpak
         flatpak update
@@ -167,4 +167,3 @@ function update_all
         fwupdmgr update
     end
 end
-
