@@ -24,5 +24,9 @@ right = [
   "file-encoding"
 ]
 
-[keys.normal.space]
-"b" = { "c" = ":buffer-close", "C" = ":buffer-close-others", "n" = ":new" }
+[keys.normal.space.b]
+c = ":buffer-close"
+C = ":buffer-close-others"
+n = ":new"
+r = ":reload"
+R = ":reload-all"
