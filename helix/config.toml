@@ -12,8 +12,17 @@ scrolloff = 20
 insert = "bar"
 select = "underline"
 
+[editor.file-picker]
+hidden = false
+
 [editor.indent-guides]
 render = true
+
+[editor.lsp]
+snippets = false
+
+[editor.soft-wrap]
+enable = true
 
 [editor.statusline]
 right = [
@@ -41,6 +50,7 @@ ret = ["move_line_down", "goto_first_nonwhitespace"]
 esc = ["collapse_selection", "keep_primary_selection", "normal_mode"]
 
 [keys.normal.space.b]
+b = "buffer_picker"
 c = ":buffer-close"
 C = ":buffer-close-others"
 n = ":new"
