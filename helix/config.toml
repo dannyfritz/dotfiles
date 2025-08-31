@@ -25,6 +25,13 @@ right = [
   "file-encoding"
 ]
 
+[editor.whitespace.render]
+space = "none"
+tab = "all"
+nbsp = "all"
+nnbsp = "all"
+newline = "all"
+
 [keys.insert]
 esc = ["collapse_selection", "normal_mode"]
 [keys.normal]
