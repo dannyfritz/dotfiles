@@ -1,6 +1,7 @@
 return {
   {
     "almo7aya/openingh.nvim",
+    enabled = false, optional = true,
     keys = {
       { "<leader>gop", mode = { "n" }, ":OpenInGHRepo<cr>", desc = "Open Project" },
       { "<leader>gof", mode = { "n", "v" }, ":OpenInGHFile<cr>", desc = "Open File" },

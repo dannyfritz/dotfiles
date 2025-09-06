@@ -4,6 +4,7 @@ theme = "rasmus-alt"
 bufferline = "always"
 color-modes = true
 cursorline = true
+end-of-line-diagnostics = "disable"
 line-number = "relative"
 rulers = [80, 100, 120]
 scrolloff = 20
@@ -20,6 +21,9 @@ render = true
 
 [editor.lsp]
 snippets = false
+
+[editor.inline-diagnostics]
+cursor-line = "disable"
 
 [editor.soft-wrap]
 enable = true
