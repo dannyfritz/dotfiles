@@ -1,7 +1,7 @@
 source $HOME/.config/fish/brew.fish
 
 fish_add_path -gp /usr/local/sbin
-fish_add_path -gp $HOME/.bin
+fish_add_path -gp $HOME/bin
 fish_add_path -gp $HOME/.local/bin
 
 set -gx XDG_CACHE_HOME $HOME/.cache
@@ -146,13 +146,13 @@ function update_all
         mise plugins update
         mise upgrade
     end
-    # if type -q nvim
-    #     __banner Neovim
-    #     nvim --headless "+Lazy! sync" +qa | rg --color=never "log.*\s\|\s"
-    #     nvim --headless "+Lazy! sync" +qa | rg --color=never "log.*\s\|\s"
-    #     nvim --headless "+MasonToolsInstallSync" +qa
-    #     nvim --headless "+MasonToolsUpdateSync" +qa
-    # end
+    if type -q nvim
+        __banner Neovim
+        nvim --headless "+Lazy! sync" +qa | rg --color=never "log.*\s\|\s"
+        nvim --headless "+Lazy! sync" +qa | rg --color=never "log.*\s\|\s"
+        nvim --headless "+MasonToolsInstallSync" +qa
+        nvim --headless "+MasonToolsUpdateSync" +qa
+    end
     if type -q flatpak
         __banner Flatpak
         flatpak update
