@@ -1,0 +1,34 @@
+#!/usr/bin/env fish
+
+set -l ANCHORS ".git" "package.json" "cargo.rs"
+
+argparse 'h/help' 'v/verbose' -- $argv
+
+if set -ql _flag_help
+    echo "USAGE: nvimp [--verbose/-v] [--help/-h]" >&2
+    return 0
+end
+
+set -l cur_dir (pwd)
+while true
+    if test "$cur_dir" = $HOME -o "$cur_dir" = "/"
+        if set -ql _flag_verbose
+            echo Invalid Directory \(quitting\): $cur_dir
+        end
+        return 1
+    end
+    for file in $ANCHORS
+        if set -ql _flag_verbose
+            echo Checking: "$cur_dir"/"$file" > /dev/tty
+        end
+        if test -e "$cur_dir"/"$file"
+            if set -ql _flag_verbose
+                echo Found: "$cur_dir"/"$file" > /dev/tty
+            end
+            echo $cur_dir
+            return 0
+        end
+    end
+    set cur_dir (dirname -- "$cur_dir")
+end
+
