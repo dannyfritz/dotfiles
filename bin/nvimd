@@ -1,6 +1,6 @@
 #!/usr/bin/env fish
 
-set PIPE_FILE ".pipe.nvim"
+set PIPE_FILE ".nvimd.pipe"
 
 function help
     echo "Usage:"
