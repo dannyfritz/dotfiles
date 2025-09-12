@@ -1,6 +1,6 @@
 #!/usr/bin/env fish
 
-set ANCHORS ".git" "package.json" "cargo.toml"
+set ANCHORS ".git" "package.json" "Cargo.toml"
 
 function help
     echo project_root
