@@ -6,6 +6,7 @@
 [._]ss[a-gi-z]
 [._]sw[a-p]
 .vim-bookmarks
+.pipe.nvim
 Session.vim
 .netrwhist
 *~

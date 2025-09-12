@@ -1,0 +1,52 @@
+#!/usr/bin/env fish
+
+set PIPE_FILE ".pipe.nvim"
+
+function help
+    echo "Usage:"
+    echo \t"nvimd [OPTION...]"
+    echo
+    echo "Options:"
+    echo \t"-h, --help"
+    echo \t\t"Show this help text"
+    echo \t"-f, --file <filename or filepath>"
+    echo \t\t"The file to open in the open Neovim server"
+    echo
+    echo "Examples:"
+    echo \t"\"nvimd\" with no arguments starts a Neovim server at the project root."
+    echo
+    echo \t"\"nvimd -f myfile.txt\" opens the file in the current project's Neovim server."
+end
+
+argparse h/help 'f/file=' -- $argv
+
+if test $status -ne 0
+    help
+    exit $status
+end
+
+if set -ql _flag_help
+    help
+    exit 0
+end
+
+if not type -q project_root
+    set_color red
+    echo ERROR: Missing command "project_root"!
+    set_color normal
+    exit 1
+end
+
+set dir (project_root)
+if test -z $dir
+    set_color red
+    echo ERROR: No project root found!
+    set_color normal
+    exit 1
+end
+
+if test $_flag_f
+    nvim --server "$dir/$PIPE_FILE" --remote (realpath -- $_flag_f)
+else
+    nvim --listen "$dir/$PIPE_FILE"
+end

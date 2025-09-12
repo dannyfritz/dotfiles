@@ -1,34 +1,57 @@
 #!/usr/bin/env fish
 
-set -l ANCHORS ".git" "package.json" "cargo.rs"
+set ANCHORS ".git" "package.json" "cargo.toml"
 
-argparse 'h/help' 'v/verbose' -- $argv
-
-if set -ql _flag_help
-    echo "USAGE: nvimp [--verbose/-v] [--help/-h]" >&2
-    return 0
+function help
+    echo project_root
+    echo
+    echo "Usage:"
+    echo \t"project_root [OPTION...]"
+    echo
+    echo "Return the project root by searching up the directory path."
+    echo "Searches for" (string join ", " $ANCHORS)
+    echo "Exits with status code 1 if no project is found."
+    echo
+    echo "Options:"
+    echo \t"-h, --help"
+    echo \t\t"Show this help text"
+    echo \t"-v, --verbose"
+    echo \t\t"Print more information to help with debugging."
 end
 
-set -l cur_dir (pwd)
+argparse v/verbose h/help -- $argv
+
+if test $status -ne 0
+    help
+    exit $status
+end
+
+if set -ql _flag_help
+    help
+    exit 0
+end
+
+set cur_dir (pwd)
 while true
-    if test "$cur_dir" = $HOME -o "$cur_dir" = "/"
+    if test "$cur_dir" = $HOME -o "$cur_dir" = /
         if set -ql _flag_verbose
+            set_color red
             echo Invalid Directory \(quitting\): $cur_dir
+            set_color normal
         end
-        return 1
+        exit 1
     end
     for file in $ANCHORS
         if set -ql _flag_verbose
-            echo Checking: "$cur_dir"/"$file" > /dev/tty
+            echo Checking: "$cur_dir"/"$file" >/dev/tty
         end
         if test -e "$cur_dir"/"$file"
             if set -ql _flag_verbose
-                echo Found: "$cur_dir"/"$file" > /dev/tty
+                echo Found: "$cur_dir"/"$file" >/dev/tty
             end
             echo $cur_dir
-            return 0
+            exit 0
         end
     end
     set cur_dir (dirname -- "$cur_dir")
 end
-
