@@ -48,5 +48,5 @@ end
 if test $_flag_f
     nvim --server "$dir/$PIPE_FILE" --remote (realpath -- $_flag_f)
 else
-    nvim --listen "$dir/$PIPE_FILE"
+    nvim +"lcd $dir" --listen "$dir/$PIPE_FILE"
 end
