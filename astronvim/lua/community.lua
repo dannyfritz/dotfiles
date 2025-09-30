@@ -6,14 +6,14 @@
 return {
   { "AstroNvim/astrocommunity" },
   -- import/override with your plugins folder
-  { import = "astrocommunity.bars-and-lines.bufferline-nvim" },
-  { import = "astrocommunity.bars-and-lines.lualine-nvim" },
+  -- { import = "astrocommunity.bars-and-lines.bufferline-nvim" },
+  -- { import = "astrocommunity.bars-and-lines.lualine-nvim" },
   { import = "astrocommunity.color.nvim-highlight-colors" },
   -- { import = "astrocommunity.colorscheme.lackluster-nvim" },
   { import = "astrocommunity.colorscheme.mellifluous-nvim" },
   { import = "astrocommunity.editing-support.yanky-nvim" },
   -- { import = "astrocommunity.file-explorer.oil-nvim" },
-  { import = "astrocommunity.file-explorer.mini-files" },
+  -- { import = "astrocommunity.file-explorer.mini-files" },
   { import = "astrocommunity.lsp.garbage-day-nvim" },
   { import = "astrocommunity.lsp.lsp-signature-nvim" },
   { import = "astrocommunity.motion.nvim-surround" },
