@@ -1,4 +1,6 @@
 [status]
+sep_left = { open = "", close = "" }
+sep_right = { open = "", close = "" }
 separator_open = "["
 separator_close = "]"
 
@@ -8,3 +10,6 @@ dirs  = [{ name = "*/", text = "+" }]
 files = [{ name = "*", text = " "}]
 exts  = []
 conds = []
+
+[which]
+separator = " > "

@@ -2,4 +2,12 @@
 sort_by = "alphabetical"
 sort_sensitive = false
 sort_reverse = false
+[opener]
+nvimd = [
+	{ run = 'echo $@ | xargs -n1 nvimd -f', desc = "Open in an nvimd server" },
+]
 
+[open]
+prepend_rules = [
+	{ name = "*", use = "nvimd" },
+]
