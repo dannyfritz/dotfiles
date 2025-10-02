@@ -39,7 +39,12 @@ return {
       },
       -- Mappings can be configured through AstroCore as well.
       -- NOTE: keycodes follow the casing in the vimdocs. For example, `<Leader>` must be capitalized
-      mappings = {},
+      mappings = {
+        n = {
+          ["L"] = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
+          ["H"] = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
+        },
+      },
     },
   },
 }
